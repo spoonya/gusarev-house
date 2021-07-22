@@ -21,20 +21,19 @@ mixin mediaButton
   button.media-button(aria-label="Воспроизвести видео")
     +icon('media-button__icon', 'play')
 
-mixin introSlide
-  .swiper-slide(style="background-image:url('images/index/intro/slide-1.jpg')")
+mixin introSlide(img, title, subtitleArr, descrip, featuresArr)
+  .swiper-slide(style=`background-image:url(images/index/intro/${img})`)
     .container
       .intro__inner
         .intro__content
-          h2.intro__title Строительство домов под ключ в Минской области и Минском районе
+          h2.intro__title= title
           h3.intro__subtitle
-            span Строим надёжные дома
-            |из клееного бруса и массива сроком эксплуатации до 100 лет
-          p.intro__descrip По индивидуальному или готовому проекту
+            span= subtitleArr[0]
+            = subtitleArr[1]
+          p.intro__descrip= descrip
           ul.intro__features
-            li Качественно
-            li Долговечно
-            li Доступно
+            for item in featuresArr
+              li= item
           +linkButton('#', 'В каталог проектов')
         .intro__media
           +mediaButton
