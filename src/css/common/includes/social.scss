@@ -1,0 +1,32 @@
+.social {
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    background: url('../images/common/insta-bg.png');
+
+    border-radius: 50%;
+  }
+
+  &__icon {
+    height: 40px;
+    width: 40px;
+
+    &--insta {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

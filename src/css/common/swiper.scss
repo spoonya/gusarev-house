@@ -2,32 +2,11 @@
   height: auto;
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-  bottom: 30px;
-  left: 0;
-  width: 100%;
-}
-
 .swiper-pagination {
   &-bullet {
-    height: 9px;
-    width: 9px;
+    height: 14px;
+    width: 14px;
 
-    border-radius: 0;
-    opacity: 1;
-    background-color: none;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    &-active {
-      &:hover {
-        background-color: $color-primary-alpha;
-        border-color: $color-primary-alpha;
-      }
-    }
+    background-color: $color-primary-beta;
   }
 }

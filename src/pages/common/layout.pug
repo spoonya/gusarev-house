@@ -3,9 +3,14 @@ html(lang="ru")
   block head
     head
       meta(charset="utf-8")
-      meta(name="description" content="")
       meta(content="width=device-width, initial-scale=1" name="viewport")
       meta(content="ie=edge" http-equiv="x-ua-compatible")
+      meta(name="description" content="Gusarev House - строительство в Минской области")
+
+      link(rel="preload" href="fonts/TTNorms-300.woff2" as="font" crossorigin="anonymous")
+      link(rel="preload" href="fonts/TTNorms-400.woff2" as="font" crossorigin="anonymous")
+      link(rel="preload" href="fonts/TTNorms-500.woff2" as="font" crossorigin="anonymous")
+      link(rel="preload" href="fonts/TTNorms-700.woff2" as="font" crossorigin="anonymous")
 
       link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
       script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
@@ -17,9 +22,8 @@ html(lang="ru")
     include ../includes/common/mixins
     block header
       include header
-    .page
-      block content
-      block footer
-        include footer
+    block content
+    block footer
+      include footer
     block scripts
       script(src='scripts/main.min.js')

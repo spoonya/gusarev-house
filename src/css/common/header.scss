@@ -1,0 +1,169 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 8;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 2.1rem;
+
+  &--dark {
+    background-color: $color-primary-gamma;
+
+    .header__call {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 3rem;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+
+  &-icon {
+    max-width: 18rem;
+    max-height: 5.9rem;
+
+    margin-right: 3rem;
+  }
+}
+
+.header__title {
+  font-size: 14px;
+
+  max-width: 24.6rem;
+
+  margin-top: 6px;
+}
+
+.header__social {
+  display: flex;
+  align-items: center;
+
+  margin-right: 10.1rem;
+
+  &-txt {
+    font-size: 14px;
+
+    margin-right: 19px;
+  }
+}
+
+.header__info {
+  display: flex;
+  align-items: center;
+}
+
+.header__call {
+  display: flex;
+  align-items: center;
+
+  padding: 1.6rem 2rem;
+  margin-right: 3.3rem;
+
+  font-size: 14px;
+  color: $color-primary-beta;
+
+  border-radius: 5px;
+  background: rgba(39, 40, 39, 0.3);
+
+  transition: color 0.1s linear;
+
+  &-icon {
+    height: 18px;
+    width: 18px;
+
+    margin-right: 10px;
+  }
+}
+
+.header__worktime {
+  &-schedule {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-size: 14px;
+    text-align: right;
+
+    &::before {
+      content: '';
+
+      display: inline-block;
+
+      background-color: $color-primary-alpha;
+      border-radius: 50%;
+
+      margin-right: 6px;
+
+      width: 6px;
+      height: 6px;
+    }
+  }
+
+  &-phone {
+    font-weight: 500;
+    font-size: 2rem;
+    color: $color-primary-beta;
+  }
+}
+
+.header__menu {
+  padding: 2rem;
+
+  border-radius: 5px;
+  background-color: rgba(39, 40, 39, 0.3);
+
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      &::after {
+        content: '';
+
+        display: inline-block;
+
+        margin: 0 3.8rem;
+
+        height: 20px;
+        width: 1px;
+
+        opacity: 0.1;
+        background-color: $color-primary-beta;
+
+        @include media-desktop {
+          margin: 0 2.9rem;
+        }
+      }
+    }
+  }
+
+  a {
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-primary-beta;
+    text-transform: uppercase;
+
+    transition: color 0.1s linear;
+
+    &:hover {
+      color: $color-primary-alpha;
+    }
+  }
+}

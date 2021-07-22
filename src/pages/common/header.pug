@@ -1,1 +1,35 @@
 header.header
+  .container
+    .header__top
+      .header__logo
+        +icon('header__logo-icon', 'logo')
+        h1.header__title Производство и строительство домов из клееного бруса в Минской области
+      .header__info
+        .header__social
+          p.header__social-txt Мы в соц.сетях:
+          +social
+        button.header__call
+          +icon('header__call-icon', 'phone')
+          |Позвоните мне
+        .header__worktime
+          p.header__worktime-schedule Пн-Пт: 9:00 до 17:00
+          a.header__worktime-phone(href="tel:80333333333") 8 (033) 333 33 33
+    nav.header__menu
+      ul
+        li
+          a(href="#") Главная
+        li
+          a(href="#") Каталог проектов
+        li
+          a(href="#") Портфолио
+        li
+          a(href="#") Услуги
+        li
+          a(href="#") Продаём
+        li
+          a(href="#") О компании
+        li
+          a(href="#") Новости
+        li
+          a(href="#") Контакты
+
