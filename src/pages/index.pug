@@ -5,12 +5,44 @@ include includes/index/mixins
 block content
   .page.page--paddingless
     main
+      //Intro
       section.intro
         #swiper-intro.swiper-container
           .swiper-wrapper
             +introSlide('slide-1.jpg', 'Строительство домов под ключ в Минской области и Минском районе', ['Строим надёжные дома', 'из клееного бруса и массива сроком эксплуатации до 100 лет'], 'По индивидуальному или готовому проекту', ['Качественно', 'Долговечно', 'Доступно'])
-            +introSlide('slide-2.jpg', 'Строительство домов под ключ в Минской области и Минском районе', ['Строим надёжные дома', 'из клееного бруса и массива сроком эксплуатации до 100 лет'], 'По индивидуальному или готовому проекту', ['Качественно', 'Долговечно', 'Доступно'])
+            +introSlide('slide-1.jpg', 'Строительство домов под ключ в Минской области и Минском районе', ['Строим надёжные дома', 'из клееного бруса и массива сроком эксплуатации до 100 лет'], 'По индивидуальному или готовому проекту', ['Качественно', 'Долговечно', 'Доступно'])
           .intro__controllers
             .swiper-pagination
             .swiper-button-next Вперёд
             img.intro__decorator(src="images/index/intro/arrows-group.png", alt="")
+
+      //Company
+      section.company
+        .container
+          .company__inner
+            .company__images
+              img.company__img(src="images/index/company/house.jpg", alt="Дом из древесины")
+              .company__years(style="background-image:url(images/index/company/texture-1.png)")
+                p.company__years-txt
+                  span 25
+                  |лет на рынке
+              .company__img-decorator(style="background-image:url(images/index/company/texture-2.png)")
+            .company__content
+              h2.company__title Компания Gusarev House
+              h3.company__subtitle
+                |С 1995 года&nbsp;
+                span строим&nbsp;
+                |теплые и долговечные деревянные дома
+              p.company__descrip Новейшие технологии позволяют нам конкурировать с любыми мировыми производителями
+              p.company__txt Gusarev House — ведущая деревообрабатывающая и строительная компания. Компания Gusarev House более 25 лет занимается производством древесины, проектирует и строит деревянные дома из клееного бруса и массива, используя новейшие технологии обработки древесины.
+              +linkButton('#', 'Подробнее о компании')
+
+      //Fee
+      section.fee
+        ul.fee__list
+          +feeItem('fee-1.jpg', ['Производство и строительство домов', 'из бруса под ключ'], '#')
+          +feeItem('fee-2.jpg', ['Архитектурное проектирование', 'любого размера'], '#')
+
+      //Catalog
+      section.catalog
+        .container

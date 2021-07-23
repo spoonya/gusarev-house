@@ -12,8 +12,8 @@ mixin social
     li.social__item
       a(href="#" aria-label="youtube" target="_blank"): +icon('social__icon', 'youtube')
 
-mixin linkButton(link, txt)
-  a.link-button(href="#")
+mixin linkButton(link, txt, modif=null)
+  a.link-button(href="#" class= modif)
     .link-button__inner= txt
       +icon('link-button__icon', 'arrow-right')
 
@@ -34,10 +34,18 @@ mixin introSlide(img, title, subtitleArr, descrip, featuresArr)
           ul.intro__features
             for item in featuresArr
               li= item
-          +linkButton('#', 'В каталог проектов')
+          +linkButton('#', 'В каталог проектов', 'link-button--light')
         .intro__media
           +mediaButton
           p.intro__media-txt
             |Посмотреть
             span видео-презентацию
             |компании
+
+mixin feeItem(img, titleArr, link)
+  li.fee__item(style=`background-image:url(images/index/fee/${img})`)
+    .fee__content
+      h3.fee__title
+        = titleArr[0]
+        span= titleArr[1]
+      +linkButton(`${link}`, 'Подробнее', 'link-button--light')

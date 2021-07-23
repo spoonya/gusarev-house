@@ -1,0 +1,73 @@
+.fee {
+  padding-bottom: $padding-bottom-section;
+}
+
+.fee__list {
+  display: flex;
+}
+
+.fee__item {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 50%;
+
+  padding: 22.3rem 0 6.9rem 10rem;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  border-radius: 0px 10px 10px 0px;
+
+  &:nth-child(2n) {
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 3rem;
+  }
+
+  &::after {
+    position: absolute;
+
+    content: '';
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(
+      180deg,
+      rgba(39, 40, 39, 0) 35.42%,
+      #111111 100%
+    );
+  }
+}
+
+.fee__content {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.fee__title {
+  max-width: 29.6rem;
+
+  margin-right: 7.3rem;
+
+  font-weight: 300;
+  font-size: 3rem;
+
+  span {
+    display: block;
+
+    font-weight: 700;
+  }
+}
