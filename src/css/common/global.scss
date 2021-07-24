@@ -86,15 +86,14 @@ textarea {
 input {
   font: inherit;
 
+  color: inherit;
+
   border: none;
   background: none;
+  outline: 0;
 
   &:focus {
-    outline: 0;
-  }
-
-  &:focus-visible {
-    @include outline;
+    border-color: $color-primary-alpha;
   }
 }
 
@@ -104,14 +103,16 @@ input[type='button'] {
   cursor: pointer;
 }
 
-::placeholder {
-  color: $color-primary-alpha;
+input::placeholder {
+  opacity: 1;
+  color: $color-primary-psi;
 }
 
 button {
   display: inline-block;
 
   font: inherit;
+  line-height: 0;
 
   padding: 0;
   margin: 0;

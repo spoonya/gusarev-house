@@ -1,1 +1,1 @@
-export { default as swiperDescrip } from './intro';
+export { default as swiperIntro } from './intro';
