@@ -1,8 +1,14 @@
 .catalog {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 
   padding-bottom: $padding-bottom-section;
+}
+
+.catalog__wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .catalog__form {

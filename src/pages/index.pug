@@ -48,30 +48,31 @@ block content
           +feeItem('fee-2.jpg', ['Архитектурное проектирование', 'любого размера'], '#')
 
       //Catalog
-      section.catalog.container
-        .catalog__form
-          .catalog__form-descrip
-            h2.catalog__form-title
-              span Скачайте каталог проектов&nbsp;
-              |в 1 клик
-            img.catalog__form-img(src="images/index/catalog/mockup.png", width="270" height="217", alt="Каталог")
-            h3.catalog__form-subtitle
-              span Зарегистрируйтесь,&nbsp;
-              |чтобы получить доступ к каталогу
-          +formCatalog
-          p.catalog__form-txt Помимо уже существующих проектов архитекторы компании могут спроектировать дом именно под Вас. Представленные варианты внутренних планировок условны. При желании совместно с нашими архитекторами Вы можете разработать собственное планировочное решение.
-        .catalog__content
-          h2.catalog__title
-            span Каталог&nbsp;
-            |популярных проектов
-          ul.catalog__list
-            +catalogItem('catalog-1.jpg', 'Мега-гипер-ультра длинное название проекта', '#', '50 м')
-            +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
-            +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
-            +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
-            +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
-            +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
-          +linkButton('#', 'В каталог проектов')
+      section.catalog
+        .catalog__wrapper.container
+          .catalog__form
+            .catalog__form-descrip
+              h2.catalog__form-title
+                span Скачайте каталог проектов&nbsp;
+                |в 1 клик
+              img.catalog__form-img(src="images/index/catalog/mockup.png", width="270" height="217", alt="Каталог")
+              h3.catalog__form-subtitle
+                span Зарегистрируйтесь,&nbsp;
+                |чтобы получить доступ к каталогу
+            +formCatalog
+            p.catalog__form-txt Помимо уже существующих проектов архитекторы компании могут спроектировать дом именно под Вас. Представленные варианты внутренних планировок условны. При желании совместно с нашими архитекторами Вы можете разработать собственное планировочное решение.
+          .catalog__content
+            h2.catalog__title
+              span Каталог&nbsp;
+              |популярных проектов
+            ul.catalog__list
+              +catalogItem('catalog-1.jpg', 'Мега-гипер-ультра длинное название проекта', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+        +linkButton('#', 'В каталог проектов')
 
       //Features
       section.features(style="background-image:url(images/index/features/bg.jpg);")
