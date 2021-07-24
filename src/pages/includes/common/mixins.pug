@@ -27,7 +27,7 @@ mixin mediaButton
     +icon('media-button__icon', 'play')
 
 mixin introSlide(img, title, subtitleArr, descrip, featuresArr)
-  .swiper-slide(style=`background-image:url(images/index/intro/${img}); `)
+  .swiper-slide.lozad(data-background-image=`images/index/intro/${img}`)
     .container
       .intro__inner
         .intro__content
@@ -48,8 +48,7 @@ mixin introSlide(img, title, subtitleArr, descrip, featuresArr)
             |компании
 
 mixin feeItem(img, titleArr, link)
-  li.fee__item(style=`background-image:url(images/index/fee/${img});`)
-
+  li.fee__item.lozad(data-background-image=`images/index/fee/${img}`)
     .fee__content
       h3.fee__title
         = titleArr[0]
@@ -59,7 +58,9 @@ mixin feeItem(img, titleArr, link)
 mixin catalogItem(img, title, link, area)
   li.catalog__item
     a.catalog__item-link(href= link aria-label="Подробнее" target="_blank")
-    img.catalog__item-img(src=`images/index/catalog/${img}`, width="330",height="240", alt="")
+    picture.lozad
+      source(srcset=`images/index/catalog/${img}.webp` type="image/webp")
+      img.catalog__item-img(src=`images/index/catalog/${img}.jpg`, width="330",height="240", alt="")
     .catalog__item-content
       h3.catalog__item-title= title
       .catalog__item-info

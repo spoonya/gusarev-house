@@ -8,7 +8,7 @@ module.exports = function imageMinify() {
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
         imagemin.mozjpeg({
-          quality: 90,
+          quality: 75,
           progressive: true
         }),
         imagemin.optipng({ optimizationLevel: 4 }),

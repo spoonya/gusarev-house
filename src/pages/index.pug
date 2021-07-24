@@ -18,19 +18,23 @@ block content
               span#swiper-intro-total.intro__slides-total
             .swiper-pagination
             .swiper-button-next Вперёд
-            img.intro__decorator(src="images/index/intro/arrows-group.png", width="733", height="340",  alt="")
+             picture.lozad
+                source(srcset="images/index/intro/arrows-group.webp" type="image/webp")
+                img.intro__decorator(src="images/index/intro/arrows-group.png", width="733", height="340",  alt="")
 
       //Company
       section.company
         .container
           .company__inner
             .company__images
-              img.company__img(src="images/index/company/house.jpg", width="450" height="690", alt="Дом из древесины")
-              .company__years(style="background-image:url(images/index/company/texture-1.png);")
+              picture.lozad
+                source(srcset="images/index/company/house.webp" type="image/webp")
+                img.company__img(src="images/index/company/house.jpg" width="450" height="690" alt="Дом из древесины")
+              .company__years.lozad(data-background-image="images/index/company/texture-1.png")
                 p.company__years-txt
                   span 25
                   |лет на рынке
-              .company__img-decorator(style="background-image:url(images/index/company/texture-2.png);")
+              .company__img-decorator.lozad(data-background-image="images/index/company/texture-2.png")
             .company__content
               h2.company__title Компания Gusarev House
               h3.company__subtitle
@@ -55,7 +59,9 @@ block content
               h2.catalog__form-title
                 span Скачайте каталог проектов&nbsp;
                 |в 1 клик
-              img.catalog__form-img(src="images/index/catalog/mockup.png", width="270" height="217", alt="Каталог")
+              picture.lozad
+                source(srcset="images/index/catalog/mockup.webp" type="image/webp")
+                img.catalog__form-img(src="images/index/catalog/mockup.png", width="270" height="217", alt="Каталог")
               h3.catalog__form-subtitle
                 span Зарегистрируйтесь,&nbsp;
                 |чтобы получить доступ к каталогу
@@ -66,16 +72,16 @@ block content
               span Каталог&nbsp;
               |популярных проектов
             ul.catalog__list
-              +catalogItem('catalog-1.jpg', 'Мега-гипер-ультра длинное название проекта', '#', '50 м')
-              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
-              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
-              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
-              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
-              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1', 'Мега-гипер-ультра длинное название проекта', '#', '50 м')
+              +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
         +linkButton('#', 'В каталог проектов')
 
       //Features
-      section.features(style="background-image:url(images/index/features/bg.jpg);")
+      section.features.lozad(data-background-image="images/index/features/bg.jpg")
         .container
           .features__inner
             .features__top
