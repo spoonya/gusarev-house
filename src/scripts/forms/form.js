@@ -1,4 +1,3 @@
-import parsePhoneNumber, { isValidPhoneNumber } from 'libphonenumber-js';
 import Swal from 'sweetalert2';
 
 const classes = {
@@ -35,19 +34,17 @@ class FormValidation {
   }
 
   _validatePhone(phoneNumber) {
+    phoneNumber = phoneNumber.replace(/\s+/g, '');
+
     if (phoneNumber.split('')[0] !== '+') {
       phoneNumber = `+${phoneNumber}`;
     }
 
-    const parsedPhoneNumber = parsePhoneNumber(phoneNumber);
+    this.formElements.userPhone.value = phoneNumber;
 
-    if (isValidPhoneNumber(phoneNumber, 'BY')) {
-      this.formElements.userPhone.value = parsedPhoneNumber.format('E.164');
+    const regex = /(\+375)(((33|29|44|25|\d{2,4})))(\d{6,7})/g;
 
-      return true;
-    }
-
-    return false;
+    return regex.test(String(phoneNumber));
   }
 
   _selectFormControl(input) {

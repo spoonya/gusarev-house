@@ -52,24 +52,36 @@
   border-bottom: 1px solid $color-primary-beta;
 }
 
-.form__btn {
+.form__button {
+  display: flex;
+  align-items: center;
+
   width: 100%;
 
-  padding: 1.5em 5.25em;
-
-  border-radius: 5px;
-
   text-transform: uppercase;
+  color: $color-primary-beta;
   font-weight: 500;
 
-  transition: color 0.1s linear, background-color 0.1s linear;
+  padding: 2.5rem 3rem;
+
+  background-color: $color-primary-alpha;
+  border-radius: 5px;
+
+  transition: background-color 0.1s linear;
 
   &:hover {
-    color: $color-primary-beta;
+    background-color: darken($color-primary-alpha, 5);
   }
 
-  @include media-smartphone-lg {
-    padding: 1.5em 2.25em;
+  &-icon {
+    width: 18px;
+    height: 18px;
+
+    margin-left: 10px;
+
+    fill: $color-primary-beta;
+
+    transition: transform 0.15s linear;
   }
 }
 
