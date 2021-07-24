@@ -26,7 +26,7 @@ block content
           .company__inner
             .company__images
               img.company__img(src="images/index/company/house.jpg", width="450" height="690", alt="Дом из древесины")
-              .company__years(style=`background-image:url(images/index/company/texture-1.png);`)
+              .company__years(style="background-image:url(images/index/company/texture-1.png);")
                 p.company__years-txt
                   span 25
                   |лет на рынке
@@ -72,3 +72,18 @@ block content
             +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
             +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
           +linkButton('#', 'В каталог проектов')
+
+      //Features
+      section.features(style="background-image:url(images/index/features/bg.jpg);")
+        .container
+          .features__inner
+            .features__top
+              h2.features__title
+                |Ключевым преимуществом наши клиенты считают&nbsp;
+                span одно из лучших качеств продукции
+              +mediaButton
+            ul.features__list
+              +featuresItem(['Собственное производство, ', 'высочайшее качество'], 'feature-1')
+              +featuresItem(['Разнообразие готовых проектов ', 'или разработаем индивидуальный'], 'feature-2')
+              +featuresItem(['Гибкая ценовая политика ', 'и чёткое соблюдение сроков'], 'feature-3')
+              +featuresItem(['Полный контроль ', 'строительство дома'], 'feature-4')

@@ -96,3 +96,10 @@ mixin formCatalog
         span.form__error
         input#form-catalog-email.form__input(name="catalog-email" type="text" placeholder="Ваш e-mail (необязательно)")
     +submitButton("Загрузить каталог")
+
+mixin featuresItem(titleArr, icon)
+  li.features__item
+    +icon('features__item-icon', icon)
+    h3.features__item-title
+      span= titleArr[0]
+      = titleArr[1]
