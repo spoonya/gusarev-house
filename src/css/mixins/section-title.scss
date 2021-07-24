@@ -1,0 +1,12 @@
+@mixin section-title($textAlign: left) {
+  font-size: 3.6rem;
+  font-weight: 300;
+  color: $color-primary-gamma;
+  text-align: $textAlign;
+
+  margin-bottom: 5rem;
+
+  span {
+    font-weight: 700;
+  }
+}

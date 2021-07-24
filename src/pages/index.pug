@@ -12,6 +12,10 @@ block content
             +introSlide('slide-1.jpg', 'Строительство домов под ключ в Минской области и Минском районе', ['Строим надёжные дома', 'из клееного бруса и массива сроком эксплуатации до 100 лет'], 'По индивидуальному или готовому проекту', ['Качественно', 'Долговечно', 'Доступно'])
             +introSlide('slide-1.jpg', 'Строительство домов под ключ в Минской области и Минском районе', ['Строим надёжные дома', 'из клееного бруса и массива сроком эксплуатации до 100 лет'], 'По индивидуальному или готовому проекту', ['Качественно', 'Долговечно', 'Доступно'])
           .intro__controllers
+            p.intro__slides
+              span#swiper-intro-current.intro__slides-current
+              span.intro__slides-decorator /
+              span#swiper-intro-total.intro__slides-total
             .swiper-pagination
             .swiper-button-next Вперёд
             img.intro__decorator(src="images/index/intro/arrows-group.png", alt="")
@@ -46,3 +50,16 @@ block content
       //Catalog
       section.catalog
         .container
+          .catalog__inner
+            h2.catalog__title
+              span Каталог&nbsp;
+              |популярных проектов
+            ul.catalog__list
+              +catalogItem('catalog-1.jpg', 'Мега-гипер-ультра длинное название проекта', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+              +catalogItem('catalog-1.jpg', 'Слобода-1', '#', '50 м')
+            +linkButton('#', 'В каталог проектов')
+

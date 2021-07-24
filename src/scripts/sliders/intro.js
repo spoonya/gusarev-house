@@ -1,3 +1,6 @@
+const currentSlideIndex = document.querySelector('#swiper-intro-current');
+const totalSlidesCount = document.querySelector('#swiper-intro-total');
+
 const swiperIntro = new Swiper('#swiper-intro', {
   loop: true,
   speed: 700,
@@ -16,7 +19,18 @@ const swiperIntro = new Swiper('#swiper-intro', {
     pauseOnMouseEnter: true
   },
 
-  effect: 'cube'
+  effect: 'cube',
+
+  on: {
+    init() {
+      currentSlideIndex.textContent = `0${this.realIndex + 1}`;
+      totalSlidesCount.textContent = `0${this.slides.length - 2}`;
+    },
+
+    slideChange() {
+      currentSlideIndex.textContent = `0${this.realIndex + 1}`;
+    }
+  }
 });
 
 export default swiperIntro;

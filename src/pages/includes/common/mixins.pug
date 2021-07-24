@@ -49,3 +49,17 @@ mixin feeItem(img, titleArr, link)
         = titleArr[0]
         span= titleArr[1]
       +linkButton(`${link}`, 'Подробнее', 'link-button--light')
+
+mixin catalogItem(img, title, link, area)
+  li.catalog__item
+    img.catalog__item-img(src=`images/index/catalog/${img}`, alt="")
+    .catalog__item-content
+      h3.catalog__item-title= title
+      .catalog__item-info
+        a.catalog__item-link(href= link target="_blank")
+          |Подробнее
+          +icon('catalog__item-link-icon', 'arrow-right')
+        p.catalog__item-area
+          +icon('catalog__item-area-icon', 'area')
+          = area
+          sup 2
