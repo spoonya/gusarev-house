@@ -19,7 +19,7 @@ const swiperIntro = new Swiper('#swiper-intro', {
     pauseOnMouseEnter: true
   },
 
-  effect: 'cube',
+  effect: 'coverflow',
 
   on: {
     init() {

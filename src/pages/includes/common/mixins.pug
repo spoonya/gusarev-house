@@ -27,7 +27,7 @@ mixin mediaButton
     +icon('media-button__icon', 'play')
 
 mixin introSlide(img, title, subtitleArr, descrip, featuresArr)
-  .swiper-slide.lozad(data-background-image=`images/index/intro/${img}`)
+  .swiper-slide.lozad(data-background-image-set=`url('images/index/intro/${img}.webp') 1x, url('images/index/intro/${img}.jpg') 2x`)
     .container
       .intro__inner
         .intro__content
@@ -48,7 +48,7 @@ mixin introSlide(img, title, subtitleArr, descrip, featuresArr)
             |компании
 
 mixin feeItem(img, titleArr, link)
-  li.fee__item.lozad(data-background-image=`images/index/fee/${img}`)
+  li.fee__item.lozad(data-background-image-set=`url('images/index/fee/${img}.webp') 1x, url('images/index/fee/${img}.jpg') 2x`)
     .fee__content
       h3.fee__title
         = titleArr[0]
@@ -92,3 +92,27 @@ mixin featuresItem(titleArr, icon)
     h3.features__item-title
       span= titleArr[0]
       = titleArr[1]
+
+mixin projectsItem(img, location, detailsArr, title, link, floors, area)
+  li.projects__item
+    picture.lozad
+      source(srcset=`images/index/projects/${img}.webp` type="image/webp")
+      img.projects__item-img(src=`images/index/projects/${img}.jpg`  alt="")
+    .projects__item-descrip
+      p.projects__item-location
+        +icon('projects__item-icon', 'location')
+        = location
+      ul
+        for item in detailsArr
+          li= item
+      .projects__item-preview
+        .projects__item-preview-left
+          h3.projects__item-title= title
+          a.projects__item-link(href= link)
+            p Подробнее
+            +icon('projects__item-link-icon', 'arrow-right')
+        .projects__item-preview-right
+          p.projects__item-floors= floors
+          p.projects__item-area
+            +icon('projects__item-icon', 'area')
+            = area
