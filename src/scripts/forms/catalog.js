@@ -11,7 +11,10 @@ function validateFormCatalog() {
     userEmail: document.querySelector('#form-catalog-email')
   };
 
-  const formValidation = new FormValidation({ form, formElements });
+  const formValidation = new FormValidation({
+    form,
+    formElements
+  });
 
   formValidation.validateOnSubmit({
     username: { isCheck: true },

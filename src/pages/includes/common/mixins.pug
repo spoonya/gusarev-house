@@ -26,6 +26,28 @@ mixin mediaButton
   button.media-button(aria-label="Воспроизвести видео")
     +icon('media-button__icon', 'play')
 
+mixin projectsItem(img, location, detailsArr, title, link, floors, area)
+  li.projects__item(tabindex="0")
+    img.projects__item-img.lozad(data-src=`images/index/projects/${img}.jpg`, width="480", height="480", alt="")
+    .projects__item-descrip
+      p.projects__item-location
+        +icon('projects__item-icon', 'location')
+        = location
+      ul
+        for item in detailsArr
+          li= item
+      .projects__item-preview
+        .projects__item-preview-left
+          h3.projects__item-title= title
+          a.projects__item-link(href= link)
+            p Подробнее
+            +icon('projects__item-link-icon', 'arrow-right')
+        .projects__item-preview-right
+          p.projects__item-floors= floors
+          p.projects__item-area
+            +icon('projects__item-icon', 'area')
+            = area
+
 mixin catalogItem(img, title, link, area)
   li.catalog__item
     a.catalog__item-link(href= link aria-label="Подробнее" target="_blank")

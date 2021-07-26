@@ -34,31 +34,8 @@ mixin featuresItem(titleArr, icon)
       span= titleArr[0]
       = titleArr[1]
 
-mixin projectsItem(img, location, detailsArr, title, link, floors, area)
-  li.projects__item
-    img.projects__item-img.lozad(data-src=`images/index/projects/${img}.jpg`, width="480", height="480", alt="")
-    .projects__item-descrip
-      p.projects__item-location
-        +icon('projects__item-icon', 'location')
-        = location
-      ul
-        for item in detailsArr
-          li= item
-      .projects__item-preview
-        .projects__item-preview-left
-          h3.projects__item-title= title
-          a.projects__item-link(href= link)
-            p Подробнее
-            +icon('projects__item-link-icon', 'arrow-right')
-        .projects__item-preview-right
-          p.projects__item-floors= floors
-          p.projects__item-area
-            +icon('projects__item-icon', 'area')
-            = area
-
 mixin produceItem(img, title, textArr, link)
-  li.produce__item
-    img.produce__item-img.lozad(data-src=`images/index/produce/${img}.jpg`,  width="480", height="480", alt="")
+  li.produce__item.lozad(data-background-image=`images/index/produce/${img}.jpg` tabindex="0")
     .produce__inner
       p.produce__item-decorator Производство
       .produce__item-info

@@ -23,7 +23,27 @@
   position: relative;
   width: 25%;
 
-  &:hover {
+  &::after {
+    position: absolute;
+
+    z-index: -1;
+
+    content: '';
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-primary-gamma;
+    opacity: 0.35;
+  }
+
+  &:hover,
+  &:focus-within {
+    outline: 0;
+
     .projects__item-descrip {
       background: rgba(40, 39, 40, 0.9);
     }
@@ -42,20 +62,17 @@
   }
 
   &-img {
-    max-width: unset;
+    position: absolute;
     width: 100%;
+    height: 100%;
+    z-index: -1;
 
-    min-height: 48rem;
+    max-width: unset;
 
     object-fit: cover;
   }
 
   &-descrip {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,10 +87,6 @@
     transition: opacity 0.1s linear, background-color 0.1s linear;
 
     ul {
-      min-height: 294px;
-
-      overflow: hidden;
-
       padding-bottom: 4.7rem;
 
       line-height: 1.5;
@@ -102,19 +115,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    margin-top: 20px;
   }
 
   &-title {
     font-size: 2.6rem;
     font-weight: 500;
-
-    max-width: 25rem;
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    max-width: 11vw;
   }
 
   &-link {

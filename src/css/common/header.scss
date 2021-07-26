@@ -77,7 +77,11 @@
   border-radius: 5px;
   background: rgba(39, 40, 39, 0.3);
 
-  transition: color 0.1s linear;
+  transition: background-color 0.1s linear;
+
+  &:hover {
+    background-color: $color-primary-alpha;
+  }
 
   &-icon {
     height: 18px;
@@ -115,6 +119,8 @@
     font-weight: 500;
     font-size: 2rem;
     color: $color-primary-beta;
+
+    @include hover;
   }
 }
 
@@ -160,10 +166,6 @@
     color: $color-primary-beta;
     text-transform: uppercase;
 
-    transition: color 0.1s linear;
-
-    &:hover {
-      color: $color-primary-alpha;
-    }
+    @include hover;
   }
 }

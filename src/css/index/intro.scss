@@ -37,6 +37,8 @@
     letter-spacing: 0.125em;
     font-weight: 30;
 
+    @include hover;
+
     &::after {
       content: '';
     }

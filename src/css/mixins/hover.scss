@@ -1,0 +1,7 @@
+@mixin hover {
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: $color-primary-alpha;
+  }
+}
