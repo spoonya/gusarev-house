@@ -1,6 +1,6 @@
 class Spoiler {
-  constructor({ spoilers }) {
-    this.spoilers = spoilers;
+  constructor(selector) {
+    this.spoilers = document.querySelectorAll(selector);
   }
 
   _isSpoilerOpen(spoiler) {

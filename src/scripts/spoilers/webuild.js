@@ -1,8 +1,6 @@
 import Spoiler from './spoiler';
 
-const details = document.querySelectorAll('#details-webuild');
-
-const spoilerWebuild = new Spoiler({ spoilers: details });
+const spoilerWebuild = new Spoiler('#details-webuild');
 
 spoilerWebuild.init();
 

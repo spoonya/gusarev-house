@@ -20,10 +20,30 @@ const errors = {
 };
 
 class FormValidation {
-  constructor({ form, formElements, isModal = false }) {
-    this.form = form;
-    this.formElements = formElements;
+  constructor(selector, { isModal } = { isModal: false }) {
+    this.form = document.querySelector(selector);
+    this.formElements = {
+      username: this.form.querySelector('[data-form-name]'),
+      userPhone: this.form.querySelector('[data-form-phone]'),
+      userEmail: this.form.querySelector('[data-form-email]'),
+      userMsg: this.form.querySelector('[data-form-message]'),
+      userAgreement: this.form.querySelector('[data-form-agreement]')
+    };
     this.isModal = isModal;
+    this.defaultConfig = {
+      username: {
+        isRequired: true
+      },
+      userPhone: {
+        isRequired: true
+      },
+      userEmail: {
+        isRequired: true
+      },
+      userMsg: {
+        isRequired: true
+      }
+    };
   }
 
   _validateEmail(email) {
@@ -67,8 +87,12 @@ class FormValidation {
     formControl.classList.add(classes.success);
   }
 
-  _checkUsername(username, usernameValue) {
-    if (!usernameValue) {
+  _checkUsername(
+    username,
+    usernameValue,
+    { isRequired } = this.defaultConfig.username
+  ) {
+    if (isRequired && !usernameValue) {
       this._setError(username, errors.emptyName);
 
       return false;
@@ -79,8 +103,12 @@ class FormValidation {
     return true;
   }
 
-  _checkUserPhone(userPhone, userPhoneValue) {
-    if (!userPhoneValue) {
+  _checkUserPhone(
+    userPhone,
+    userPhoneValue,
+    { isRequired } = this.defaultConfig.userPhone
+  ) {
+    if (isRequired && !userPhoneValue) {
       this._setError(userPhone, errors.emptyPhone);
 
       return false;
@@ -97,7 +125,11 @@ class FormValidation {
     return true;
   }
 
-  _checkUserEmail(userEmail, userEmailValue, isRequired = false) {
+  _checkUserEmail(
+    userEmail,
+    userEmailValue,
+    { isRequired } = this.defaultConfig.userEmail
+  ) {
     if (isRequired && !userEmailValue) {
       this._setError(userEmail, errors.emptyEmail);
 
@@ -115,7 +147,11 @@ class FormValidation {
     return true;
   }
 
-  _checkUserMessage(userMessage, userMessageValue, isRequired = false) {
+  _checkUserMessage(
+    userMessage,
+    userMessageValue,
+    { isRequired } = this.defaultConfig.userMsg
+  ) {
     const maxMessageLength = 250;
     const minMessageLength = 16;
 
@@ -177,60 +213,63 @@ class FormValidation {
     });
   }
 
-  validateOnSubmit(config) {
+  validateOnSubmit(userConfig = {}) {
     if (!this.form) return;
 
+    const config = Object.assign(this.defaultConfig, userConfig);
+
     this.form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
       const isValid = [];
 
-      if (config.username && config.username.isCheck) {
+      if (this.formElements.username) {
         isValid.push(
           this._checkUsername(
             this.formElements.username,
-            this.formElements.username.value.trim()
+            this.formElements.username.value.trim(),
+            config.username
           )
         );
       }
 
-      if (config.userPhone && config.userPhone.isCheck) {
+      if (this.formElements.userPhone) {
         isValid.push(
           this._checkUserPhone(
             this.formElements.userPhone,
-            this.formElements.userPhone.value.trim()
+            this.formElements.userPhone.value.trim(),
+            config.userPhone
           )
         );
       }
 
-      if (config.userEmail && config.userEmail.isCheck) {
+      if (this.formElements.userEmail) {
         isValid.push(
           this._checkUserEmail(
             this.formElements.userEmail,
             this.formElements.userEmail.value.trim(),
-            config.userEmail.isRequired
+            config.userEmail
           )
         );
       }
 
-      if (config.userMessage && config.userMessage.isCheck)
+      if (this.formElements.userMsg)
         isValid.push(
           this._checkUserMessage(
             this.formElements.userMsg,
             this.formElements.userMsg.value.trim(),
-            config.userMessage.isRequired
+            config.userMsg
           )
         );
 
-      if (config.userAgreement && config.userAgreement.isCheck) {
+      if (this.formElements.userAgreementg) {
         isValid.push(this._checkAgreement(this.formElements.userAgreement));
       }
 
       if (isValid.includes(false)) {
-        e.preventDefault();
-
         return;
       }
 
-      this._showAlert();
       this._clearInputs();
     });
   }

@@ -73,11 +73,11 @@ mixin formCatalog
     .form__inner
       .form__control
         span.form__error
-        input#form-catalog-name.form__input(name="catalog-name" type="text" placeholder="Ваше имя")
+        input#form-catalog-name.form__input(name="catalog-name" type="text" placeholder="Ваше имя" data-form-name)
       .form__control
         span.form__error
-        input#form-catalog-phone.form__input(name="catalog-phone" type="text" placeholder="Ваш телефон")
+        input#form-catalog-phone.form__input(name="catalog-phone" type="text" placeholder="Ваш телефон" data-form-phone)
       .form__control
         span.form__error
-        input#form-catalog-email.form__input(name="catalog-email" type="text" placeholder="Ваш e-mail (необязательно)")
+        input#form-catalog-email.form__input(name="catalog-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
     +submitButton("Загрузить каталог")
