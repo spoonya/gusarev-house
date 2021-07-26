@@ -131,6 +131,18 @@ button {
   }
 }
 
+details summary {
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    @include outline;
+  }
+}
+
 details summary::-webkit-details-marker {
   display: none;
 }

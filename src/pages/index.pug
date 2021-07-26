@@ -130,3 +130,32 @@ block content
               +featuresItem(['Разнообразие готовых проектов ', 'или разработаем индивидуальный'], 'feature-2')
               +featuresItem(['Гибкая ценовая политика ', 'и чёткое соблюдение сроков'], 'feature-3')
               +featuresItem(['Полный контроль ', 'строительство дома'], 'feature-4')
+
+      //Youtube
+      section.youtube
+        .container
+          .youtube__inner
+            .youtube__info
+              h3.youtube__suptitle И не только!
+              h2.youtube__title
+                |Делимся экспертностью в области строительства&nbsp;
+                span на нашем Youtube канале
+              a.youtube__link(href="https://www.youtube.com/channel/UCUdIa66ASkvG7fYzFUC6DWA" target="_blank")
+                p Смотреть Youtube канал
+                +icon('youtube__link-icon', 'arrow-right')
+            ul.youtube__videos
+              li.youtube__item.lozad(data-background-image="images/index/youtube/youtube-1.jpg")
+                +mediaButton
+              li.youtube__item.lozad(data-background-image="images/index/youtube/youtube-1.jpg")
+                +mediaButton
+
+      //We build
+      section.webuild
+        .container
+          h2.webuild__title Мы построили более 100+ домов и построим Ваш дом мечты
+          details#details-webuild.webuild__details
+            +summary('webuild__summary')
+            .webuild__txt
+              p Gusarev House — деревообрабатывающая и строительная компания. Компания Gusarev House более 25 лет занимается производством древесины, проектирует и строит деревянные дома из клееного бруса и массива, используя новейшие технологии обработки древесины.
+              p Дома компании Gusarev House востребованы по всей Минской области. Строения компании можно найти на территории всей Минской области, а так же Минского района. Дома, созданные Gusarev House, отличают неординарные архитектурные решения и исключительная надежность.
+              p Наша компания всегда осуществляла полный цикл производства деревянных строений, возводя их под ключ. То есть от заготовки материала до финишной отделки, которая обеспечивает защиту дерева и делает его прочным на долгие годы.
