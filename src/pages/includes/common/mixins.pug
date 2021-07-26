@@ -9,13 +9,13 @@ mixin summary(className)
 mixin social
   ul.social
     li.social__item
-      a(href="#" aria-label="vk" target="_blank"): +icon('social__icon', 'vk')
+      a(href="#" aria-label="vk" target="_blank" rel="noopener"): +icon('social__icon', 'vk')
     li.social__item
-      a(href="#" aria-label="instagram" target="_blank")
+      a(href="#" aria-label="instagram" target="_blank" rel="noopener")
         .social__icon-wrapper
           +icon('social__icon social__icon--insta', 'instagram')
     li.social__item
-      a(href="#" aria-label="youtube" target="_blank"): +icon('social__icon', 'youtube')
+      a(href="#" aria-label="youtube" target="_blank" rel="noopener"): +icon('social__icon', 'youtube')
 
 mixin linkButton(link, txt, modif=null)
   a.link-button(href="#" class= modif)
@@ -53,6 +53,17 @@ mixin projectsItem(img, location, detailsArr, title, link, floors, area)
             +icon('projects__item-icon', 'area')
             = area
 
+mixin sectionWebuild
+  section.webuild
+    .container
+      h2.webuild__title Мы построили более 100 домов и построим Ваш дом мечты
+      details#details-webuild.webuild__details
+        +summary('webuild__summary')
+        .webuild__txt
+          p Gusarev House — деревообрабатывающая и строительная компания. Компания Gusarev House более 25 лет занимается производством древесины, проектирует и строит деревянные дома из клееного бруса и массива, используя новейшие технологии обработки древесины.
+          p Дома компании Gusarev House востребованы по всей Минской области. Строения компании можно найти на территории всей Минской области, а так же Минского района. Дома, созданные Gusarev House, отличают неординарные архитектурные решения и исключительная надежность.
+          p Наша компания всегда осуществляла полный цикл производства деревянных строений, возводя их под ключ. То есть от заготовки материала до финишной отделки, которая обеспечивает защиту дерева и делает его прочным на долгие годы.
+
 mixin catalogItem(img, title, link, area)
   li.catalog__item
     a.catalog__item-link(href= link aria-label="Подробнее" target="_blank")
@@ -69,7 +80,7 @@ mixin catalogItem(img, title, link, area)
           sup 2
 
 mixin formCatalog
-  form#form-catalog.form(method="GET", action="#")
+  form#form-catalog.form(method="POST", action="#")
     .form__inner
       .form__control
         span.form__error
@@ -81,3 +92,32 @@ mixin formCatalog
         span.form__error
         input#form-catalog-email.form__input(name="catalog-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
     +submitButton("Загрузить каталог")
+
+mixin formCallback
+  section.form-callback
+    .form-callback__titles.container
+      h3.form-callback__suptitle Это бесплатно!
+      h2.form-callback__title
+        span Перезвоним и проконсультируем&nbsp;
+        |по любым вопросам, заполните форму
+    .form__content
+      .container
+        form#form-callback.form(method="GET", action="#")
+          h4.form__title После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00
+          .form__inner
+            .form__group
+              .form__control
+                span.form__error
+                input#form-callback-name.form__input(name="callback-name" type="text" placeholder="Ваше имя" data-form-name)
+              .form__control
+                span.form__error
+                input#form-callback-phone.form__input(name="callback-phone" type="text" placeholder="Ваш телефон" data-form-phone)
+              .form__control
+                span.form__error
+                input#form-callback-email.form__input(name="callback-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
+            .form__group
+              .form__control.form__control--wide
+                span.form__error
+                input#form-message.form__input(name="callback-msg" maxlength="250" placeholder="Ваше сообщение (необязательно)" data-form-message)
+              +submitButton("Перезвонить")
+        img.form__img.lozad(data-src="images/common/phone.png", alt="")

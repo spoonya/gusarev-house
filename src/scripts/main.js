@@ -1,9 +1,12 @@
 /* eslint-disable no-unused-vars */
+import lazyLoadObserver from './lazyload';
 import * as sliders from './sliders';
 import { spoilerWebuild } from './spoilers';
-import lazyLoadObserver from './lazyload';
-import { validateFormCatalog } from './forms';
+import { validateFormCatalog, validateFormCallback } from './forms';
 
 lazyLoadObserver.observe();
 
 validateFormCatalog();
+validateFormCallback();
+
+spoilerWebuild.init();

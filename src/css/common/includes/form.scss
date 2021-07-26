@@ -6,6 +6,31 @@
   }
 }
 
+.form__content {
+  position: relative;
+}
+
+.form__img {
+  position: absolute;
+
+  bottom: -30px;
+  right: 0;
+
+  max-width: 65rem;
+}
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.form__title {
+  margin-bottom: 4.5rem;
+
+  font-size: 2rem;
+}
+
 .form__control {
   position: relative;
 
@@ -55,6 +80,7 @@
 .form__button {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   width: 100%;
 
@@ -147,4 +173,73 @@
   line-height: 1.4;
 
   color: $color-primary-omega;
+}
+
+.form-callback {
+  padding-bottom: 12rem;
+
+  &__suptitle {
+    font-size: 2rem;
+    color: $color-primary-psi;
+
+    margin-bottom: 2.6rem;
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: 3.6rem;
+    color: $color-primary-gamma;
+
+    margin-bottom: 4.2rem;
+
+    max-width: 63.6rem;
+
+    span {
+      display: block;
+      font-weight: 700;
+    }
+  }
+
+  .form__button {
+    max-width: 26rem;
+  }
+
+  .form {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 96rem;
+
+    background-color: $color-primary-gamma;
+    border-radius: 0px 10px 10px 0px;
+
+    &::before {
+      position: absolute;
+
+      content: '';
+
+      top: 0;
+      right: 100%;
+
+      height: 100%;
+      width: 100vh;
+
+      background-color: $color-primary-gamma;
+    }
+
+    padding: 5.5rem 12rem 5.5rem 0;
+  }
+
+  .form__control {
+    width: 33%;
+
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+
+    &--wide {
+      flex: 1;
+    }
+  }
 }

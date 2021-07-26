@@ -73,13 +73,10 @@ textarea {
 
   border: none;
   resize: none;
+  outline: 0;
 
   &:focus {
-    outline: 0;
-  }
-
-  &:focus-visible {
-    @include outline;
+    border-color: $color-primary-alpha;
   }
 }
 

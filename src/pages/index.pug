@@ -140,7 +140,7 @@ block content
               h2.youtube__title
                 |Делимся экспертностью в области строительства&nbsp;
                 span на нашем Youtube канале
-              a.youtube__link(href="https://www.youtube.com/channel/UCUdIa66ASkvG7fYzFUC6DWA" target="_blank")
+              a.youtube__link(href="https://www.youtube.com/channel/UCUdIa66ASkvG7fYzFUC6DWA" target="_blank" rel="noopener")
                 p Смотреть Youtube канал
                 +icon('youtube__link-icon', 'arrow-right')
             ul.youtube__videos
@@ -149,13 +149,8 @@ block content
               li.youtube__item.lozad(data-background-image="images/index/youtube/youtube-1.jpg")
                 +mediaButton
 
+      //Form callback
+      +formCallback
+
       //We build
-      section.webuild
-        .container
-          h2.webuild__title Мы построили более 100+ домов и построим Ваш дом мечты
-          details#details-webuild.webuild__details
-            +summary('webuild__summary')
-            .webuild__txt
-              p Gusarev House — деревообрабатывающая и строительная компания. Компания Gusarev House более 25 лет занимается производством древесины, проектирует и строит деревянные дома из клееного бруса и массива, используя новейшие технологии обработки древесины.
-              p Дома компании Gusarev House востребованы по всей Минской области. Строения компании можно найти на территории всей Минской области, а так же Минского района. Дома, созданные Gusarev House, отличают неординарные архитектурные решения и исключительная надежность.
-              p Наша компания всегда осуществляла полный цикл производства деревянных строений, возводя их под ключ. То есть от заготовки материала до финишной отделки, которая обеспечивает защиту дерева и делает его прочным на долгие годы.
+      +sectionWebuild

@@ -1,27 +1,28 @@
 import Swal from 'sweetalert2';
 
-const classes = {
-  error: 'error',
-  errorEl: 'form__error',
-  formControlEl: 'form__control',
-  success: 'success'
-};
-
-const errors = {
-  emptyEmail: 'Введите E-mail',
-  emptyMsg: 'Введите сообщение',
-  emptyName: 'Введите имя',
-  emptyPhone: 'Введите номер',
-  invalidEmail: 'Некорректный E-mail',
-  invalidPhone: 'Введите номер в формате +375',
-  maxMessageLength: 'Не более 250 символов',
-  minMessageLength: 'Не менее 16 символов',
-  unchecked: 'Поле должно быть отмечено'
-};
-
 class FormValidation {
   constructor(selector, { isModal } = { isModal: false }) {
+    this.classes = {
+      error: 'error',
+      errorEl: 'form__error',
+      formControlEl: 'form__control',
+      success: 'success'
+    };
+
+    this.errors = {
+      emptyEmail: 'Введите E-mail',
+      emptyMsg: 'Введите сообщение',
+      emptyName: 'Введите имя',
+      emptyPhone: 'Введите номер',
+      invalidEmail: 'Некорректный E-mail',
+      invalidPhone: 'Введите номер в формате +375',
+      maxMessageLength: 'Не более 250 символов',
+      minMessageLength: 'Не менее 16 символов',
+      unchecked: 'Поле должно быть отмечено'
+    };
+
     this.form = document.querySelector(selector);
+
     this.formElements = {
       username: this.form.querySelector('[data-form-name]'),
       userPhone: this.form.querySelector('[data-form-phone]'),
@@ -29,7 +30,7 @@ class FormValidation {
       userMsg: this.form.querySelector('[data-form-message]'),
       userAgreement: this.form.querySelector('[data-form-agreement]')
     };
-    this.isModal = isModal;
+
     this.defaultConfig = {
       username: {
         isRequired: true
@@ -44,6 +45,8 @@ class FormValidation {
         isRequired: true
       }
     };
+
+    this.isModal = isModal;
   }
 
   _validateEmail(email) {
@@ -68,23 +71,23 @@ class FormValidation {
   }
 
   _selectFormControl(input) {
-    return input.closest(`.${classes.formControlEl}`);
+    return input.closest(`.${this.classes.formControlEl}`);
   }
 
   _setError(input, message) {
     const formControl = this._selectFormControl(input);
-    const error = formControl.querySelector(`.${classes.errorEl}`);
+    const error = formControl.querySelector(`.${this.classes.errorEl}`);
 
     error.textContent = message;
-    formControl.classList.remove(classes.success);
-    formControl.classList.add(classes.error);
+    formControl.classList.remove(this.classes.success);
+    formControl.classList.add(this.classes.error);
   }
 
   _setSuccess(input) {
     const formControl = this._selectFormControl(input);
 
-    formControl.classList.remove(classes.error);
-    formControl.classList.add(classes.success);
+    formControl.classList.remove(this.classes.error);
+    formControl.classList.add(this.classes.success);
   }
 
   _checkUsername(
@@ -93,7 +96,7 @@ class FormValidation {
     { isRequired } = this.defaultConfig.username
   ) {
     if (isRequired && !usernameValue) {
-      this._setError(username, errors.emptyName);
+      this._setError(username, this.errors.emptyName);
 
       return false;
     }
@@ -109,13 +112,13 @@ class FormValidation {
     { isRequired } = this.defaultConfig.userPhone
   ) {
     if (isRequired && !userPhoneValue) {
-      this._setError(userPhone, errors.emptyPhone);
+      this._setError(userPhone, this.errors.emptyPhone);
 
       return false;
     }
 
     if (userPhoneValue && !this._validatePhone(userPhoneValue)) {
-      this._setError(userPhone, errors.invalidPhone);
+      this._setError(userPhone, this.errors.invalidPhone);
 
       return false;
     }
@@ -131,13 +134,13 @@ class FormValidation {
     { isRequired } = this.defaultConfig.userEmail
   ) {
     if (isRequired && !userEmailValue) {
-      this._setError(userEmail, errors.emptyEmail);
+      this._setError(userEmail, this.errors.emptyEmail);
 
       return false;
     }
 
     if (userEmailValue && !this._validateEmail(userEmailValue)) {
-      this._setError(userEmail, errors.invalidEmail);
+      this._setError(userEmail, this.errors.invalidEmail);
 
       return false;
     }
@@ -156,19 +159,19 @@ class FormValidation {
     const minMessageLength = 16;
 
     if (isRequired && !userMessageValue) {
-      this._setError(userMessage, errors.emptyMsg);
+      this._setError(userMessage, this.errors.emptyMsg);
 
       return false;
     }
 
     if (userMessageValue.length && userMessageValue.length > maxMessageLength) {
-      this._setError(userMessage, errors.maxMessageLength);
+      this._setError(userMessage, this.errors.maxMessageLength);
 
       return false;
     }
 
     if (userMessageValue.length && userMessageValue.length < minMessageLength) {
-      this._setError(userMessage, errors.minMessageLength);
+      this._setError(userMessage, this.errors.minMessageLength);
 
       return false;
     }
@@ -180,7 +183,7 @@ class FormValidation {
 
   _checkAgreement(checkbox) {
     if (!checkbox.checked) {
-      this._setError(checkbox, errors.unchecked);
+      this._setError(checkbox, this.errors.unchecked);
 
       return false;
     }
@@ -207,8 +210,8 @@ class FormValidation {
       }
 
       this._selectFormControl(input).classList.remove(
-        classes.success,
-        classes.error
+        this.classes.success,
+        this.classes.error
       );
     });
   }
@@ -216,7 +219,7 @@ class FormValidation {
   validateOnSubmit(userConfig = {}) {
     if (!this.form) return;
 
-    const config = Object.assign(this.defaultConfig, userConfig);
+    const config = { ...this.defaultConfig, ...userConfig };
 
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
