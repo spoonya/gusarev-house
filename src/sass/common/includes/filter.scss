@@ -1,0 +1,39 @@
+.filter {
+  display: flex;
+
+  margin-bottom: 3rem;
+
+  li {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__button {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-primary-psi;
+
+    padding: 2.1rem 4rem;
+
+    background-color: $color-primary-beta;
+
+    border: 1px solid lighten($color-secondary-beta, 20);
+    border-radius: 5px;
+
+    transition: color 0.07s linear, background-color 0.07s linear;
+
+    &:hover {
+      background-color: $color-primary-alpha;
+      color: $color-primary-beta;
+      border-color: $color-primary-alpha;
+    }
+
+    &.active {
+      background-color: $color-primary-alpha;
+      color: $color-primary-beta;
+      border-color: $color-primary-alpha;
+    }
+  }
+}

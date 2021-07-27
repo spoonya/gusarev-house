@@ -38,7 +38,7 @@ mixin social
       a(href="https://www.youtube.com/channel/UCUdIa66ASkvG7fYzFUC6DWA" aria-label="youtube" target="_blank" rel="noopener"): +icon('social__icon', 'youtube')
 
 mixin linkButton(link, txt, modif=null)
-  a.link-button(href="#" class= modif)
+  a.link-button(href= link class= modif)
     .link-button__inner= txt
       +icon('link-button__icon', 'arrow-right')
 

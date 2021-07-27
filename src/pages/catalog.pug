@@ -22,22 +22,21 @@ block content
           .catalog__wrapper
             +formCatalog(false)
             .catalog__content
-              ul.catalog__filter
+              ul.filter
                 li
-                  button.catalog__filter-button.active до 100 м
+                  button.filter__button.active до 100 м
                     sup 2
                 li
-                  button.catalog__filter-button до 200 м
+                  button.filter__button до 200 м
                     sup 2
                 li
-                  button.catalog__filter-button до 300 м
+                  button.filter__button до 300 м
                     sup 2
                 li
-                  button.catalog__filter-button более 300 м
+                  button.filter__button более 300 м
                     sup 2
                 li
-                  button.catalog__filter-button Эскизы
-                    sup 2
+                  button.filter__button Эскизы
               ul.catalog__list
                 +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
                 +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')

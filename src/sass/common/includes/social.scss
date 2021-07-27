@@ -5,6 +5,10 @@
     &:not(:last-child) {
       margin-right: 10px;
     }
+
+    &:hover {
+      filter: brightness(90%);
+    }
   }
 
   &__icon-wrapper {
