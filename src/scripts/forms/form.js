@@ -17,7 +17,7 @@ class FormValidation {
       invalidEmail: 'Некорректный E-mail',
       invalidPhone: 'Введите номер в формате +375',
       maxMessageLength: 'Не более 250 символов',
-      minMessageLength: 'Не менее 16 символов',
+      minMessageLength: 'Не менее 8 символов',
       unchecked: 'Поле должно быть отмечено'
     };
 
@@ -156,7 +156,7 @@ class FormValidation {
     { isRequired } = this.defaultConfig.userMsg
   ) {
     const maxMessageLength = 250;
-    const minMessageLength = 16;
+    const minMessageLength = 8;
 
     if (isRequired && !userMessageValue) {
       this._setError(userMessage, this.errors.emptyMsg);
