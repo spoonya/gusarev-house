@@ -21,6 +21,10 @@
       &-icon {
         transform: rotate(-90deg);
       }
+
+      &::after {
+        display: none;
+      }
     }
 
     .webuild__txt {
@@ -30,6 +34,10 @@
 }
 
 .webuild__summary {
+  position: relative;
+
+  z-index: 1;
+
   width: 100%;
 
   color: $color-primary-alpha;
@@ -47,6 +55,29 @@
 
   span {
     margin-right: 10px;
+  }
+
+  &::after {
+    position: absolute;
+
+    z-index: -1;
+
+    content: '';
+
+    pointer-events: none;
+
+    top: -145px;
+    right: 50%;
+    transform: translateX(50%);
+
+    width: 100vw;
+    height: 150px;
+
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      #ffffff 94.27%
+    );
   }
 }
 
