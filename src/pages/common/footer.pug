@@ -1,1 +1,54 @@
 footer.footer
+  .footer__top
+    .container
+      .footer__inner
+        .footer__item
+          +logo('logo-black', true)
+        .footer__item
+          nav.footer__menu
+            ul
+              li
+                a(href="#") Главная
+              li
+                a(href="#") Дома из клееного бруса
+              li
+                a(href="#") Архитектурное проектирование
+              li
+                a(href="#") Каталог проектов
+              li
+                a(href="#") Портфолио
+              li
+                a(href="#") Продаём
+              li
+                a(href="#") О компании
+        .footer__item
+          +worktime
+          .footer__phones
+            +icon('footer__icon', 'phone')
+            ul
+              li
+                a(href="tel:+375297777777") +375 (29) 777 77 77
+              li
+                a(href="tel:+375338312233") +375 (33) 831 22 33
+              li
+                a(href="tel:+375256663883") +375 (25) 666 38 83
+          .footer__mail
+            +icon('footer__icon', 'message')
+            a(href="mailto:info@gusarevhouse.by") info@gusarevhouse.by
+        .footer__item
+          .footer__buttons
+            a.footer__button(href="#") Все контакты
+            button.footer__button Заказать обратный звонок
+          .footer__social
+            p Мы в социальных сетях
+            +social
+  .footer__bot.container
+    .footer__item
+      p
+        |Все права защищены. 2021
+        span ИП Гусарев А.А
+    .footer__item
+      p.footer__disclaimer Вся информация, размещённая на сайте, носит ознакомительный характер и может отличаться от действительности.
+    .footer__item
+      button.footer__button Политика конфиденциальности
+      p.footer__createby Разработано в студии aiva.by

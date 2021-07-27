@@ -1,0 +1,22 @@
+.worktime {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  font-size: 14px;
+  text-align: right;
+
+  &::before {
+    content: '';
+
+    display: inline-block;
+
+    background-color: $color-primary-alpha;
+    border-radius: 50%;
+
+    margin-right: 6px;
+
+    width: 6px;
+    height: 6px;
+  }
+}

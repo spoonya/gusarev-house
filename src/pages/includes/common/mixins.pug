@@ -1,6 +1,17 @@
 mixin icon(className, name)
   svg(class= className): use(xlink:href="images/sprite.svg#" + name)
 
+mixin logo(logo, isInFooter = false)
+  .logo
+    +icon('logo__icon', logo)
+    if isInFooter
+      h2.logo__title Производство и строительство домов из клееного бруса и массива в Минской области и районе
+    else
+      h1.logo__title Производство и строительство домов из клееного бруса в Минской области
+
+mixin worktime
+  p.worktime Пн-Пт: 9:00 до 17:00
+
 mixin summary(className)
   summary(class= className)
     span подробнее
@@ -15,7 +26,7 @@ mixin social
         .social__icon-wrapper
           +icon('social__icon social__icon--insta', 'instagram')
     li.social__item
-      a(href="#" aria-label="youtube" target="_blank" rel="noopener"): +icon('social__icon', 'youtube')
+      a(href="https://www.youtube.com/channel/UCUdIa66ASkvG7fYzFUC6DWA" aria-label="youtube" target="_blank" rel="noopener"): +icon('social__icon', 'youtube')
 
 mixin linkButton(link, txt, modif=null)
   a.link-button(href="#" class= modif)
@@ -100,9 +111,9 @@ mixin formCallback
       h2.form-callback__title
         span Перезвоним и проконсультируем&nbsp;
         |по любым вопросам, заполните форму
-    .form__content
+    .form-content
       .container
-        form#form-callback.form(method="GET", action="#")
+        form#form-callback.form(method="POST", action="#")
           h4.form__title После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00
           .form__inner
             .form__group
@@ -120,4 +131,4 @@ mixin formCallback
                 span.form__error
                 input#form-message.form__input(name="callback-msg" maxlength="250" placeholder="Ваше сообщение (необязательно)" data-form-message)
               +submitButton("Перезвонить")
-        img.form__img.lozad(data-src="images/common/phone.png", alt="")
+        //- img.form__img.lozad(data-src="images/common/phone.png", alt="")

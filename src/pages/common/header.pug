@@ -1,9 +1,7 @@
 header.header
   .container
     .header__top
-      .header__logo
-        +icon('header__logo-icon', 'logo')
-        h1.header__title Производство и строительство домов из клееного бруса в Минской области
+      +logo('logo')
       .header__info
         .header__social
           p.header__social-txt Мы в соц.сетях:
@@ -11,9 +9,9 @@ header.header
         button.header__call
           +icon('header__call-icon', 'phone')
           |Позвоните мне
-        .header__worktime
-          p.header__worktime-schedule Пн-Пт: 9:00 до 17:00
-          a.header__worktime-phone(href="tel:80333333333") 8 (033) 333 33 33
+        .header__group
+          +worktime
+          a.header__phone(href="tel:80333333333") 8 (033) 333 33 33
     nav.header__menu
       ul
         li

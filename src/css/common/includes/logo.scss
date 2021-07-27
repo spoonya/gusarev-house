@@ -1,0 +1,19 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    max-width: 18rem;
+    max-height: 5.9rem;
+
+    margin-right: 3rem;
+  }
+
+  &__title {
+    font-size: 14px;
+
+    max-width: 24.6rem;
+
+    margin-top: 6px;
+  }
+}
