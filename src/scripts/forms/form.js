@@ -22,6 +22,7 @@ class FormValidation {
     };
 
     this.form = document.querySelector(selector);
+    if (!this.form) return;
 
     this.formElements = {
       username: this.form.querySelector('[data-form-name]'),

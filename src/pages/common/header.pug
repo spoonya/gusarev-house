@@ -1,33 +1,34 @@
-header.header
-  .container
-    .header__top
-      +logo('logo')
-      .header__info
-        .header__social
-          p.header__social-txt Мы в соц.сетях:
-          +social
-        button.header__call
-          +icon('header__call-icon', 'phone')
-          |Позвоните мне
-        .header__group
-          +worktime
-          a.header__phone(href="tel:80333333333") 8 (033) 333 33 33
-    nav.header__menu
-      ul
-        li
-          a(href="#") Главная
-        li
-          a(href="#") Каталог проектов
-        li
-          a(href="#") Портфолио
-        li
-          a(href="#") Услуги
-        li
-          a(href="#") Продаём
-        li
-          a(href="#") О компании
-        li
-          a(href="#") Новости
-        li
-          a(href="#") Контакты
+mixin header(modif='header--dark')
+  header.header(class= modif)
+    .container
+      .header__top
+        +logo('logo')
+        .header__info
+          .header__social
+            p.header__social-txt Мы в соц.сетях:
+            +social
+          button.header__call
+            +icon('header__call-icon', 'phone')
+            |Позвоните мне
+          .header__group
+            +worktime
+            a.header__phone(href="tel:80333333333") 8 (033) 333 33 33
+      nav.header__menu
+        ul
+          li
+            a(href="index.html") Главная
+          li
+            a(href="catalog.html") Каталог проектов
+          li
+            a(href="#") Портфолио
+          li
+            a(href="#") Услуги
+          li
+            a(href="#") Продаём
+          li
+            a(href="#") О компании
+          li
+            a(href="#") Новости
+          li
+            a(href="#") Контакты
 

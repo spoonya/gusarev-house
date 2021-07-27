@@ -1,0 +1,59 @@
+extends common/layout
+
+include includes/index/mixins
+
+block content
+  .page
+    main
+      //Crumbs
+      +crumbs([{href: 'catalog.html', name: 'Каталог проектов'}])
+
+      //Catalog
+      section.catalog.catalog--page
+        .container
+          .catalog__inner
+            h2.catalog__title
+              |Каталог&nbsp;
+              span популярных готовых решений деревянных домов&nbsp;
+              |из клееного бруса
+            .catalog__txt
+              p Помимо уже существующих проектов архитекторы компании могут спроектировать дом именно под Вас.
+              p Представленные варианты внутренних планировок условны. При желании совместно с нашими архитекторами Вы можете разработать собственное планировочное решение.
+          .catalog__wrapper
+            +formCatalog(false)
+            .catalog__content
+              ul.catalog__filter
+                li
+                  button.catalog__filter-button.active до 100 м
+                    sup 2
+                li
+                  button.catalog__filter-button до 200 м
+                    sup 2
+                li
+                  button.catalog__filter-button до 300 м
+                    sup 2
+                li
+                  button.catalog__filter-button более 300 м
+                    sup 2
+                li
+                  button.catalog__filter-button Эскизы
+                    sup 2
+              ul.catalog__list
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+                +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
+
+      //We build
+      +sectionWebuild
+
+      //Form callback
+      +formCallback(['Не ограничиваемся ', 'каталогом'], 'Наши архитекторы спроектируют индивидуальный проект под вас с собственным планировочным решением.', 'Оставьте заявку на разработку проекта', {modifDisplay: 'inline', modifReverse: 'reversed'})

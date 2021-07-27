@@ -1,0 +1,52 @@
+.crumbs {
+  background-color: $color-primary-omega;
+
+  padding: 2.9rem 0;
+
+  margin-bottom: 5rem;
+
+  @include media-tablet-lg {
+    margin-bottom: 3rem;
+  }
+
+  @include media-tablet-sm {
+    margin-top: 20px;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  li {
+    a {
+      font-size: 18px;
+
+      color: $color-primary-gamma;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:not(:last-of-type) {
+      &::after {
+        display: inline-block;
+        content: '-';
+        margin: 0 7px;
+        color: $color-primary-gamma;
+
+        @include media-smartphone-lg {
+          margin: 0 1rem;
+        }
+      }
+    }
+
+    &:last-of-type {
+      a {
+        font-weight: 500;
+      }
+    }
+  }
+}

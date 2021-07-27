@@ -28,8 +28,9 @@ html(lang="ru")
         title Gusarev House - Строительная компания
   body
     include ../includes/common/mixins
+    include header
     block header
-      include header
+      +header
     block content
     block footer
       include footer

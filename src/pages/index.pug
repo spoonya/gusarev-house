@@ -1,6 +1,10 @@
 extends common/layout
 
 include includes/index/mixins
+include common/header
+
+block header
+  +header(null)
 
 block content
   .page.page--paddingless
@@ -50,19 +54,7 @@ block content
       //Catalog
       section.catalog
         .catalog__wrapper.container
-          .catalog__form
-            .catalog__form-descrip
-              h2.catalog__form-title
-                span Скачайте каталог проектов&nbsp;
-                |в 1 клик
-              picture.lozad
-                source(srcset="images/index/catalog/mockup.webp" type="image/webp")
-                img.catalog__form-img(src="images/index/catalog/mockup.png", width="270" height="217", alt="Каталог")
-              h3.catalog__form-subtitle
-                span Зарегистрируйтесь,&nbsp;
-                |чтобы получить доступ к каталогу
-            +formCatalog
-            p.catalog__form-txt Помимо уже существующих проектов архитекторы компании могут спроектировать дом именно под Вас. Представленные варианты внутренних планировок условны. При желании совместно с нашими архитекторами Вы можете разработать собственное планировочное решение.
+          +formCatalog
           .catalog__content
             h2.catalog__title
               span Каталог&nbsp;
@@ -150,7 +142,7 @@ block content
                 +mediaButton
 
       //Form callback
-      +formCallback
+      +formCallback(['Перезвоним и проконсультируем ', 'по любым вопросам, заполните форму'], 'Это бесплатно!', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00')
 
       //We build
       +sectionWebuild

@@ -9,6 +9,15 @@ mixin logo(logo, isInFooter = false)
     else
       h1.logo__title Производство и строительство домов из клееного бруса в Минской области
 
+mixin crumbs(arrLinks)
+  .crumbs
+    .container
+      nav.crumbs__inner
+        ul
+          li: a(href='index.html') Главная
+          for link in arrLinks
+            li: a(href= link.href)= link.name
+
 mixin worktime
   p.worktime Пн-Пт: 9:00 до 17:00
 
@@ -22,7 +31,7 @@ mixin social
     li.social__item
       a(href="#" aria-label="vk" target="_blank" rel="noopener"): +icon('social__icon', 'vk')
     li.social__item
-      a(href="#" aria-label="instagram" target="_blank" rel="noopener")
+      a(href="https://www.instagram.com/gusarev_house/" aria-label="instagram" target="_blank" rel="noopener")
         .social__icon-wrapper
           +icon('social__icon social__icon--insta', 'instagram')
     li.social__item
@@ -92,31 +101,44 @@ mixin catalogItem(img, title, link, area)
           = area
           sup 2
 
-mixin formCatalog
-  form#form-catalog.form(method="POST", action="#")
-    .form__inner
-      .form__control
-        span.form__error
-        input#form-catalog-name.form__input(name="catalog-name" type="text" placeholder="Ваше имя" data-form-name)
-      .form__control
-        span.form__error
-        input#form-catalog-phone.form__input(name="catalog-phone" type="text" placeholder="Ваш телефон" data-form-phone)
-      .form__control
-        span.form__error
-        input#form-catalog-email.form__input(name="catalog-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
-    +submitButton("Загрузить каталог")
+mixin formCatalog(isText=true)
+  .catalog__form
+    .catalog__form-descrip
+      h2.catalog__form-title
+        span Скачайте каталог проектов&nbsp;
+        |в 1 клик
+      picture.lozad
+        source(srcset="images/index/catalog/mockup.webp" type="image/webp")
+        img.catalog__form-img(src="images/index/catalog/mockup.png", width="270" height="217", alt="Каталог")
+      h3.catalog__form-subtitle
+        span Зарегистрируйтесь,&nbsp;
+        |чтобы получить доступ к каталогу
+    form#form-catalog.form(method="POST", action="#")
+      .form__inner
+        .form__control
+          span.form__error
+          input#form-catalog-name.form__input(name="catalog-name" type="text" placeholder="Ваше имя" data-form-name)
+        .form__control
+          span.form__error
+          input#form-catalog-phone.form__input(name="catalog-phone" type="text" placeholder="Ваш телефон" data-form-phone)
+        .form__control
+          span.form__error
+          input#form-catalog-email.form__input(name="catalog-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
+      +submitButton("Загрузить каталог")
+      if isText
+        p.catalog__form-txt Помимо уже существующих проектов архитекторы компании могут спроектировать дом именно под Вас. Представленные варианты внутренних планировок условны. При желании совместно с нашими архитекторами Вы можете разработать собственное планировочное решение.
 
-mixin formCallback
+mixin formCallback(titleArr, feature, formTxt, modificators={modifDisplay: null, modifReverse: null})
   section.form-callback
-    .form-callback__titles.container
-      h3.form-callback__suptitle Это бесплатно!
+    .form-callback__titles.container(class= modificators.modifReverse)
+      p.form-callback__feature= feature
       h2.form-callback__title
-        span Перезвоним и проконсультируем&nbsp;
-        |по любым вопросам, заполните форму
+        span(class= modificators.modifDisplay)= titleArr[0]
+        = titleArr[1]
     .form-content
       .container
         form#form-callback.form(method="POST", action="#")
-          p.form__txt После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00
+          p.form__txt= formTxt
           .form__inner
             .form__group
               .form__control

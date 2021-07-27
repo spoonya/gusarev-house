@@ -8,13 +8,19 @@
   display: flex;
   flex-direction: column;
 
-  padding-top: 2.1rem;
-
   &--dark {
     background-color: $color-primary-gamma;
 
     .header__call {
       background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .header__menu {
+      padding: 2rem 0;
+
+      ul {
+        justify-content: space-between;
+      }
     }
   }
 }
@@ -24,6 +30,7 @@
   justify-content: space-between;
 
   padding-bottom: 3rem;
+  padding-top: 2.1rem;
 }
 
 .header__social {

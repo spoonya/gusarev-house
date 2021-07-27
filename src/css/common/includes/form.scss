@@ -176,11 +176,32 @@
 .form-callback {
   padding-bottom: 12rem;
 
-  &__suptitle {
+  &__feature {
     font-size: 2rem;
     color: $color-primary-psi;
 
     margin-bottom: 2.6rem;
+
+    max-width: 58rem;
+  }
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 4.2rem;
+
+    &.reversed {
+      flex-direction: column-reverse;
+
+      .form-callback__title {
+        margin-bottom: 2.6rem;
+      }
+
+      .form-callback__feature {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__title {
@@ -188,13 +209,15 @@
     font-size: 3.6rem;
     color: $color-primary-gamma;
 
-    margin-bottom: 4.2rem;
-
     max-width: 63.6rem;
 
     span {
       display: block;
       font-weight: 700;
+
+      &.inline {
+        display: inline;
+      }
     }
   }
 
