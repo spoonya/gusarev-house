@@ -22,21 +22,17 @@ block content
           .catalog__wrapper
             +formCatalog(false)
             .catalog__content
-              ul.filter
-                li
-                  button.filter__button.active до 100 м
+              nav.filter
+                ul#filter-catalog
+                  li.filter__button.active до 100 м
                     sup 2
-                li
-                  button.filter__button до 200 м
+                  li.filter__button до 200 м
                     sup 2
-                li
-                  button.filter__button до 300 м
+                  li.filter__button до 300 м
                     sup 2
-                li
-                  button.filter__button более 300 м
+                  li.filter__button более 300 м
                     sup 2
-                li
-                  button.filter__button Эскизы
+                  li.filter__button Эскизы
               ul.catalog__list
                 +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
                 +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
@@ -51,8 +47,8 @@ block content
                 +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
                 +catalogItem('catalog-1', 'Слобода-1', '#', '50 м')
 
-      //We build
-      +sectionWebuild
-
       //Form callback
       +formCallback(['Не ограничиваемся ', 'каталогом'], 'Наши архитекторы спроектируют индивидуальный проект под вас с собственным планировочным решением.', 'Оставьте заявку на разработку проекта', {modifDisplay: 'inline', modifReverse: 'reversed'})
+
+      //We build
+      +sectionWebuild

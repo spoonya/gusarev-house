@@ -1,6 +1,20 @@
 .projects {
   padding-bottom: 6rem;
 
+  &--page {
+    .projects__title {
+      text-align: left;
+
+      max-width: 72.4rem;
+
+      margin-bottom: 4rem;
+    }
+
+    .filter {
+      margin-bottom: 4rem;
+    }
+  }
+
   .link-button {
     margin: 0 auto;
   }
