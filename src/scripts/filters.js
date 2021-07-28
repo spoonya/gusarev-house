@@ -7,7 +7,7 @@ function addClickEvtToFilters() {
   activeBtn.classList.add('active');
 
   filter.addEventListener('click', (e) => {
-    if (!e.target === 'li') return;
+    if (e.target.tagName !== 'LI') return;
 
     if (!e.target.classList.contains('active')) {
       e.target.classList.add('active');
