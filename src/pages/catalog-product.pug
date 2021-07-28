@@ -1,0 +1,61 @@
+extends common/layout
+
+block title
+  title Каталог - Слобода-1
+
+block content
+  .page
+    main
+      //Crumbs
+      +crumbs([
+        {href: 'catalog.html', name: 'Каталог проектов'},
+        {href: 'catalog-product.html', name: '«Слобода-1»'}
+      ])
+
+      //Product
+      .product
+        .container
+          .product__inner
+            +productSlider(['slide-1.jpg', 'slide-2.jpg', 'slide-1.jpg', 'slide-2.jpg'])
+            .product__details
+              ul.product__list
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Жилая / общая площадь:
+                    p.product__list-item-txt 100 / 90 м2
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Количество этажей:
+                    p.product__list-item-txt 2 этажа
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Материал стен:
+                    p.product__list-item-txt Брус
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Материал кровли:
+                    p.product__list-item-txt Металл
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Количество комнат:
+                    p.product__list-item-txt 8 комнат
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Срок строительства:
+                    p.product__list-item-txt от 90 дней
+              +formCallbackMini(['Рассчитайте стоимость ', 'этого проекта в 2 шага'], '', {modifDisplayGroup: 'column', modifDisplayInner: 'flex'}, true)
+
+      //Product about
+      +productAbout('Обширное панорамное остекление банного комплекса "Слобода-1" предъявляет требование считаться с окружающим пейзажем и к интерьеру.')
+
+      //Product plan
+      +productPlan(['plan-1.png', 'plan-1.png'])
+
+      //Form callback
+      +formCallback(['Не ограничиваемся ', 'каталогом'], 'Наши архитекторы спроектируют индивидуальный проект под вас с собственным планировочным решением.', 'Оставьте заявку на разработку проекта', {modifDisplay: 'inline', modifReverse: 'reversed'})

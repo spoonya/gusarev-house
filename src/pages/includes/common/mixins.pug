@@ -38,9 +38,14 @@ mixin social
       a(href="https://www.youtube.com/channel/UCUdIa66ASkvG7fYzFUC6DWA" aria-label="youtube" target="_blank" rel="noopener"): +icon('social__icon', 'youtube')
 
 mixin linkButton(link, txt, modif=null)
-  a.link-button(href= link class= modif)
-    .link-button__inner= txt
-      +icon('link-button__icon', 'arrow-right')
+  a.button(href= link class= modif)
+    span.button__inner= txt
+      +icon('button__icon', 'arrow-right')
+
+mixin modalCallButton(txt, modif=null)
+  button.button(class= modif)
+    span.button__inner= txt
+      +icon('button__icon', 'arrow-right')
 
 mixin submitButton(txt)
   button.form__button
@@ -117,13 +122,13 @@ mixin formCatalog(isText=true)
       .form__inner
         .form__control
           span.form__error
-          input#form-catalog-name.form__input(name="catalog-name" type="text" placeholder="Ваше имя" data-form-name)
+          input.form__input(name="catalog-name" type="text" placeholder="Ваше имя" data-form-name)
         .form__control
           span.form__error
-          input#form-catalog-phone.form__input(name="catalog-phone" type="text" placeholder="Ваш телефон" data-form-phone)
+          input.form__input(name="catalog-phone" type="text" placeholder="Ваш телефон" data-form-phone)
         .form__control
           span.form__error
-          input#form-catalog-email.form__input(name="catalog-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
+          input.form__input(name="catalog-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
       +submitButton("Загрузить каталог")
       if isText
         p.catalog__form-txt Помимо уже существующих проектов архитекторы компании могут спроектировать дом именно под Вас. Представленные варианты внутренних планировок условны. При желании совместно с нашими архитекторами Вы можете разработать собственное планировочное решение.
@@ -143,16 +148,73 @@ mixin formCallback(titleArr, feature, formTxt, modificators={modifDisplay: null,
             .form__group
               .form__control
                 span.form__error
-                input#form-callback-name.form__input(name="callback-name" type="text" placeholder="Ваше имя" data-form-name)
+                input.form__input(name="callback-name" type="text" placeholder="Ваше имя" data-form-name)
               .form__control
                 span.form__error
-                input#form-callback-phone.form__input(name="callback-phone" type="text" placeholder="Ваш телефон" data-form-phone)
+                input.form__input(name="callback-phone" type="text" placeholder="Ваш телефон" data-form-phone)
               .form__control
                 span.form__error
-                input#form-callback-email.form__input(name="callback-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
+                input.form__input(name="callback-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
             .form__group
               .form__control.form__control--wide
                 span.form__error
-                input#form-message.form__input(name="callback-msg" maxlength="250" placeholder="Ваше сообщение (необязательно)" data-form-message)
+                input.form__input(name="callback-msg" maxlength="250" placeholder="Ваше сообщение (необязательно)" data-form-message)
               +submitButton("Перезвонить")
-        //- img.form__img.lozad(data-src="images/common/phone.png", alt="")
+        //- img.form-callback__img(src="images/common/phone.png", alt="")
+
+mixin formCallbackMini(titleArr, subtitle, modificators={modifDisplayGroup: null}, isRadio=false)
+  .form-callback-mini
+    .form-content
+      form#form-callback-mini.form(method="POST", action="#")
+        if subtitle
+          h3.form-callback-mini__subtitle= subtitle
+        h2.form-callback-mini__title
+          span= titleArr[0]
+          = titleArr[1]
+        .form__inner(class= modificators.modifDisplayInner)
+          if isRadio
+            .form-callback-mini__type
+              h3.form-callback-mini__type-title 1. Выберите что Вам необходимо:
+              .form__control
+                span.form__error
+                label.form__checkbox-wrapper
+                  input.form__checkbox(name="callback-mini-type" type="radio" data-form-type checked)
+                  span.form__checkbox-styled
+                  span.form__checkbox-txt Архитектурный проект
+              .form__control
+                span.form__error
+                label.form__checkbox-wrapper
+                  input.form__checkbox(name="callback-mini-type" type="radio" data-form-type)
+                  span.form__checkbox-styled
+                  span.form__checkbox-txt Адаптация проекта
+          .form__group.form__group(class= modificators.modifDisplayGroup)
+            .form__control.form__control--wide
+              span.form__error
+              input.form__input(name="callback-mini-phone" type="text" placeholder="Ваш телефон" data-form-phone)
+            +submitButton("Перезвонить")
+
+mixin productAbout(txt)
+  section.product-about.container
+    .product-about__inner
+      h2.product-title О проекте
+      .product-about__txt
+        p= txt
+    +modalCallButton('Получить консультацию')
+
+mixin productPlan(imgArr)
+  section.product-plan.container
+    h2.product-title Планировки
+    ul.product-plan__list
+      for img in imgArr
+        li.product-plan__list-item
+          img.product-plan__list-img.lozad(data-src=`images/projects/sloboda/${img}`, width="690", height="440" alt="")
+
+mixin productSlider(imgArr)
+  #swiper-product.swiper-container
+    .swiper-wrapper
+      for img in imgArr
+        .swiper-slide
+          img.swiper-slide.product__slide(src=`images/projects/sloboda/${img}`, width="690" height="559" alt="")
+    .swiper-button-prev
+    .swiper-button-next
+    .swiper-pagination

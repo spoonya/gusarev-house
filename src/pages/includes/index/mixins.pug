@@ -11,7 +11,7 @@ mixin introSlide(img, title, subtitleArr, descrip, featuresArr)
           ul.intro__features
             for item in featuresArr
               li= item
-          +linkButton('#', 'В каталог проектов', 'link-button--light')
+          +linkButton('#', 'В каталог проектов', 'button--light')
         .intro__media
           +mediaButton
           p.intro__media-txt
@@ -25,7 +25,7 @@ mixin feeItem(img, titleArr, link)
       h3.fee__title
         = titleArr[0]
         span= titleArr[1]
-      +linkButton(`${link}`, 'Подробнее', 'link-button--light')
+      +linkButton(`${link}`, 'Подробнее', 'button--light')
 
 mixin featuresItem(titleArr, icon)
   li.features__item

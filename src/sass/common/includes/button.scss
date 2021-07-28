@@ -1,4 +1,4 @@
-.link-button {
+.button {
   position: relative;
 
   display: flex;
@@ -11,6 +11,10 @@
   font-weight: 700;
 
   padding: 2.5rem 3rem;
+
+  &--center {
+    margin: 0 auto;
+  }
 
   &::before {
     position: absolute;
@@ -41,7 +45,7 @@
       border-color: $color-primary-alpha;
     }
 
-    .link-button__icon {
+    .button__icon {
       transform: translateX(4px);
       fill: $color-primary-beta;
     }
@@ -70,7 +74,7 @@
   &--light {
     color: $color-primary-beta;
 
-    .link-button__icon {
+    .button__icon {
       fill: $color-primary-beta;
     }
 

@@ -10,13 +10,6 @@
   position: relative;
 }
 
-.form__img {
-  position: absolute;
-
-  bottom: -154px;
-  right: 0px;
-}
-
 .form__group {
   display: flex;
   justify-content: space-between;
@@ -33,6 +26,10 @@
   position: relative;
 
   margin-bottom: 35px;
+
+  &--wide {
+    flex: 1;
+  }
 
   &:last-of-type {
     margin-bottom: 20px;
@@ -128,12 +125,10 @@
 
   display: inline-block;
 
-  margin-right: 2.5rem;
+  margin-right: 15px;
 
-  min-width: 20px;
-  min-height: 20px;
-
-  background: $color-primary-beta;
+  min-width: 24px;
+  min-height: 24px;
 
   transition: opacity 0.1s linear;
 
@@ -156,12 +151,20 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     background-color: $color-primary-alpha;
-    border-radius: 1px;
+    border-radius: 2px;
   }
 }
 
 .form__checkbox:checked + .form__checkbox-styled::before {
   opacity: 1;
+}
+
+.form__checkbox:not(:checked) + .form__checkbox-styled {
+  border-color: $color-secondary-beta;
+}
+
+.form__checkbox:not(:checked) ~ .form__checkbox-txt {
+  color: $color-secondary-beta;
 }
 
 .form__checkbox-txt {
@@ -170,7 +173,7 @@
   font-size: 14px;
   line-height: 1.4;
 
-  color: $color-primary-omega;
+  color: $color-primary-beta;
 }
 
 .form-callback {
@@ -183,6 +186,13 @@
     margin-bottom: 2.6rem;
 
     max-width: 58rem;
+  }
+
+  &__img {
+    position: absolute;
+
+    bottom: -154px;
+    right: -330px;
   }
 
   &__titles {
@@ -258,9 +268,83 @@
     &:not(:last-child) {
       margin-right: 3rem;
     }
+  }
+}
 
-    &--wide {
-      flex: 1;
+.form-callback-mini {
+  .form {
+    padding: 5rem;
+
+    border-radius: 10px;
+  }
+
+  .form__inner {
+    &.flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  .form__group {
+    &.column {
+      flex-direction: column;
+
+      align-items: unset;
+
+      .form__control {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .form__control {
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+
+  .form__button {
+    min-width: 26rem;
+    width: unset;
+  }
+
+  &__type {
+    &-title {
+      font-size: 1.8rem;
+
+      margin-bottom: 1.5rem;
+    }
+
+    .form__control {
+      margin-bottom: 10px;
+    }
+
+    .form__checkbox {
+      &-txt {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 2.6rem;
+    font-weight: 300;
+    text-align: center;
+
+    margin-bottom: 3rem;
+
+    span {
+      font-weight: 700;
     }
   }
 }
