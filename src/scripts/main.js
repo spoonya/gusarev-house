@@ -3,6 +3,7 @@ import lazyLoadObserver from './lazyload';
 import * as sliders from './sliders';
 import { spoilerWebuild } from './spoilers';
 import { validateFormCatalog, validateFormCallback } from './forms';
+import addClickEvtToFilters from './filters';
 
 lazyLoadObserver.observe();
 
@@ -10,3 +11,5 @@ validateFormCatalog();
 validateFormCallback();
 
 spoilerWebuild.init();
+
+addClickEvtToFilters();
