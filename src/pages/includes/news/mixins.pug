@@ -1,0 +1,11 @@
+mixin newsItem(img, title, date, link)
+  li.news__item
+    a.news__item-link(href= link)
+    .news__item-img-wrapper
+      img.news__item-img(src=`images/news/${img}`, alt="")
+    .news__item-inner
+      h3.news__item-title= title
+      p.news__item-date= date
+    p.news__item-link-txt(href= link)
+      |Читать подробнее
+      +icon('news__item-link-txt-icon', 'arrow-right')

@@ -42,7 +42,14 @@
   font-weight: 500;
 
   &:hover {
+    p {
+      color: $color-primary-alpha;
+      border-color: $color-primary-alpha;
+    }
+
     .youtube__link-icon {
+      fill: $color-primary-alpha;
+
       transform: translateX(5px);
     }
   }
@@ -53,6 +60,8 @@
     line-height: 1.5;
 
     margin-right: 13px;
+
+    transition: color 0.1s linear;
   }
 
   &-icon {
@@ -61,7 +70,7 @@
 
     fill: $color-primary-gamma;
 
-    transition: transform 0.1s linear;
+    transition: transform 0.1s linear, fill 0.1s linear;
   }
 }
 

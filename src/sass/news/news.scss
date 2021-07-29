@@ -1,0 +1,173 @@
+.news {
+  padding-bottom: 11rem;
+
+  .button {
+    margin: 0 auto;
+  }
+}
+
+.news__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  padding-bottom: 2rem;
+}
+
+.news__item {
+  position: relative;
+
+  width: 49%;
+
+  margin-bottom: 3rem;
+
+  &:hover {
+    .news__item-img {
+      transform: scale(1.05);
+    }
+
+    .news__item-title {
+      color: $color-primary-alpha;
+    }
+
+    .news__item-link-txt {
+      &-icon {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  &-img-wrapper {
+    max-width: 69rem;
+    border-radius: 10px;
+
+    overflow: hidden;
+  }
+
+  &-img {
+    width: 100%;
+
+    transition: transform 0.15s linear;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem 0 2.5rem;
+
+    min-height: 5.8rem;
+  }
+
+  &-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: $color-primary-gamma;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    max-width: 48rem;
+
+    transition: color 0.1s linear;
+  }
+
+  &-date {
+    color: $color-primary-gamma;
+    font-size: 16px;
+
+    padding: 1.3rem 2rem;
+
+    background-color: $color-primary-omega;
+    border-radius: 5px;
+  }
+
+  &-link {
+    position: absolute;
+
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  &-link-txt {
+    display: flex;
+    align-items: center;
+
+    color: $color-primary-psi;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+
+    &-icon {
+      height: 16px;
+      width: 16px;
+      margin-left: 10px;
+
+      fill: $color-primary-psi;
+
+      transition: transform 0.15s linear;
+    }
+  }
+}
+
+.news__title {
+  @include section-title;
+}
+
+.news-product {
+  padding-bottom: 9rem;
+
+  .button {
+    margin: 0 auto;
+  }
+
+  &__img {
+    width: 100%;
+
+    object-fit: cover;
+
+    max-height: 56rem;
+
+    margin-bottom: 4rem;
+
+    border-radius: 10px;
+  }
+
+  &__txt {
+    padding-bottom: 5.9rem;
+
+    &-title {
+      font-weight: 500;
+      font-size: 2.4rem;
+      color: $color-primary-gamma;
+
+      padding: 2rem 0 3rem;
+    }
+
+    p {
+      color: $color-primary-gamma;
+      font-size: 18px;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 3.2rem;
+    color: $color-primary-gamma;
+
+    margin-bottom: 4rem;
+  }
+}

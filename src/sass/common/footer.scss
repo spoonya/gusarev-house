@@ -140,6 +140,13 @@
   border-bottom: 1px solid $color-primary-alpha;
   color: $color-primary-alpha;
   line-height: 1.2;
+
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: $color-primary-gamma;
+    border-color: $color-primary-gamma;
+  }
 }
 
 .footer__icon {

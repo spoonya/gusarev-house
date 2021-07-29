@@ -8,13 +8,9 @@
 
   text-transform: uppercase;
   color: $color-primary-psi;
-  font-weight: 700;
+  font-weight: 500;
 
   padding: 2.5rem 3rem;
-
-  &--center {
-    margin: 0 auto;
-  }
 
   &::before {
     position: absolute;
@@ -80,6 +76,34 @@
 
     &::before {
       border-color: $color-primary-beta;
+    }
+  }
+
+  &--center {
+    margin: 0 auto;
+  }
+
+  &--reverse {
+    .button__inner {
+      flex-direction: row-reverse;
+    }
+
+    .button__icon {
+      margin-left: 0;
+      margin-right: 15px;
+
+      transform: scale(-1, 1);
+    }
+
+    &.button::before {
+      left: unset;
+      right: 0;
+    }
+
+    &.button:hover {
+      .button__icon {
+        transform: translateX(-4px) scale(-1, 1);
+      }
     }
   }
 }

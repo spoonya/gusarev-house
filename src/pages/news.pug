@@ -1,0 +1,27 @@
+extends common/layout
+
+include includes/news/mixins
+
+block title
+  title Новости
+
+block content
+  .page
+    main
+      //Crumbs
+      +crumbs([{href: 'news.html', name: 'Новости'}])
+
+      //News
+      section.news
+        .container
+          h2.news__title
+            |Последние&nbsp;
+            span новости&nbsp;
+          ul.news__list
+            +newsItem('news-1.jpg', 'Преимущества и недостатки бани из бруса и бревна недостатки бани из бруса и бревна', '15 июля 2021', 'news-product.html')
+            +newsItem('news-1.jpg', 'Преимущества и недостатки бани из бруса и бревна', '15 июля 2021', 'news-product.html')
+            +newsItem('news-1.jpg', 'Преимущества и недостатки бани из бруса и бревна', '15 июля 2021', 'news-product.html')
+            +newsItem('news-1.jpg', 'Преимущества и недостатки бани из бруса и бревна', '15 июля 2021', 'news-product.html')
+            +newsItem('news-1.jpg', 'Преимущества и недостатки бани из бруса и бревна', '15 июля 2021', 'news-product.html')
+            +newsItem('news-1.jpg', 'Преимущества и недостатки бани из бруса и бревна', '15 июля 2021', 'news-product.html')
+          +linkButton('#', 'Показать ещё статьи')
