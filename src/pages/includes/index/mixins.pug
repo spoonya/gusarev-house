@@ -1,10 +1,10 @@
-mixin introSlide(img, title, subtitleArr, descrip, featuresArr)
+mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null)
   .swiper-slide.lozad(data-background-image=`images/index/intro/${img}.jpg`)
     .container
       .intro__inner
         .intro__content
           h2.intro__title= title
-          h3.intro__subtitle
+          h3.intro__subtitle(class= modif)
             span= subtitleArr[0]
             = subtitleArr[1]
           p.intro__descrip= descrip

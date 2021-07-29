@@ -1,0 +1,57 @@
+extends common/layout
+
+block title
+  title Продаём - Участок под строительство
+
+block content
+  .page
+    main
+      //Crumbs
+      +crumbs([
+        {href: 'sales.html', name: 'Продаём'},
+        {href: 'sales-product.html', name: 'Участок под строительство'}
+      ])
+
+      //Product
+      .product
+        .container
+          .product__inner
+            +productSlider(['slide-1.jpg', 'slide-2.jpg', 'slide-1.jpg', 'slide-2.jpg'])
+            .product__details
+              ul.product__list
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Площадь:
+                    p.product__list-item-txt 100 м2
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Местоположение:
+                    p.product__list-item-txt Березинский р-н, д.Слобода
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Постройки на участке:
+                    p.product__list-item-txt Нет
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Газ:
+                    p.product__list-item-txt нет
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Электричество:
+                    p.product__list-item-txt нет
+                li.product__list-item
+                  +icon('product__list-icon', 'circle')
+                  .product__list-item-wrapper
+                    p.product__list-item-title Примечание:
+                    p.product__list-item-txt Живописное место
+              +formCallbackMini(['Укажите свой телефон ', 'и мы с вами свяжемся!'], 'Хотите купить участок?')
+
+      //Product about
+      +productAbout('Обширное панорамное остекление банного комплекса "Слобода-1" предъявляет требование считаться с окружающим пейзажем и к интерьеру.')
+
+      +formCallback(['Хотите купить дом или участок?', 'Заполните форму и мы вам перезвоним.'], 'Это бесплатно!', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00')

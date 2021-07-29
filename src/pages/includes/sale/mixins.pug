@@ -1,0 +1,21 @@
+mixin saleItem(img, suptitle, title, location, price, link, area=null)
+  li.sale__item
+    img.sale__item-img.lozad(data-src=`images/sale/sloboda/${img}.jpg`, width="450",height="300", alt="")
+    .sale__item-content
+      h4.sale__item-suptitle= suptitle
+      h3.sale__item-title= title
+      .sale__item-inner
+        p.sale__item-location
+          +icon('sale__item-location-icon', 'location')
+          = location
+        if area
+          p.sale__item-area
+            +icon('sale__item-area-icon', 'area')
+            = area
+            sup 2
+      p.sale__item-price= price
+      .sale__item-info
+        button.sale__item-buy Купить
+        a.sale__item-link(href= link target="_blank")
+          |Узнать подробнее
+          +icon('sale__item-link-icon', 'arrow-right')

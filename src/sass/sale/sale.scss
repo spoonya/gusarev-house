@@ -5,3 +5,157 @@
     display: block;
   }
 }
+
+.sale__list {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 3rem;
+
+  padding-bottom: $padding-bottom-section;
+}
+
+.sale__item {
+  width: 31.91%;
+
+  overflow: hidden;
+
+  &-img {
+    min-height: 300px;
+    max-height: 300px;
+    width: 100%;
+
+    border-radius: 10px 10px 0px 0px;
+
+    object-fit: cover;
+  }
+
+  &-content {
+    padding: 4rem;
+
+    border: 1px solid $color-secondary-alpha;
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  &-suptitle {
+    font-size: 14px;
+    color: $color-primary-psi;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+
+    margin-bottom: 1.3rem;
+  }
+
+  &-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: $color-primary-gamma;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    min-height: 5.6rem;
+
+    margin-bottom: 2rem;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 24px;
+
+    margin-bottom: 3rem;
+  }
+
+  &-location {
+    display: flex;
+
+    color: $color-primary-gamma;
+    font-size: 16px;
+
+    &-icon {
+      width: 18px;
+      height: 18px;
+
+      fill: $color-primary-alpha;
+
+      margin-right: 10px;
+    }
+  }
+
+  &-area {
+    display: flex;
+    align-items: center;
+
+    color: $color-primary-gamma;
+    font-weight: 500;
+    font-size: 16px;
+
+    &-icon {
+      height: 24px;
+      width: 24px;
+
+      fill: $color-primary-alpha;
+
+      margin-right: 10px;
+    }
+  }
+
+  &-price {
+    color: $color-primary-alpha;
+    font-weight: 500;
+    font-size: 2.8rem;
+
+    margin-bottom: 2rem;
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+
+    color: $color-primary-gamma;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+
+    &-icon {
+      width: 16px;
+      height: 16px;
+
+      margin-left: 10px;
+
+      transition: transform 0.15s linear;
+    }
+
+    &:hover {
+      .sale__item-link-icon {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  &-buy {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-primary-beta;
+    background-color: $color-primary-alpha;
+    border-radius: 5px;
+
+    padding: 1.6rem 3.1rem;
+    margin-right: 3rem;
+
+    transition: background-color 0.1s linear;
+
+    &:hover {
+      background-color: darken($color-primary-alpha, 5);
+    }
+  }
+}

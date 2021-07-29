@@ -138,9 +138,13 @@
   font-size: 5.8rem;
   font-weight: 300;
 
-  max-width: 86rem;
+  max-width: 75.2rem;
 
   margin-bottom: 3.3rem;
+
+  &--wide {
+    max-width: 86rem;
+  }
 
   span {
     font-weight: 700;
