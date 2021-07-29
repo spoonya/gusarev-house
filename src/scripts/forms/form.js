@@ -221,11 +221,10 @@ class FormValidation {
     if (!this.form) return;
 
     const config = { ...this.defaultConfig, ...userConfig };
+    const isValid = [];
 
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
-
-      const isValid = [];
 
       if (this.formElements.username) {
         isValid.push(

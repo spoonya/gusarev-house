@@ -160,7 +160,9 @@ mixin formCallback(titleArr, feature, formTxt, modificators={modifDisplay: null,
                 span.form__error
                 input.form__input(name="callback-msg" maxlength="250" placeholder="Ваше сообщение (необязательно)" data-form-message)
               +submitButton("Перезвонить")
-        //- img.form-callback__img(src="images/common/phone.png", alt="")
+        .form-callback__img
+          img.form-callback__img-phone(src="images/common/phone.png", alt="")
+          img.form-callback__img-arrow(src="images/common/arrows.png", alt="")
 
 mixin formCallbackMini(titleArr, subtitle, modificators={modifDisplayGroup: null}, isRadio=false)
   .form-callback-mini

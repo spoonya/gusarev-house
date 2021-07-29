@@ -1,0 +1,26 @@
+extends common/layout
+
+block title
+  title Продаём
+
+block content
+  .page
+    main
+      //Crumbs
+      +crumbs([{href: 'sale.html', name: 'Продаём'}])
+
+      //Sale
+      section.sale
+        .container
+          h2.sale__title
+            |Продажа земельных участков&nbsp;
+            span и готовых домов
+          nav.filter
+            ul#filter
+              li.filter__button Все
+              li.filter__button Земельные участки
+              li.filter__button Готовые дома
+
+      //Form callback
+      +formCallback(['Хотите купить дом или участок?', 'Заполните форму и мы вам перезвоним.'], 'Это бесплатно!', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00')
+

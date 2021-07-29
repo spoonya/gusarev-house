@@ -7,7 +7,9 @@
 }
 
 .form-content {
-  position: relative;
+  .container {
+    position: relative;
+  }
 }
 
 .form__group {
@@ -183,7 +185,7 @@
     font-size: 2rem;
     color: $color-primary-psi;
 
-    margin-bottom: 2.6rem;
+    margin-bottom: 1rem;
 
     max-width: 58rem;
   }
@@ -191,8 +193,18 @@
   &__img {
     position: absolute;
 
-    bottom: -154px;
-    right: -330px;
+    bottom: -100px;
+    right: -255px;
+
+    &-phone,
+    &-arrows {
+      position: absolute;
+    }
+
+    &-phone {
+      left: 15%;
+      bottom: -50px;
+    }
   }
 
   &__titles {
@@ -219,7 +231,7 @@
     font-size: 3.6rem;
     color: $color-primary-gamma;
 
-    max-width: 63.6rem;
+    max-width: 66.6rem;
 
     span {
       display: block;

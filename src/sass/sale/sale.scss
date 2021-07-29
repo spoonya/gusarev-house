@@ -1,0 +1,7 @@
+.sale__title {
+  @include section-title;
+
+  span {
+    display: block;
+  }
+}
