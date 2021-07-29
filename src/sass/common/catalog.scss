@@ -114,15 +114,22 @@
 .catalog__list {
   display: flex;
   flex-wrap: wrap;
-  grid-gap: 3rem;
 
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
 }
 
 .catalog__item {
   position: relative;
 
   width: 31.43%;
+
+  margin-right: 3rem;
+
+  &:nth-child(3n + 3) {
+    margin-right: 0;
+  }
+
+  margin-bottom: 3rem;
 
   overflow: hidden;
 

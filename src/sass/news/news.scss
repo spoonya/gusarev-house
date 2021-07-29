@@ -9,7 +9,6 @@
 .news__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   padding-bottom: 2rem;
 }
@@ -17,7 +16,13 @@
 .news__item {
   position: relative;
 
-  width: 49%;
+  width: 48.9%;
+
+  margin-right: 3rem;
+
+  &:nth-child(2n + 2) {
+    margin-right: 0;
+  }
 
   margin-bottom: 3rem;
 

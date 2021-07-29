@@ -1,5 +1,6 @@
 mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null)
-  .swiper-slide.lozad(data-background-image=`images/index/intro/${img}.jpg`)
+  .swiper-slide
+    .intro__bg-img.lozad(data-background-image=`images/index/intro/${img}.jpg`)
     .container
       .intro__inner
         .intro__content

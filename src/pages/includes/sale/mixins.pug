@@ -16,6 +16,6 @@ mixin saleItem(img, suptitle, title, location, price, link, area=null)
       p.sale__item-price= price
       .sale__item-info
         button.sale__item-buy Купить
-        a.sale__item-link(href= link target="_blank")
+        a.sale__item-link(href= link)
           |Узнать подробнее
           +icon('sale__item-link-icon', 'arrow-right')

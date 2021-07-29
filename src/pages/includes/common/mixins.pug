@@ -93,7 +93,7 @@ mixin sectionWebuild
 
 mixin catalogItem(img, title, link, area)
   li.catalog__item
-    a.catalog__item-link(href= link aria-label="Подробнее" target="_blank")
+    a.catalog__item-link(href= link aria-label="Подробнее")
     img.catalog__item-img.lozad(data-src=`images/index/catalog/${img}.jpg`, width="330",height="240", alt="")
     .catalog__item-content
       h3.catalog__item-title= title
