@@ -8,13 +8,14 @@ block content
     main
       //Crumbs
       +crumbs([
-        {href: 'sales.html', name: 'Продаём'},
-        {href: 'sales-product.html', name: 'Участок под строительство'}
+        {href: 'sale.html', name: 'Продаём'},
+        {href: 'sale-product.html', name: 'Участок под строительство'}
       ])
 
       //Product
       .product
         .container
+          h2.product-name Участок под строительство дома
           .product__inner
             +productSlider(['slide-1.jpg', 'slide-2.jpg', 'slide-1.jpg', 'slide-2.jpg'])
             .product__details

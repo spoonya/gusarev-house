@@ -14,8 +14,7 @@ const swiperIntro = new Swiper('#swiper-product', {
   },
 
   autoplay: {
-    delay: 3000,
-    pauseOnMouseEnter: true
+    delay: 3000
   },
 
   effect: 'fade'
