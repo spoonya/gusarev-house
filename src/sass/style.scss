@@ -16,6 +16,7 @@
 @import 'common/youtube';
 @import 'common/webuild';
 @import 'common/product';
+@import 'common/title-block';
 @import 'common/includes/logo';
 @import 'common/includes/crumbs';
 @import 'common/includes/worktime';
@@ -24,6 +25,7 @@
 @import 'common/includes/button';
 @import 'common/includes/media-button';
 @import 'common/includes/filter';
+@import 'common/includes/contacts-info';
 
 @import 'index/intro';
 @import 'index/company';
@@ -36,3 +38,5 @@
 @import 'sale/sale';
 
 @import 'news/news';
+
+@import 'contacts/contacts';

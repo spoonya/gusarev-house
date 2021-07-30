@@ -14,34 +14,9 @@
       margin-bottom: 0;
     }
   }
-}
 
-.catalog__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-bottom: 4.7rem;
-
-  .catalog__title {
-    text-align: left;
-
-    max-width: 66rem;
-
-    margin-bottom: 0;
-  }
-}
-
-.catalog__txt {
-  max-width: 57rem;
-
-  p {
-    color: $color-primary-psi;
-    font-size: 18px;
-
-    &:not(:last-child) {
-      margin-bottom: 3rem;
-    }
+  .title-block__txt {
+    max-width: 57rem;
   }
 }
 

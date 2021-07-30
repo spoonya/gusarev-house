@@ -1,0 +1,42 @@
+extends common/layout
+
+block title
+  title Контакты
+
+block content
+  .page
+    main
+      //Crumbs
+      +crumbs([{href: 'contacts.html', name: 'Контакты'}])
+
+      //Contacts
+      section.contacts.container
+        .title-block
+          h2.title-block__title
+            |Контакты&nbsp;
+            span Gusareb House
+          .title-block__txt
+            p Помимо уже существующих проектов архитекторы компании могут спроектировать дом именно под Вас. Представленные варианты внутренних планировок условны. При желании совместно с нашими архитекторами Вы можете разработать собственное планировочное решение
+        .contacts__inner
+          .contacts__info
+            h3.contacts__info-title Телефоны
+            .contacts__info-wrapper
+              +contactsInfo
+          .contacts__map
+            .contacts__map-info
+              h3.contacts__map-title Адреса
+              .contacts__map-item
+                h4.contacts__map-item-title Прозводство
+                p.contacts__map-item-txt
+                  +icon('contacts__map-item-icon', 'location-circle')
+                  |Минская область, Березинский р-н, д. Слобода, Колхозная ул., 39
+              .contacts__map-item
+                h4.contacts__map-item-title Офис
+                p.contacts__map-item-txt
+                  +icon('contacts__map-item-icon', 'location-circle')
+                  |Минская область, Березинский р-н, д. Слобода, Колхозная ул., 39
+            #map-contacts.contacts__map-wrapper
+              script(async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aafc92128767bdd383cdfac652028aee907d79cdfe344875c9dd2f7ba981ba5f3&amp;width=100%25&amp;height=100%25&amp;scroll=true")
+
+      //Form callback
+      +formCallback(['Перезвоним и проконсультируем', 'по любым вопросам, заполните форму'], 'Это бесплатно!', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00')

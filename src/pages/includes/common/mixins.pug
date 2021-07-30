@@ -21,6 +21,21 @@ mixin crumbs(arrLinks)
 mixin worktime
   p.worktime Пн-Пт: 9:00 до 17:00
 
+mixin contactsInfo
+  +worktime
+  .phones
+    +icon('icon', 'phone')
+    ul
+      li
+        a(href="tel:+375297777777") +375 (29) 777 77 77
+      li
+        a(href="tel:+375338312233") +375 (33) 831 22 33
+      li
+        a(href="tel:+375256663883") +375 (25) 666 38 83
+  .mail
+    +icon('icon', 'message')
+    a(href="mailto:info@gusarevhouse.by") info@gusarevhouse.by
+
 mixin summary(className)
   summary(class= className)
     span подробнее
@@ -94,7 +109,7 @@ mixin sectionWebuild
 mixin catalogItem(img, title, link, area)
   li.catalog__item
     a.catalog__item-link(href= link aria-label="Подробнее")
-    img.catalog__item-img.lozad(data-src=`images/index/catalog/${img}.jpg`, width="330",height="240", alt="")
+    img.catalog__item-img.lozad(data-src=`images/index/catalog/${img}.jpg`, width="330", height="240", alt="")
     .catalog__item-content
       h3.catalog__item-title= title
       .catalog__item-info

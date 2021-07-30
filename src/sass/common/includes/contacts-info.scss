@@ -1,0 +1,39 @@
+.phones {
+  align-items: flex-start;
+
+  margin-bottom: 4.4rem;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.mail {
+  align-items: center;
+}
+
+.phones,
+.mail {
+  display: flex;
+
+  transform: translateX(-7rem);
+
+  a {
+    font-weight: 500;
+    color: $color-primary-gamma;
+    font-size: 2.4rem;
+
+    @include hover;
+  }
+
+  .icon {
+    fill: $color-primary-alpha;
+
+    width: 4rem;
+    height: 4rem;
+
+    margin-right: 3rem;
+  }
+}
