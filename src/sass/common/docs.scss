@@ -1,0 +1,44 @@
+.docs {
+  padding: 4.6rem;
+
+  background-color: $color-primary-omega;
+}
+
+.docs__inner {
+  display: flex;
+  align-items: center;
+}
+
+.docs__title {
+  @include section-title;
+
+  margin-bottom: 0;
+  margin-right: 13rem;
+
+  max-width: 23.1rem;
+
+  span {
+    display: block;
+  }
+}
+
+.docs__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  width: 100%;
+}
+
+.docs__item {
+  border-radius: 5px;
+
+  overflow: hidden;
+
+  &-img {
+    max-height: 32.8rem;
+    max-width: 23rem;
+
+    width: 100%;
+  }
+}

@@ -1,0 +1,51 @@
+.bar-features {
+  padding-bottom: 7rem;
+}
+
+.bar-features__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bar-features__title {
+  @include section-title;
+
+  max-width: 48.9rem;
+
+  span {
+    display: block;
+  }
+}
+
+.bar-features__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding: 6.2rem 6.2rem 3.6rem 9rem;
+
+  max-width: 94.5rem;
+  width: 100%;
+
+  background-color: $color-primary-gamma;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.bar-features__item {
+  width: 22%;
+
+  margin-bottom: 2.6rem;
+
+  &-txt {
+    font-size: 16px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &-icon {
+    width: 17px;
+    height: 38px;
+  }
+}

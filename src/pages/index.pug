@@ -25,25 +25,7 @@ block content
             img.intro__decorator.lozad(data-src="images/index/intro/arrows-group.png", width="733", height="340",  alt="")
 
       //Company
-      section.company
-        .container
-          .company__inner
-            .company__images
-              img.company__img.lozad(data-src="images/index/company/house.jpg" width="450" height="690" alt="Дом из древесины")
-              .company__years.lozad(data-background-image=`images/index/company/texture-1.png`)
-                p.company__years-txt
-                  span 25
-                  |лет на рынке
-              .company__img-decorator.lozad(data-background-image=`images/index/company/texture-2.png`)
-            .company__content
-              h2.company__title Компания Gusarev House
-              h3.company__subtitle
-                |С 1995 года&nbsp;
-                span строим&nbsp;
-                |теплые и долговечные деревянные дома
-              p.company__descrip Новейшие технологии позволяют нам конкурировать с любыми мировыми производителями
-              p.company__txt Gusarev House — ведущая деревообрабатывающая и строительная компания. Компания Gusarev House более 25 лет занимается производством древесины, проектирует и строит деревянные дома из клееного бруса и массива, используя новейшие технологии обработки древесины.
-              +linkButton('#', 'Подробнее о компании')
+      +sectionCompany
 
       //Fee
       section.fee
@@ -109,7 +91,7 @@ block content
           +produceItem('produce-1', 'Клееный брус', ['Основные преимущества клееного бруса:', '- не меняет своей формы во время эксплуатации;', '- имеет большую по сравнению с обычной древесиной прочность;', '- имеет меньшую теплопроводность;' ], '#')
 
       //Features
-      section.features.lozad(data-background-image="images/index/features/bg.jpg")
+      section.features.lozad(data-background-image="images/features/bg.jpg")
         .container
           .features__inner
             .features__top
@@ -118,28 +100,13 @@ block content
                 span одно из лучших качеств продукции
               +mediaButton
             ul.features__list
-              +featuresItem(['Собственное производство, ', 'высочайшее качество'], 'feature-1')
-              +featuresItem(['Разнообразие готовых проектов ', 'или разработаем индивидуальный'], 'feature-2')
-              +featuresItem(['Гибкая ценовая политика ', 'и чёткое соблюдение сроков'], 'feature-3')
-              +featuresItem(['Полный контроль ', 'строительство дома'], 'feature-4')
+              +companyFeature(['Собственное производство, ', 'высочайшее качество'], 'feature-1')
+              +companyFeature(['Разнообразие готовых проектов ', 'или разработаем индивидуальный'], 'feature-2')
+              +companyFeature(['Гибкая ценовая политика ', 'и чёткое соблюдение сроков'], 'feature-3')
+              +companyFeature(['Полный контроль ', 'строительство дома'], 'feature-4')
 
       //Youtube
-      section.youtube
-        .container
-          .youtube__inner
-            .youtube__info
-              h3.youtube__suptitle И не только!
-              h2.youtube__title
-                |Делимся экспертностью в области строительства&nbsp;
-                span на нашем Youtube канале
-              a.youtube__link(href="https://www.youtube.com/channel/UCUdIa66ASkvG7fYzFUC6DWA" target="_blank" rel="noopener")
-                p Смотреть Youtube канал
-                +icon('youtube__link-icon', 'arrow-right')
-            ul.youtube__videos
-              li.youtube__item.lozad(data-background-image="images/index/youtube/youtube-1.jpg")
-                +mediaButton
-              li.youtube__item.lozad(data-background-image="images/index/youtube/youtube-1.jpg")
-                +mediaButton
+      +sectionYoutube
 
       //Form callback
       +formCallback(['Перезвоним и проконсультируем ', 'по любым вопросам, заполните форму'], 'Это бесплатно!', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00')

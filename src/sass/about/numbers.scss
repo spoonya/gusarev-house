@@ -1,0 +1,55 @@
+.numbers {
+  margin-bottom: 5.5rem;
+
+  padding: 6.7rem 0;
+
+  background-color: $color-primary-omega;
+}
+
+.numbers__inner {
+  display: flex;
+  align-items: center;
+}
+
+.numbers__list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  width: 100%;
+}
+
+.numbers__title {
+  @include section-title(left);
+
+  max-width: 16rem;
+
+  margin-bottom: 0;
+  margin-right: 19.3rem;
+
+  span {
+    display: block;
+  }
+}
+
+.numbers__item {
+  width: 24%;
+
+  margin-bottom: 3rem;
+
+  &-title {
+    color: $color-primary-alpha;
+    font-weight: 700;
+    font-size: 8.2rem;
+  }
+
+  &-txt {
+    font-size: 14px;
+    color: $color-primary-gamma;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}

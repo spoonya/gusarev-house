@@ -1,5 +1,9 @@
-.swiper-slide {
-  height: auto;
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .swiper-pagination {

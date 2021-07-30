@@ -29,61 +29,7 @@
     padding-right: 3rem;
   }
 
-  .swiper-container-horizontal > .swiper-pagination-bullets,
-  .swiper-pagination-custom,
-  .swiper-pagination-fraction {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .swiper-pagination {
-    margin-bottom: 10px;
-
-    &-bullet {
-      position: relative;
-
-      width: 10px;
-      height: 10px;
-
-      opacity: 1;
-
-      background-color: $color-secondary-beta;
-
-      &:not(:last-child) {
-        margin-right: 30px;
-      }
-
-      &::after {
-        position: absolute;
-
-        display: none;
-
-        top: 50%;
-        left: 50%;
-
-        transform: translate(-50%, -50%);
-
-        content: '';
-
-        border-radius: 50%;
-        border: 1px solid;
-
-        border-color: $color-primary-alpha;
-
-        width: 30px;
-        height: 30px;
-      }
-
-      &-active {
-        background-color: $color-primary-alpha;
-
-        &::after {
-          display: block;
-        }
-      }
-    }
-  }
+  @include swiper-pagination;
 }
 
 .product__inner {

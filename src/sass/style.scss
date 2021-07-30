@@ -5,6 +5,7 @@
 @import 'mixins/outline';
 @import 'mixins/section-title';
 @import 'mixins/hover';
+@import 'mixins/swiper-pagination';
 
 @import 'common/global';
 @import 'common/header';
@@ -12,23 +13,26 @@
 @import 'common/burger';
 @import 'common/swiper';
 @import 'common/catalog';
+@import 'common/company';
 @import 'common/projects';
 @import 'common/youtube';
 @import 'common/webuild';
 @import 'common/product';
+@import 'common/docs';
+@import 'common/features-company';
 @import 'common/title-block';
 @import 'common/includes/logo';
 @import 'common/includes/crumbs';
 @import 'common/includes/worktime';
 @import 'common/includes/form';
 @import 'common/includes/social';
+@import 'common/includes/company-feature';
 @import 'common/includes/button';
 @import 'common/includes/media-button';
 @import 'common/includes/filter';
 @import 'common/includes/contacts-info';
 
 @import 'index/intro';
-@import 'index/company';
 @import 'index/fee';
 @import 'index/insta';
 @import 'index/produce';
@@ -36,6 +40,10 @@
 @import 'index/features';
 
 @import 'sale/sale';
+
+@import 'about/numbers';
+@import 'about/bar-features';
+@import 'about/about-slider';
 
 @import 'news/news';
 

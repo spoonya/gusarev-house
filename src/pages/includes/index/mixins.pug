@@ -28,13 +28,6 @@ mixin feeItem(img, titleArr, link)
         span= titleArr[1]
       +linkButton(`${link}`, 'Подробнее', 'button--light')
 
-mixin featuresItem(titleArr, icon)
-  li.features__item
-    +icon('features__item-icon', icon)
-    h3.features__item-title
-      span= titleArr[0]
-      = titleArr[1]
-
 mixin produceItem(img, title, textArr, link)
   li.produce__item.lozad(data-background-image=`images/index/produce/${img}.jpg` tabindex="0")
     .produce__inner

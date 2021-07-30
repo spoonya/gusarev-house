@@ -71,6 +71,13 @@ mixin mediaButton
   button.media-button(aria-label="Воспроизвести видео")
     +icon('media-button__icon', 'play')
 
+mixin companyFeature(titleArr, icon)
+  li.company-feature
+    +icon('company-feature__icon', icon)
+    h3.company-feature__title
+      span= titleArr[0]
+      = titleArr[1]
+
 mixin projectsItem(img, location, detailsArr, title, link, floors, area)
   li.projects__item(tabindex="0")
     img.projects__item-img.lozad(data-src=`images/index/projects/${img}.jpg`, width="480", height="480", alt="")
@@ -105,6 +112,102 @@ mixin sectionWebuild
           +summary('webuild__summary')
           .webuild__txt
             p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio veritatis facere doloribus, adipisci, temporibus, quaerat alias quasi quibusdam maiores labore similique ratione repellat aperiam nam saepe cumque exercitationem nobis sapiente!Maxime, quod. Id, fuga. Non minus optio, ut hic recusandae neque amet at fugit modi iure esse, debitis explicabo nisi velit id distinctio. Provident quae consectetur totam repellendus, quaerat eaque?Consectetur soluta, vero quaerat repellat unde consequuntur magni delectus earum doloremque ipsam nihil labore ut amet ipsum vel iusto quia commodi sed? Dolor rem sed eaque, eos temporibus veritatis ipsum!
+
+mixin sectionCompany(textArr=null, isAboutPage=false, modif=null)
+  section.company(class= modif)
+    .container
+      .company__inner
+        .company__images
+          img.company__img.lozad(data-src="images/index/company/house.jpg" width="450" height="690" alt="Дом из древесины")
+          .company__years.lozad(data-background-image=`images/index/company/texture-1.png`)
+            p.company__years-txt
+              span 25
+              |лет на рынке
+          .company__img-decorator.lozad(data-background-image=`images/index/company/texture-2.png`)
+        .company__content
+          if !isAboutPage
+            h3.company__subtitle Компания Gusarev House
+          if !isAboutPage
+            h2.company__title
+              |С 1995 года&nbsp;
+              span строим&nbsp;
+              |теплые и долговечные деревянные дома
+          else
+            h2.company__title
+              |О&nbsp;
+              span компании&nbsp;
+          p.company__descrip Новейшие технологии позволяют нам конкурировать с любыми мировыми производителями
+          .company__txt
+            p Gusarev House — ведущая деревообрабатывающая и строительная компания. Компания Gusarev House более 25 лет занимается производством древесины, проектирует и строит деревянные дома из клееного бруса и массива, используя новейшие технологии обработки древесины.
+            if textArr
+              for text in textArr
+                p= text
+          if !isAboutPage
+            +linkButton('about.html', 'Подробнее о компании')
+
+mixin docsItem(img)
+  li.docs__item
+    img.docs__item-img.lozad(data-src=`images/docs/${img}`, data-pswp-width="230"
+    data-pswp-height="328"  width="230", height="328" alt="")
+
+
+mixin sectionDocs
+  section.docs
+    .container
+      .docs__inner
+        h2.docs__title
+          |Документы и&nbsp;
+          span сертификаты
+        ul#about-docs.docs__list
+          +docsItem('doc-1.jpg')
+          +docsItem('doc-1.jpg')
+          +docsItem('doc-1.jpg')
+          +docsItem('doc-1.jpg')
+
+
+mixin sectionYoutube
+  section.youtube
+    .container
+      .youtube__inner
+        .youtube__info
+          h3.youtube__suptitle И не только!
+          h2.youtube__title
+            |Делимся экспертностью в области строительства&nbsp;
+            span на нашем Youtube канале
+          a.youtube__link(href="https://www.youtube.com/channel/UCUdIa66ASkvG7fYzFUC6DWA" target="_blank" rel="noopener")
+            p Смотреть Youtube канал
+            +icon('youtube__link-icon', 'arrow-right')
+        ul.youtube__videos
+          li.youtube__item.lozad(data-background-image="images/index/youtube/youtube-1.jpg")
+            +mediaButton
+          li.youtube__item.lozad(data-background-image="images/index/youtube/youtube-1.jpg")
+            +mediaButton
+
+mixin sectionFeaturesCompany
+  section.company-features
+    .company-features__bg.lozad(data-background-image="images/features/bg.jpg")
+    .container
+      .company-features__inner
+        h2.company-features__title
+          span Преимущества домов&nbsp;
+          |Gusarev House
+        ul.company-features__list
+          +companyFeature(['Собственное производство, ', 'высочайшее качество'], 'feature-1')
+          +companyFeature(['Разнообразие готовых проектов ', 'или разработаем индивидуальный'], 'feature-2')
+          +companyFeature(['Гибкая ценовая политика ', 'и чёткое соблюдение сроков'], 'feature-3')
+          +companyFeature(['Полный контроль ', 'строительство дома'], 'feature-4')
+          +companyFeature(['Быстрая скорость, ', 'обработки заявок'], 'feature-5')
+          li.company-feature
+            +icon('company-feature__icon', 'feature-6')
+            h3.company-feature__title
+              |Работаем на&nbsp;
+              span высококачественном оборудовании
+          li.company-feature
+            +icon('company-feature__icon', 'feature-7')
+            h3.company-feature__title
+              |Организовываема&nbsp;
+              span удобную для Вас логистику
+          +companyFeature(['Индивидуальный подход ', 'к каждому нашему клиенту'], 'feature-8')
 
 mixin catalogItem(img, title, link, area)
   li.catalog__item
@@ -235,3 +338,13 @@ mixin productSlider(imgArr)
     .swiper-button-prev
     .swiper-button-next
     .swiper-pagination
+
+mixin aboutSlider(imgArr)
+  #swiper-about.swiper-container
+    .swiper-wrapper
+      for img in imgArr
+        .swiper-slide
+          img.swiper-slide.about-slider__slide(src=`images/about/${img}`, width="1170" height="580" alt="")
+    .swiper-pagination
+  .swiper-button-prev
+  .swiper-button-next

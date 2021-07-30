@@ -1,0 +1,49 @@
+.about-slider {
+  position: relative;
+
+  margin-bottom: 9rem;
+
+  .swiper-container {
+    max-width: 117rem;
+  }
+
+  .swiper-wrapper {
+    margin-bottom: 80px;
+  }
+
+  .swiper-button-prev {
+    padding-left: 3rem;
+  }
+
+  .swiper-button-next {
+    padding-right: 3rem;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $color-primary-gamma;
+
+    &:hover {
+      color: $color-primary-alpha;
+    }
+  }
+
+  @include swiper-pagination;
+}
+
+.about-slider__title {
+  @include section-title(center);
+
+  max-width: 69rem;
+
+  margin: 0 auto 4rem;
+}
+
+.about-slider__slide {
+  object-fit: cover;
+  width: 100%;
+
+  max-height: 58rem;
+
+  border-radius: 10px;
+}

@@ -1,0 +1,107 @@
+extends common/layout
+
+include includes/about/mixins
+
+block title
+  title О компании
+
+block content
+  .page
+    main
+      //Crumbs
+      +crumbs([{href: 'about.html', name: 'О компании'}])
+
+      //Company
+      +sectionCompany(['Дома компании Gusarev House востребованы по всей Минской области. Строения компании можно найти на территории всей Минской области, а так же Минского района.', 'Дома, созданные Gusarev House, отличают неординарные архитектурные решения и исключительная надежность.', 'Наша компания всегда осуществляла полный цикл производства деревянных строений, возводя их под ключ. То есть от заготовки материала до финишной отделки, которая обеспечивает защиту дерева и делает его прочным на долгие годы.'], true, 'company--reverse')
+
+      //Numbers
+      section.numbers
+        .container
+          .numbers__inner
+            h2.numbers__title
+              |Коротко&nbsp;
+              span история в цифрах
+            ul.numbers__list
+              li.numbers__item
+                h3.numbers__item-title 1995
+                p.numbers__item-txt
+                  span год рождения нашей компании,&nbsp;
+                  |с тех пор мы ни разу не останавливались и по сей день продолжаем совершенствоваться в своём ремесле
+              li.numbers__item
+                h3.numbers__item-title +1500
+                p.numbers__item-txt
+                  span суммарное количество построенных домов по готовым,&nbsp;
+                  |а так же индивидуальным проектам
+              li.numbers__item
+                h3.numbers__item-title 500+
+                p.numbers__item-txt
+                  |семей счастливо живут в&nbsp;
+                  span домах, построенных нами
+
+      //Features bar
+      section.bar-features
+        .bar-features__inner
+          h2.bar-features__title.container
+            span Основные преимущества&nbsp;
+            |нашего клееного бруса
+          ul.bar-features__list
+            li.bar-features__item
+              +icon('bar-features__item-icon', 'plus')
+              p.bar-features__item-txt
+                span Не меняет своей формы&nbsp;
+                |во время эксплуатации
+            li.bar-features__item
+              +icon('bar-features__item-icon', 'plus')
+              p.bar-features__item-txt
+                span Имеет большую&nbsp;
+                |по сравнению с обычной древесиной
+                span прочность
+            li.bar-features__item
+              +icon('bar-features__item-icon', 'plus')
+              p.bar-features__item-txt
+                |Имеет&nbsp;
+                span меньшую теплопроводность
+            li.bar-features__item
+              +icon('bar-features__item-icon', 'plus')
+              p.bar-features__item-txt
+                |Имеет&nbsp;
+                span минимальную усадку по высоте
+            li.bar-features__item
+              +icon('bar-features__item-icon', 'plus')
+              p.bar-features__item-txt
+                span Стена выглядит монолитной&nbsp;
+                |и не требует дополнительной отделки
+            li.bar-features__item
+              +icon('bar-features__item-icon', 'plus')
+              p.bar-features__item-txt
+                |Пазы по длине бруса жестко фиксируют брус в стене и не пропускают влагу — &nbsp;
+                span уплотнитель не требуется
+            li.bar-features__item
+              +icon('bar-features__item-icon', 'plus')
+              p.bar-features__item-txt
+                |Имеет&nbsp;
+                span высокое качество лицевых поверхностей
+            li.bar-features__item
+              +icon('bar-features__item-icon', 'plus')
+              p.bar-features__item-txt
+                |Не даёт&nbsp;
+                span сильных трещин
+
+      //Docs
+      +sectionDocs
+
+      //Features company
+      +sectionFeaturesCompany
+
+      //Slider
+      section.about-slider.container
+        h2.about-slider__title
+          span Gusarev House - надежная компания с лучшим качеством&nbsp;
+          |продукции на рынке
+        +aboutSlider(['slide-1.jpg', 'slide-2.jpg', 'slide-1.jpg', 'slide-2.jpg'])
+
+      //Youtube
+      +sectionYoutube
+
+      //Form callback
+      +formCallback(['Перезвоним и проконсультируем', 'по любым вопросам, заполните форму'], 'Это бесплатно!', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00')

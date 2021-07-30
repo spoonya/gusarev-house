@@ -1,5 +1,38 @@
 .company {
   padding-bottom: $padding-bottom-section;
+
+  &--reverse {
+    .company__inner {
+      flex-direction: row-reverse;
+      align-items: flex-end;
+    }
+
+    .company__images {
+      margin-right: 0;
+    }
+
+    .company__img-decorator {
+      right: 100%;
+      left: unset;
+    }
+
+    .company__years {
+      left: -25%;
+      right: unset;
+    }
+
+    .company__content {
+      padding-right: 0;
+    }
+
+    .company__txt {
+      margin-bottom: 0;
+
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
 }
 
 .company__inner {
@@ -72,13 +105,6 @@
 }
 
 .company__title {
-  color: $color-primary-psi;
-  font-size: 2rem;
-
-  margin-bottom: 3.3rem;
-}
-
-.company__subtitle {
   font-size: 4rem;
   color: $color-primary-gamma;
   font-weight: 300;
@@ -90,6 +116,13 @@
   }
 }
 
+.company__subtitle {
+  color: $color-primary-psi;
+  font-size: 2rem;
+
+  margin-bottom: 3.3rem;
+}
+
 .company__descrip {
   font-size: 2.2rem;
   font-weight: 300;
@@ -99,9 +132,15 @@
 }
 
 .company__txt {
-  font-size: 1.8rem;
-  color: $color-primary-psi;
-  line-height: 1.4;
-
   margin-bottom: 5.3rem;
+
+  p {
+    font-size: 1.8rem;
+    color: $color-primary-psi;
+    line-height: 1.4;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
 }

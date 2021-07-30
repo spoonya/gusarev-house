@@ -1,0 +1,59 @@
+.company-features {
+  position: relative;
+
+  padding: 8rem 0 3rem;
+
+  overflow: hidden;
+
+  margin-bottom: 7rem;
+
+  background-color: $color-primary-gamma;
+
+  &::after {
+    position: absolute;
+
+    content: '';
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: $color-primary-gamma;
+    opacity: 0.9;
+  }
+}
+
+.company-features__bg {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  filter: blur(40px);
+}
+
+.company-features__inner {
+  position: relative;
+
+  z-index: 1;
+}
+
+.company-features__title {
+  @include section-title(center);
+
+  margin-bottom: 7.3rem;
+
+  color: $color-primary-beta;
+}
+
+.company-features__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
