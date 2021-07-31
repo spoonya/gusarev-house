@@ -78,9 +78,31 @@ mixin companyFeature(titleArr, icon)
       span= titleArr[0]
       = titleArr[1]
 
+mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null)
+  .swiper-slide
+    .intro__bg-img.lozad(data-background-image=`images/intro/${img}.jpg`)
+    .container
+      .intro__inner
+        .intro__content
+          h2.intro__title= title
+          h3.intro__subtitle(class= modif)
+            span= subtitleArr[0]
+            = subtitleArr[1]
+          p.intro__descrip= descrip
+          ul.intro__features
+            for item in featuresArr
+              li= item
+          +linkButton('#', 'В каталог проектов', 'button--light')
+        .intro__media
+          +mediaButton
+          p.intro__media-txt
+            |Посмотреть
+            span видео-презентацию
+            |компании
+
 mixin projectsItem(img, location, detailsArr, title, link, floors, area)
   li.projects__item(tabindex="0")
-    img.projects__item-img.lozad(data-src=`images/index/projects/${img}.jpg`, width="480", height="480", alt="")
+    img.projects__item-img.lozad(data-src=`images/projects/${img}.jpg`, width="480", height="480", alt="")
     .projects__item-descrip
       p.projects__item-location
         +icon('projects__item-icon', 'location')
@@ -113,17 +135,31 @@ mixin sectionWebuild
           .webuild__txt
             p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio veritatis facere doloribus, adipisci, temporibus, quaerat alias quasi quibusdam maiores labore similique ratione repellat aperiam nam saepe cumque exercitationem nobis sapiente!Maxime, quod. Id, fuga. Non minus optio, ut hic recusandae neque amet at fugit modi iure esse, debitis explicabo nisi velit id distinctio. Provident quae consectetur totam repellendus, quaerat eaque?Consectetur soluta, vero quaerat repellat unde consequuntur magni delectus earum doloremque ipsam nihil labore ut amet ipsum vel iusto quia commodi sed? Dolor rem sed eaque, eos temporibus veritatis ipsum!
 
+mixin feeItem(img, titleArr, link)
+  li.fee__item.lozad(data-background-image=`images/index/fee/${img}.jpg`)
+    .fee__content
+      h3.fee__title
+        = titleArr[0]
+        span= titleArr[1]
+      +linkButton(`${link}`, 'Подробнее', 'button--light')
+
+mixin sectionFee
+  section.fee
+    ul.fee__list
+      +feeItem('fee-1', ['Производство и строительство домов', 'из бруса под ключ'], '#')
+      +feeItem('fee-2', ['Архитектурное проектирование', 'любого размера'], '#')
+
 mixin sectionCompany(textArr=null, isAboutPage=false, modif=null)
   section.company(class= modif)
     .container
       .company__inner
         .company__images
-          img.company__img.lozad(data-src="images/index/company/house.jpg" width="450" height="690" alt="Дом из древесины")
-          .company__years.lozad(data-background-image=`images/index/company/texture-1.png`)
+          img.company__img.lozad(data-src="images/company/house.jpg" width="450" height="690" alt="Дом из древесины")
+          .company__years.lozad(data-background-image=`images/company/texture-1.png`)
             p.company__years-txt
               span 25
               |лет на рынке
-          .company__img-decorator.lozad(data-background-image=`images/index/company/texture-2.png`)
+          .company__img-decorator.lozad(data-background-image=`images/company/texture-2.png`)
         .company__content
           if !isAboutPage
             h3.company__subtitle Компания Gusarev House
@@ -145,11 +181,55 @@ mixin sectionCompany(textArr=null, isAboutPage=false, modif=null)
           if !isAboutPage
             +linkButton('about.html', 'Подробнее о компании')
 
+mixin catalogItem(img, title, link, area)
+  li.catalog__item
+    a.catalog__item-link(href= link aria-label="Подробнее")
+    img.catalog__item-img.lozad(data-src=`images/catalog/${img}.jpg`, width="330", height="240", alt="")
+    .catalog__item-content
+      h3.catalog__item-title= title
+      .catalog__item-info
+        p.catalog__item-details
+          |Подробнее
+          +icon('catalog__item-details-icon', 'arrow-right')
+        p.catalog__item-area
+          +icon('catalog__item-area-icon', 'area')
+          = area
+          sup 2
+
+mixin sectionCatalog
+  section.catalog
+    .catalog__wrapper.container
+      +formCatalog
+      .catalog__content
+        h2.catalog__title
+          span Каталог&nbsp;
+          |популярных проектов
+        ul.catalog__list
+          +catalogItem('catalog-1', 'Мега-гипер-ультра длинное название проекта', 'catalog-product.html', '50 м')
+          +catalogItem('catalog-1', 'Слобода-1', 'catalog-product.html', '50 м')
+          +catalogItem('catalog-1', 'Слобода-1', 'catalog-product.html', '50 м')
+          +catalogItem('catalog-1', 'Слобода-1', 'catalog-product.html', '50 м')
+          +catalogItem('catalog-1', 'Слобода-1', 'catalog-product.html', '50 м')
+          +catalogItem('catalog-1', 'Слобода-1', 'catalog-product.html', '50 м')
+    +linkButton('catalog.html', 'В каталог проектов', 'button--center')
+
+mixin produceItem(img, title, textArr, link)
+  li.produce__item.lozad(data-background-image=`images/produce/${img}.jpg` tabindex="0")
+    .produce__inner
+      p.produce__item-decorator Производство
+      .produce__item-info
+        h3.produce__item-title= title
+        .produce__item-txt
+          for item in textArr
+            p= item
+        a.produce__item-link(href= link)
+          p Подробнее
+          +icon('produce__item-link-icon', 'arrow-right')
+
 mixin docsItem(img)
   li.docs__item
     img.docs__item-img.lozad(data-src=`images/docs/${img}`, data-pswp-width="230"
     data-pswp-height="328"  width="230", height="328" alt="")
-
 
 mixin sectionDocs
   section.docs
@@ -164,7 +244,6 @@ mixin sectionDocs
           +docsItem('doc-1.jpg')
           +docsItem('doc-1.jpg')
 
-
 mixin sectionYoutube
   section.youtube
     .container
@@ -178,9 +257,9 @@ mixin sectionYoutube
             p Смотреть Youtube канал
             +icon('youtube__link-icon', 'arrow-right')
         ul.youtube__videos
-          li.youtube__item.lozad(data-background-image="images/index/youtube/youtube-1.jpg")
+          li.youtube__item.lozad(data-background-image="images/youtube/youtube-1.jpg")
             +mediaButton
-          li.youtube__item.lozad(data-background-image="images/index/youtube/youtube-1.jpg")
+          li.youtube__item.lozad(data-background-image="images/youtube/youtube-1.jpg")
             +mediaButton
 
 mixin sectionFeaturesCompany
@@ -208,21 +287,6 @@ mixin sectionFeaturesCompany
               |Организовываема&nbsp;
               span удобную для Вас логистику
           +companyFeature(['Индивидуальный подход ', 'к каждому нашему клиенту'], 'feature-8')
-
-mixin catalogItem(img, title, link, area)
-  li.catalog__item
-    a.catalog__item-link(href= link aria-label="Подробнее")
-    img.catalog__item-img.lozad(data-src=`images/index/catalog/${img}.jpg`, width="330", height="240", alt="")
-    .catalog__item-content
-      h3.catalog__item-title= title
-      .catalog__item-info
-        p.catalog__item-details
-          |Подробнее
-          +icon('catalog__item-details-icon', 'arrow-right')
-        p.catalog__item-area
-          +icon('catalog__item-area-icon', 'area')
-          = area
-          sup 2
 
 mixin formCatalog(isText=true)
   .catalog__form

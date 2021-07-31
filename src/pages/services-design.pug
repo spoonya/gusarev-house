@@ -1,0 +1,23 @@
+extends common/layout
+
+include common/header
+
+block header
+  +header(null)
+
+block content
+  .page.page--paddingless
+    main
+      //Intro
+      section.intro
+        +introSlide('slide-2', 'Проектирование домов под ключ', ['Типовое и индивидуальное ', 'проектирование частных домов и коттеджей'], 'С полным сопровождением', ['Качественно', 'Долговечно', 'Доступно'])
+        img.intro__decorator.lozad(data-src="images/index/intro/arrows-group.png", width="733", height="340",  alt="")
+
+      //Catalog
+      +sectionCatalog
+
+      //Form callback
+      +formCallback(['Перезвоним и проконсультируем', 'по любым вопросам, заполните форму'], 'Это бесплатно!', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00')
+
+      //We build
+      +sectionWebuild
