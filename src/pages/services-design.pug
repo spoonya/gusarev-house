@@ -2,6 +2,9 @@ extends common/layout
 
 include common/header
 
+block title
+  title Услуги проектирования
+
 block header
   +header(null)
 
@@ -11,10 +14,72 @@ block content
       //Intro
       section.intro
         +introSlide('slide-2', 'Проектирование домов под ключ', ['Типовое и индивидуальное ', 'проектирование частных домов и коттеджей'], 'С полным сопровождением', ['Качественно', 'Долговечно', 'Доступно'])
-        img.intro__decorator.lozad(data-src="images/index/intro/arrows-group.png", width="733", height="340",  alt="")
+        img.intro__decorator.lozad(data-src="images/intro/arrows-group.png", width="733", height="340",  alt="")
+
+      //About company
+      section.company
+        .container
+          .company__inner
+            .company__content
+              h3.company__suptitle С нуля под ключ
+              h2.company__title
+                span От проектирования до заселения&nbsp;
+                |в собственный дом
+              .company__txt
+                p Gusarev House — ведущая деревообрабатывающая и строительная компания. Компания Gusarev House более 25 лет занимается производством древесины, проектирует и строит деревянные дома из клееного бруса и массива, используя новейшие технологии обработки древесины.
+              +linkButton('about.html','Подробнее о компании')
+            .company__info
+              img.company__img.lozad(data-src="images/company/house-3.jpg" width="450" height="690" alt="")
+              ul.company__numbers
+                li.company__numbers-item
+                  p.company__numbers-item-value +400
+                  p.company__numbers-item-txt спроектированных и построенных домов
+                li.company__numbers-item
+                  p.company__numbers-item-value 500+
+                  p.company__numbers-item-txt довольных клиентов
+                li.company__numbers-item
+                  p.company__numbers-item-value 25+
+                  p.company__numbers-item-txt лет опыта
+
+      //Produce
+      section.produce
+        h2.produce__title.container
+          |Проектирование&nbsp;
+          span деревянных домов
+        ul.produce__list
+          +produceItem('produce-3', 'Из бруса и оцилиндрованого бревна', ['Жить в доме сложенном из деревянных бревен очень комфортно и полезно для здоровья. Такой дом с уверенностью можно назвать «живым». Он сам поддерживает благоприятный микроклимат – зимой хорошо сохраняет тепло, а летом в доме из оцилиндрованного бревна прохладно.'], '#', true)
+          +produceItem('produce-4', 'Каркасный дом', ['Каркасный дом имеет деревянную или металлическую основу — каркас. Все составные части каркасного сооружения способны выдержать практически любые атмосферные нагрузки. Комплект будущего дома доставляется на место установки и собирается, согласно инструкции, наподобие конструктора.' ], '#', true)
+          +produceItem('produce-5', 'Фахверковый дом', ['Фахверк — «ящичная работа», каркасная конструкция, типичная для крестьянской архитектуры многих стран Европы. В отдельных случаях фахверк рассматривают в качестве разновидности флехтверка. Представляет собой каркас, образованный системой горизонтальных и вертикальных деревянных брусьев и раскосов с заполнением промежутков камнем, кирпичом, глиной и другими материалами.' ], '#', true)
 
       //Catalog
       +sectionCatalog
+
+      //Fee
+      section.fee
+        ul.fee__list
+          +feeItem('fee-3', ['Проектирование', 'кманных домов'], '#')
+          +feeItem('fee-4', ['Проектирование', 'дома из кирпича'], '#')
+
+      //About design
+      section.company
+        .container
+          .company__inner
+            .company__images
+              img.company__img.lozad(data-src="images/company/house-2.jpg" width="450" height="690" alt="")
+              .company__years.lozad(data-background-image=`images/company/texture-1.png`)
+                p.company__years-txt
+                  span 14
+                  |дней в среднем длится разработка проекта
+              .company__img-decorator.lozad(data-background-image=`images/company/texture-2.png`)
+            .company__content
+              h3.company__suptitle Предложим вам готовый проект
+              h2.company__title
+                |Или разработаем&nbsp;
+                span индивидуальный
+              p.company__descrip Помимо уже существующих проектов архитекторы компании могут спроектировать дом именно под вас.
+              .company__txt
+                p Представленные варианты внутренних планировок в каталоге выше - условны. При желании совместно с нашими архитекторами вы можете разработать собственное планировочное решение.
+              +modalCallButton('Оставить заявку на индивидуальный проект')
 
       //Form callback
       +formCallback(['Перезвоним и проконсультируем', 'по любым вопросам, заполните форму'], 'Это бесплатно!', 'После заполнения формы мы свяжемся с Вами в рабочее время Пн-Пт 9:00-17:00')
