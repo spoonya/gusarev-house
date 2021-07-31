@@ -136,7 +136,7 @@ mixin sectionWebuild
             p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio veritatis facere doloribus, adipisci, temporibus, quaerat alias quasi quibusdam maiores labore similique ratione repellat aperiam nam saepe cumque exercitationem nobis sapiente!Maxime, quod. Id, fuga. Non minus optio, ut hic recusandae neque amet at fugit modi iure esse, debitis explicabo nisi velit id distinctio. Provident quae consectetur totam repellendus, quaerat eaque?Consectetur soluta, vero quaerat repellat unde consequuntur magni delectus earum doloremque ipsam nihil labore ut amet ipsum vel iusto quia commodi sed? Dolor rem sed eaque, eos temporibus veritatis ipsum!
 
 mixin feeItem(img, titleArr, link)
-  li.fee__item.lozad(data-background-image=`images/index/fee/${img}.jpg`)
+  li.fee__item.lozad(data-background-image=`images/fee/${img}.jpg`)
     .fee__content
       h3.fee__title
         = titleArr[0]
@@ -295,7 +295,7 @@ mixin formCatalog(isText=true)
         span Скачайте каталог проектов&nbsp;
         |в 1 клик
       picture.lozad
-        source(srcset="images/index/catalog/mockup.webp" type="image/webp")
+        source(srcset="images/catalog/mockup.webp" type="image/webp")
         img.catalog__form-img(src="images/index/catalog/mockup.png", width="270" height="217", alt="Каталог")
       h3.catalog__form-subtitle
         span Зарегистрируйтесь,&nbsp;

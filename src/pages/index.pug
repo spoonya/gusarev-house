@@ -21,7 +21,7 @@ block content
               span#swiper-intro-total.intro__slides-total
             .swiper-pagination
             .swiper-button-next Вперёд
-            img.intro__decorator.lozad(data-src="images/index/intro/arrows-group.png", width="733", height="340",  alt="")
+            img.intro__decorator.lozad(data-src="images/intro/arrows-group.png", width="733", height="340",  alt="")
 
       //Company
       +sectionCompany
@@ -49,17 +49,15 @@ block content
         +linkButton('projects.html', 'Смотреть все дома', 'button--center')
 
       //Instagram
-      section.insta
-        .container
-          .insta__content.lozad(data-background-image="images/index/insta/bg.jpg")
-            .insta__inner
-              .insta__info
-                h2.insta__title Больше выполненых работ у нас в Инстаграмме
-                a.insta__link(href="#") @gusarev_house
-              ul.insta__list
-                li.insta__item: img.insta__photo.lozad(data-src="images/index/insta/house-1.jpg", width="208" height="130" alt="")
-                li.insta__item: img.insta__photo.lozad(data-src="images/index/insta/house-1.jpg", width="208" height="130" alt="")
-                li.insta__item: img.insta__photo.lozad(data-src="images/index/insta/house-1.jpg", width="208" height="130" alt="")
+      section.insta.container.lozad(data-background-image="images/index/insta/bg.jpg")
+        .insta__inner
+          .insta__info
+            h2.insta__title Больше выполненых работ у нас в Инстаграмме
+            a.insta__link(href="#") @gusarev_house
+          ul.insta__list
+            li.insta__item: img.insta__photo.lozad(data-src="images/index/insta/house-1.jpg", width="208" height="130" alt="")
+            li.insta__item: img.insta__photo.lozad(data-src="images/index/insta/house-1.jpg", width="208" height="130" alt="")
+            li.insta__item: img.insta__photo.lozad(data-src="images/index/insta/house-1.jpg", width="208" height="130" alt="")
 
       //Produce
       section.produce
