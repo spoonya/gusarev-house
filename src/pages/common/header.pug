@@ -12,23 +12,24 @@ mixin header(modif='header--dark')
             |Позвоните мне
           .header__group
             +worktime
-            a.header__phone(href="tel:80333333333") 8 (033) 333 33 33
+            ul.header__phones
+              li
+                a.header__phone(href="tel:80333333333") 8 (033) 333 33 33
+                //- ul
+                //-   li:  a.header__phone(href="tel:80297777777") 8 (029) 777 77 77
+                //-   li:  a.header__phone(href="tel:80333333333") 8 (033) 333 33 33
+
       nav.header__menu
         ul
+          li: a(href="index.html") Главная
+          li: a(href="catalog.html") Каталог проектов
+          li: a(href="projects.html") Портфолио
           li
-            a(href="index.html") Главная
-          li
-            a(href="catalog.html") Каталог проектов
-          li
-            a(href="projects.html") Портфолио
-          li
-            a(href="services.html") Услуги
-          li
-            a(href="sale.html") Продаём
-          li
-            a(href="about.html") О компании
-          li
-            a(href="news.html") Новости
-          li
-            a(href="contacts.html") Контакты
-
+            a(role="button") Услуги
+            ul
+              li: a(href="services-design.html") Архитектурное проектирование
+              li: a(href="services-produce.html") Производство материалов
+          li: a(href="sale.html") Продаём
+          li: a(href="about.html") О компании
+          li: a(href="news.html") Новости
+          li: a(href="contacts.html") Контакты
