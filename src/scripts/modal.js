@@ -58,6 +58,7 @@ function closeModal() {
 }
 
 function createModal(html) {
+  DOM.modalContent.innerHTML = '';
   DOM.modalContent.insertAdjacentHTML('afterbegin', html);
 }
 
