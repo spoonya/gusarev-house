@@ -78,10 +78,13 @@ mixin companyFeature(titleArr, icon)
       span= titleArr[0]
       = titleArr[1]
 
-mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null)
+mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null, isSlide=true)
   .swiper-slide
-    .intro__bg-img.swiper-lazy(data-background=`images/intro/${img}.jpg`)
-    .swiper-lazy-preloader.swiper-lazy-preloader-white
+    if isSlide
+      .intro__bg-img.swiper-lazy(data-background=`images/intro/${img}.jpg`)
+      .swiper-lazy-preloader.swiper-lazy-preloader-white
+    else
+      .intro__bg-img.lozad(data-background-image=`images/intro/${img}.jpg`)
     .container
       .intro__inner
         .intro__content
@@ -93,7 +96,7 @@ mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null)
           ul.intro__features
             for item in featuresArr
               li= item
-          +linkButton('#', 'В каталог проектов', 'button--light')
+          +linkButton('catalog.html', 'В каталог проектов', 'button--light')
         .intro__media
           +mediaButton
           p.intro__media-txt
