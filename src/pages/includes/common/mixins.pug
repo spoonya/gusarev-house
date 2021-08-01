@@ -80,7 +80,8 @@ mixin companyFeature(titleArr, icon)
 
 mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null)
   .swiper-slide
-    .intro__bg-img.lozad(data-background-image=`images/intro/${img}.jpg`)
+    .intro__bg-img.swiper-lazy(data-background=`images/intro/${img}.jpg`)
+    .swiper-lazy-preloader.swiper-lazy-preloader-white
     .container
       .intro__inner
         .intro__content
