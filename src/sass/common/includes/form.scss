@@ -1,9 +1,13 @@
 .form {
+  position: relative;
+
   background-color: $color-primary-gamma;
 
   textarea {
     height: 12rem;
   }
+
+  @include loading;
 }
 
 .form-content {

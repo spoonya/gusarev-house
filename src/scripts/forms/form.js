@@ -79,7 +79,7 @@ class FormValidation {
 
     this.formElements.userPhone.value = phoneNumber;
 
-    const regex = /(\+375)(((33|29|44|25|\d{2,4})))(\d{6,7}$)/g;
+    const regex = /(\+375)(((\d{2,4})))(\d{6,7}$)/g;
 
     return regex.test(String(phoneNumber));
   }
@@ -289,9 +289,15 @@ class FormValidation {
         return;
       }
 
-      if (!this.isModal) this._clearInputs();
+      this.form.classList.add(CLASSES.loading);
 
-      this._showAlert();
+      setTimeout(() => {
+        if (!this.isModal) this._clearInputs();
+
+        this.form.classList.remove(CLASSES.loading);
+
+        this._showAlert();
+      }, 1500);
     });
   }
 }

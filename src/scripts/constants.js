@@ -1,22 +1,23 @@
 const CLASSES = {
   active: 'active',
   fixed: 'fixed',
+  loading: 'loading',
   scrollHidden: 'scroll-hidden'
 };
 
 const IDs = {
-  modal: '#modal',
+  formAlert: '#form-alert',
   formCallMe: '#form-callme',
   formRequest: '#form-request',
-  formAlert: '#form-alert',
+  modal: '#modal',
   modalYouTube: '#modal-youtube'
 };
 
 const DOM = {
   body: document.querySelector('body'),
-  overlay: document.querySelector('#overlay'),
   modal: document.querySelector('#modal'),
-  modalContent: document.querySelector('#modal-content')
+  modalContent: document.querySelector('#modal-content'),
+  overlay: document.querySelector('#overlay')
 };
 
 export { CLASSES, DOM, IDs };
