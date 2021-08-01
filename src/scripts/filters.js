@@ -3,11 +3,11 @@ function addClickEvtToFilters() {
 
   if (!filter) return;
 
-  let activeBtn = filter.querySelector('ul li');
+  let activeBtn = filter.querySelector('ul button');
   activeBtn.classList.add('active');
 
   filter.addEventListener('click', (e) => {
-    if (e.target.tagName !== 'LI') return;
+    if (e.target.tagName !== 'BUTTON') return;
 
     if (!e.target.classList.contains('active')) {
       e.target.classList.add('active');

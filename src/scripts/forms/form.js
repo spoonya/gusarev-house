@@ -1,7 +1,11 @@
-import Swal from 'sweetalert2';
+import { openModal } from '../modal';
+import { IDs } from '../constants';
 
 class FormValidation {
   constructor(selector, { isModal } = { isModal: false }) {
+    this.form = document.querySelector(selector);
+    if (!this.form) return;
+
     this.classes = {
       error: 'error',
       errorEl: 'form__error',
@@ -21,9 +25,6 @@ class FormValidation {
       unchecked: 'Поле должно быть отмечено'
     };
 
-    this.form = document.querySelector(selector);
-    if (!this.form) return;
-
     this.formElements = {
       username: this.form.querySelector('[data-form-name]'),
       userPhone: this.form.querySelector('[data-form-phone]'),
@@ -40,6 +41,9 @@ class FormValidation {
         isRequired: true
       },
       userEmail: {
+        isRequired: true
+      },
+      userAgreement: {
         isRequired: true
       },
       userMsg: {
@@ -195,15 +199,12 @@ class FormValidation {
   }
 
   _showAlert() {
-    Swal.fire({
-      text: 'Ваша заявка успешно отправлена',
-      icon: 'success',
-      confirmButtonText: 'ок'
-    });
+    openModal(IDs.formAlert);
   }
 
   _clearInputs() {
     Object.values(this.formElements).forEach((input) => {
+      if (!input) return;
       input.value = '';
 
       if (input.type === 'checkbox') {
@@ -221,10 +222,11 @@ class FormValidation {
     if (!this.form) return;
 
     const config = { ...this.defaultConfig, ...userConfig };
-    const isValid = [];
 
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      const isValid = [];
 
       if (this.formElements.username) {
         isValid.push(
@@ -265,7 +267,7 @@ class FormValidation {
           )
         );
 
-      if (this.formElements.userAgreementg) {
+      if (this.formElements.userAgreement) {
         isValid.push(this._checkAgreement(this.formElements.userAgreement));
       }
 
@@ -273,7 +275,9 @@ class FormValidation {
         return;
       }
 
-      this._clearInputs();
+      if (!this.isModal) this._clearInputs();
+
+      this._showAlert();
     });
   }
 }

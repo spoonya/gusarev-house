@@ -57,8 +57,8 @@ mixin linkButton(link, txt, modif=null)
     span.button__inner= txt
       +icon('button__icon', 'arrow-right')
 
-mixin modalCallButton(txt, modif=null)
-  button.button(class= modif)
+mixin modalCallButton(txt, dataTarget, modif=null)
+  button.button(class= modif data-modal-target= dataTarget)
     span.button__inner= txt
       +icon('button__icon', 'arrow-right')
 
@@ -68,7 +68,7 @@ mixin submitButton(txt)
     +icon('form__button-icon', 'arrow-right')
 
 mixin mediaButton
-  button.media-button(aria-label="Воспроизвести видео")
+  button.media-button(aria-label="Воспроизвести видео" data-modal-target="#modal-youtube")
     +icon('media-button__icon', 'play')
 
 mixin companyFeature(titleArr, icon)
@@ -141,7 +141,7 @@ mixin feeItem(img, titleArr, link)
       h3.fee__title
         = titleArr[0]
         span= titleArr[1]
-      +linkButton(`${link}`, 'Подробнее', 'button--light')
+      +modalCallButton('Подробнее', '#form-request', 'button--light')
 
 mixin sectionCompany(textArr=null, isAboutPage=false, modif=null)
   section.company(class= modif)
@@ -219,14 +219,13 @@ mixin produceItem(img, title, textArr, link, isProduceDesign=false)
         .produce__item-txt
           for item in textArr
             p= item
-        a.produce__item-link(href= link)
+        button.produce__item-link(data-modal-target="#form-callme")
           p Подробнее
           +icon('produce__item-link-icon', 'arrow-right')
 
 mixin docsItem(img)
   li.docs__item
-    img.docs__item-img.lozad(data-src=`images/docs/${img}`, data-pswp-width="230"
-    data-pswp-height="328"  width="230", height="328" alt="")
+    img.docs__item-img.lozad(data-src=`images/docs/${img}`, width="230", height="328" alt="")
 
 mixin sectionDocs
   section.docs
@@ -246,7 +245,7 @@ mixin sectionYoutube
     .container
       .youtube__inner
         .youtube__info
-          h3.youtube__suptitle И не только!
+          p.youtube__suptitle И не только!
           h2.youtube__title
             |Делимся экспертностью в области строительства&nbsp;
             span на нашем Youtube канале
@@ -348,8 +347,8 @@ mixin formCallbackMini(titleArr, subtitle, modificators={modifDisplayGroup: null
     .form-content
       form#form-callback-mini.form(method="POST", action="#")
         if subtitle
-          h3.form-callback-mini__subtitle= subtitle
-        h2.form-callback-mini__title
+          h2.form-callback-mini__title= subtitle
+        p.form-callback-mini__subtitle
           span= titleArr[0]
           = titleArr[1]
         .form__inner(class= modificators.modifDisplayInner)
@@ -380,7 +379,7 @@ mixin productAbout(txt)
       h2.product-title О проекте
       .product-about__txt
         p= txt
-    +modalCallButton('Получить консультацию')
+    +modalCallButton('Получить консультацию', '#form-callme')
 
 mixin productPlan(imgArr)
   section.product-plan.container
@@ -409,3 +408,9 @@ mixin aboutSlider(imgArr)
     .swiper-pagination
   .swiper-button-prev
   .swiper-button-next
+
+mixin modal
+  #modal.modal
+    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+      +icon('modal__button-close-icon', 'close')
+    #modal-content.modal__content

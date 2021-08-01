@@ -43,6 +43,11 @@
     border-radius: 0px 0px 10px 10px;
   }
 
+  &-titles {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   &-suptitle {
     font-size: 14px;
     color: $color-primary-psi;

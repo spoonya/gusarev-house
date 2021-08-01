@@ -342,7 +342,7 @@
     }
   }
 
-  &__subtitle {
+  &__title {
     font-size: 2rem;
     font-weight: 300;
     text-align: center;
@@ -350,7 +350,7 @@
     margin-bottom: 2rem;
   }
 
-  &__title {
+  &__subtitle {
     font-size: 2.6rem;
     font-weight: 300;
     text-align: center;
@@ -360,5 +360,44 @@
     span {
       font-weight: 700;
     }
+  }
+}
+
+.form-modal {
+  position: relative;
+
+  display: flex;
+
+  .form__inner {
+    padding-bottom: 3rem;
+
+    max-width: 30rem;
+    width: 100%;
+  }
+
+  &__img {
+    max-width: 33rem;
+    width: 100%;
+    object-fit: cover;
+    margin-right: 3rem;
+  }
+
+  &__title {
+    font-size: 3.6rem;
+    text-align: center;
+
+    margin-bottom: 2rem;
+
+    margin-right: 6.7rem;
+
+    span {
+      display: block;
+
+      font-weight: 700;
+    }
+  }
+
+  .form__button {
+    margin-bottom: 25px;
   }
 }

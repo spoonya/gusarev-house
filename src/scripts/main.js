@@ -8,6 +8,7 @@ import {
   validateFormCallbackMini
 } from './forms';
 import addClickEvtToFilters from './filters';
+import controlModal from './modal';
 
 lazyLoadObserver.observe();
 
@@ -18,3 +19,5 @@ validateFormCallbackMini();
 spoilerWebuild.init();
 
 addClickEvtToFilters();
+
+controlModal();

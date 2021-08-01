@@ -1,0 +1,55 @@
+.modal {
+  position: fixed;
+
+  z-index: 10;
+
+  top: 50%;
+  left: 50%;
+
+  max-width: 76rem;
+
+  padding-top: 4.7rem;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.1s ease-in;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+  background-color: $color-primary-gamma;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  @include media-smartphone-sm {
+    max-width: 35rem;
+  }
+
+  &.active {
+    pointer-events: all;
+
+    opacity: 1;
+  }
+
+  &__button-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    &-icon {
+      height: 16px;
+      width: 16px;
+
+      fill: $color-primary-beta;
+
+      transition: fill 0.1s linear;
+
+      &:hover {
+        fill: $color-primary-alpha;
+      }
+    }
+  }
+}

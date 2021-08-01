@@ -1,0 +1,22 @@
+.video-section {
+  width: 76rem;
+  max-width: 100%;
+  padding-top: 15px;
+}
+
+.video-block {
+  padding-bottom: 56.25%;
+  height: 0;
+  width: 76rem;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.video {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

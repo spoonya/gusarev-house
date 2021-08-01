@@ -7,7 +7,7 @@ mixin header(modif='header--dark')
           .header__social
             p.header__social-txt Мы в соц.сетях:
             +social
-          button.header__call
+          button.header__call(data-modal-target="#form-callme")
             +icon('header__call-icon', 'phone')
             |Позвоните мне
           .header__group

@@ -19,9 +19,12 @@ block content
             span и готовых домов
           nav.filter
             ul#filter
-              li.filter__button Все
-              li.filter__button Земельные участки
-              li.filter__button Готовые дома
+              li
+                button.filter__button Все
+              li
+                button.filter__button Земельные участки
+              li
+                button.filter__button Готовые дома
           ul.sale__list
             +saleItem('sloboda', 'Земельный участок', 'Участок под строительство дома под строительство дома под строительство дома', 'Березинский р-н, д.Слобода', '15 990 рублей', 'sale-product-land.html')
             +saleItem('sloboda', 'Готовый дом', 'Дом из клееного бруса', 'Березинский р-н, д.Слобода', '183 190 рублей', 'sale-product-house.html', '50м')
