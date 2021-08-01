@@ -5,7 +5,7 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-modal-close]');
 
 function createFormContent({ img, title, btnTxt }) {
-  const formTemplate = `<div class="form-modal"><img class="form-modal__img" src="images/modals/${img}" alt="" />
+  const formTemplate = `<div class="form-modal"><img class="form-modal__img" src="images/modals/${img}" width="330" height="479" alt="" />
     <form class="form" id="form-modal-callback" method="POST" action="#">
         ${title}
         <div class="form__inner">
@@ -38,15 +38,9 @@ const modalContent = {
       '<h2 class="form-modal__title"><span>Оставить заявку&nbsp;</span>на индивидуальный проект</h2>',
     btnTxt: 'Отправить заявку'
   }),
-  formAlert: `<div class="alert" id="#form-alert">
-    <div class="alert__inner">
-        <h2 class="alert__title">Спасибо! Ваш запрос отправлен.</h2>
-        <h3 class="alert__subtitle"><span>А пока подпишитесь на наш Instagram,&nbsp;</span>там много интересного</h3><a class="alert__link" href="https://www.instagram.com/gusarev_house/" target="_blank" rel="noopener">@gusarev_house</a>
-    </div><img class="alert__img" src="images/modals/phone-2.png" alt="" />
-</div>`,
   video: `<div id="modal-youtube" class="video-section">
     <div class="video-block"><iframe class="video" src="https://www.youtube.com/embed/wBcik87jPVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>`
+    </div>`
 };
 
 function closeModal() {
@@ -74,10 +68,6 @@ function openModal(modalTarget) {
     case IDs.formRequest:
       createModal(modalContent.formRequest);
       validateFormCallbackModal();
-      break;
-
-    case IDs.formAlert:
-      createModal(modalContent.formAlert);
       break;
 
     case IDs.modalYouTube:

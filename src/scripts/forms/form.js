@@ -1,5 +1,4 @@
-import { openModal } from '../modal';
-import { IDs } from '../constants';
+import { DOM, CLASSES } from '../constants';
 
 class FormValidation {
   constructor(selector, { isModal } = { isModal: false }) {
@@ -11,6 +10,16 @@ class FormValidation {
       errorEl: 'form__error',
       formControlEl: 'form__control',
       success: 'success'
+    };
+
+    this.alert = {
+      html: `<div class="alert" id="#form-alert">
+              <div class="alert__inner">
+                <h2 class="alert__title">Спасибо! Ваш запрос отправлен.</h2>
+                <h3 class="alert__subtitle"><span>А пока подпишитесь на наш Instagram,&nbsp;</span>там много интересного</h3><a class="alert__link" href="https://www.instagram.com/gusarev_house/" target="_blank" rel="noopener">@gusarev_house</a>
+              </div>
+              <img class="alert__img" src="images/modals/phone-2.png" width="240" height="228" alt="" />
+            </div>`
     };
 
     this.errors = {
@@ -199,7 +208,12 @@ class FormValidation {
   }
 
   _showAlert() {
-    openModal(IDs.formAlert);
+    DOM.modalContent.innerHTML = '';
+    DOM.modalContent.insertAdjacentHTML('afterbegin', this.alert.html);
+
+    DOM.body.classList.add(CLASSES.scrollHidden);
+    DOM.modal.classList.add(CLASSES.active);
+    DOM.overlay.classList.add(CLASSES.active);
   }
 
   _clearInputs() {
