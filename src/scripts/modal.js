@@ -49,16 +49,15 @@ const modalContent = {
 </div>`
 };
 
-function closeModal(modal) {
-  if (!modal) return;
+function closeModal() {
+  DOM.modalContent.innerHTML = '';
 
-  modal.classList.remove(CLASSES.active);
+  DOM.modal.classList.remove(CLASSES.active);
   DOM.overlay.classList.remove(CLASSES.active);
   DOM.body.classList.remove(CLASSES.scrollHidden);
 }
 
 function createModal(html) {
-  DOM.modalContent.innerHTML = '';
   DOM.modalContent.insertAdjacentHTML('afterbegin', html);
 }
 
@@ -110,8 +109,7 @@ function controlModal() {
 
   closeModalButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      const modal = button.closest(`${IDs.modal}`);
-      closeModal(modal);
+      closeModal();
     });
   });
 }
