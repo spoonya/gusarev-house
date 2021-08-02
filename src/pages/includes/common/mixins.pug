@@ -229,7 +229,7 @@ mixin produceItem(img, title, textArr, link, isProduceDesign=false)
 
 mixin docsItem(img)
   li.docs__item
-    img.docs__item-img.lozad(data-src=`images/docs/${img}`, width="230", height="328" alt="")
+    img.docs__item-img.lozad(data-src=`images/docs/${img}`, data-fancybox="gallery", data-width="230", data-height="328" alt="")
 
 mixin sectionDocs
   section.docs
@@ -390,8 +390,8 @@ mixin productPlan(imgArr)
     h2.product-title Планировки
     ul.product-plan__list
       for img in imgArr
-        li.product-plan__list-item
-          img.product-plan__list-img.lozad(data-src=`images/projects/sloboda/${img}`, width="690", height="440" alt="")
+        li.product-plan__list-item.panzoom
+          img.product-plan__list-img.panzoom__content(src=`images/projects/sloboda/${img}`, width="690", height="440" alt="")
 
 mixin productSlider(imgArr)
   #swiper-product.swiper-container
