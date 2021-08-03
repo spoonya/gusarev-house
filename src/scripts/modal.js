@@ -106,4 +106,3 @@ function controlModal() {
 }
 
 export default controlModal;
-export { openModal };

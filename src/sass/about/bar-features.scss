@@ -29,6 +29,10 @@
 
   background-color: $color-primary-gamma;
   border-radius: 10px 0px 0px 10px;
+
+  @include media-desktop {
+    padding: 6.2rem 6.2rem 3.6rem;
+  }
 }
 
 .bar-features__item {

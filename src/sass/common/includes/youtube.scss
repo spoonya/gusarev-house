@@ -1,15 +1,32 @@
 .youtube {
   padding-bottom: $padding-bottom-section;
+
+  @include media-desktop {
+    padding-bottom: ($padding-bottom-section + 5rem);
+  }
 }
 
 .youtube__inner {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  @include media-laptop {
+    flex-direction: column;
+  }
 }
 
 .youtube__info {
   margin-right: 4rem;
+
+  @include media-laptop {
+    margin-bottom: 6rem;
+    margin-right: 0;
+  }
+
+  @include media-tablet-lg {
+    margin-bottom: 3rem;
+  }
 }
 
 .youtube__suptitle {
@@ -31,6 +48,14 @@
   span {
     display: block;
     font-weight: 700;
+  }
+
+  @include media-laptop {
+    max-width: unset;
+  }
+
+  @include media-tablet-lg {
+    margin-bottom: 2rem;
   }
 }
 
@@ -78,6 +103,14 @@
   display: flex;
   justify-content: space-between;
 
+  @include media-laptop {
+    width: 100%;
+  }
+
+  @include media-tablet-sm {
+    flex-wrap: wrap;
+  }
+
   .media-button {
     position: relative;
 
@@ -99,7 +132,7 @@
   background-position: center;
   background-size: cover;
 
-  padding: 11rem 17.5rem;
+  padding: 10rem 16.5rem;
 
   border-radius: 10px;
 
@@ -122,5 +155,23 @@
 
   &:not(:last-child) {
     margin-right: 3rem;
+  }
+
+  @include media-desktop {
+    padding: 8rem 14.5rem;
+  }
+
+  @include media-laptop {
+    width: 49%;
+  }
+
+  @include media-tablet-sm {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-right: 0;
+
+      margin-bottom: 2.5rem;
+    }
   }
 }

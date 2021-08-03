@@ -44,6 +44,18 @@
 
     margin-right: 19px;
   }
+
+  @include media-laptop {
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-right: 7rem;
+
+    &-txt {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .header__info {
@@ -172,12 +184,24 @@
         @include media-desktop {
           margin: 0 2.9rem;
         }
+
+        @include media-laptop {
+          margin: 0 2.9rem;
+        }
+
+        @include media-custom(1139px) {
+          margin: 0 2rem;
+        }
+
+        @include media-custom(1026px) {
+          margin: 0 1.5rem;
+        }
       }
     }
   }
 
   a {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 500;
     color: $color-primary-beta;
     text-transform: uppercase;

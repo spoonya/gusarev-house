@@ -42,6 +42,10 @@
     }
   }
 
+  @include media-desktop {
+    width: 47.9%;
+  }
+
   &-img-wrapper {
     max-width: 69rem;
     border-radius: 10px;

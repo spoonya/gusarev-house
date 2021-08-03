@@ -156,7 +156,7 @@ html {
 
   font-size: 62.5%;
 
-  @include media-laptop {
+  @include media-desktop {
     font-size: 55%;
   }
 }
@@ -177,6 +177,10 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+
+  @include media-desktop {
+    max-width: 1200px;
+  }
 }
 
 .page {

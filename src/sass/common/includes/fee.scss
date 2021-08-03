@@ -46,6 +46,14 @@
       #111111 100%
     );
   }
+
+  @include media-desktop {
+    padding: 22.3rem 0 6.9rem 5rem;
+  }
+
+  @include media-laptop {
+    padding-right: 3rem;
+  }
 }
 
 .fee__content {
@@ -55,10 +63,15 @@
   align-items: center;
 
   z-index: 1;
+
+  @include media-laptop {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .fee__title {
-  max-width: 29.6rem;
+  max-width: 30.6rem;
 
   margin-right: 7.3rem;
 
@@ -69,5 +82,16 @@
     display: block;
 
     font-weight: 700;
+  }
+
+  @include media-laptop {
+    margin-bottom: 15px;
+    margin-right: 0;
+
+    max-width: unset;
+
+    span {
+      display: inline;
+    }
   }
 }

@@ -41,6 +41,10 @@
     background-color: $color-primary-gamma;
     opacity: 0.5;
   }
+
+  @include media-tablet-sm {
+    padding: 6.5rem 5.4rem;
+  }
 }
 
 .insta__inner {
@@ -51,6 +55,18 @@
   justify-content: space-between;
 
   z-index: 1;
+
+  @include media-laptop {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  @include media-tablet-sm {
+    align-items: flex-start;
+
+    text-align: left;
+  }
 }
 
 .insta__title {
@@ -59,6 +75,24 @@
   margin-bottom: 18px;
 
   max-width: 35.1rem;
+
+  @include media-desktop {
+    margin-right: 3rem;
+  }
+
+  @include media-laptop {
+    margin-right: 0;
+  }
+}
+
+.insta__info {
+  @include media-desktop {
+    margin-bottom: 3rem;
+  }
+
+  @include media-tablet-sm {
+    margin: 0;
+  }
 }
 
 .insta__link {
@@ -69,7 +103,10 @@
 
 .insta__list {
   display: flex;
-  flex-wrap: wrap;
+
+  @include media-tablet-sm {
+    display: none;
+  }
 }
 
 .insta__item {
@@ -79,6 +116,12 @@
 
   &:not(:last-child) {
     margin-right: 3.2rem;
+  }
+
+  @include media-desktop {
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
   }
 }
 

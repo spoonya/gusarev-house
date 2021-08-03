@@ -210,6 +210,12 @@
     &-phone {
       left: 15%;
       bottom: -50px;
+
+      @include media-desktop {
+        max-width: 70rem;
+
+        left: 30%;
+      }
     }
   }
 

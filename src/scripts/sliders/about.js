@@ -17,8 +17,6 @@ const swiperIntro = new Swiper('#swiper-about', {
     delay: 3000
   },
 
-  preloadImages: false,
-
   effect: 'fade'
 });
 

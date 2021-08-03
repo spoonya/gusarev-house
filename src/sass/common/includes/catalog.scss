@@ -48,6 +48,10 @@
     margin-bottom: 3rem;
 
     max-width: 33rem;
+
+    @include media-desktop {
+      max-width: 28rem;
+    }
   }
 
   &-title {
@@ -122,6 +126,22 @@
 
         transform: translateX(5px);
       }
+    }
+  }
+
+  @include media-desktop {
+    width: 31.2%;
+  }
+
+  @include media-laptop {
+    width: 48.4%;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(3n + 3) {
+      margin-right: 3rem;
     }
   }
 

@@ -45,6 +45,10 @@
 .footer__menu {
   margin-right: 2rem;
 
+  @include media-desktop {
+    margin-right: 4rem;
+  }
+
   ul {
     display: flex;
     flex-direction: column;

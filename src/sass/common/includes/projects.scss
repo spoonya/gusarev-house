@@ -59,7 +59,7 @@
     }
 
     .projects__item-location {
-      opacity: 0;
+      display: none;
     }
 
     .projects__item-link {
@@ -124,8 +124,6 @@
     display: flex;
 
     font-size: 14px;
-
-    transition: opacity 0.1s linear;
   }
 
   &-preview {

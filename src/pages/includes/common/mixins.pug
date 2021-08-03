@@ -144,6 +144,7 @@ mixin feeItem(img, titleArr, link)
     .fee__content
       h3.fee__title
         = titleArr[0]
+        |&nbsp;
         span= titleArr[1]
       +modalCallButton('Подробнее', '#form-request', 'button--light')
 
@@ -358,7 +359,7 @@ mixin formCallbackMini(titleArr, subtitle, modificators={modifDisplayGroup: null
         .form__inner(class= modificators.modifDisplayInner)
           if isRadio
             .form-callback-mini__type
-              h3.form-callback-mini__type-title 1. Выберите что Вам необходимо:
+              p.form-callback-mini__type-title 1. Выберите что Вам необходимо:
               .form__control
                 span.form__error
                 label.form__checkbox-wrapper

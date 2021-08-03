@@ -16,8 +16,8 @@
     align-items: center;
     justify-content: center;
 
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    height: 4rem;
 
     background: url('../images/common/insta-bg.png');
 
@@ -25,12 +25,12 @@
   }
 
   &__icon {
-    height: 40px;
-    width: 40px;
+    height: 4rem;
+    width: 4rem;
 
     &--insta {
-      width: 20px;
-      height: 20px;
+      width: 2rem;
+      height: 2rem;
     }
   }
 }

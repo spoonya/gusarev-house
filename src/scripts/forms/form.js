@@ -79,7 +79,7 @@ class FormValidation {
 
     this.formElements.userPhone.value = phoneNumber;
 
-    const regex = /(\+375)(((\d{2,4})))(\d{6,7}$)/g;
+    const regex = /(\+375)(\d{2,4})(\d{6,7}$)/g;
 
     return regex.test(String(phoneNumber));
   }

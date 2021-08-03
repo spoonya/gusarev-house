@@ -1,11 +1,14 @@
 .filter {
   ul {
     display: flex;
+    flex-wrap: wrap;
   }
 
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 
   li {
+    margin-bottom: 2rem;
+
     cursor: pointer;
     user-select: none;
 
@@ -40,6 +43,10 @@
       background-color: $color-primary-alpha;
       color: $color-primary-beta;
       border-color: $color-primary-alpha;
+    }
+
+    @include media-desktop {
+      padding: 2.1rem 3rem;
     }
   }
 }

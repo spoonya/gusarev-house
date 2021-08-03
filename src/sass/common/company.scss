@@ -7,6 +7,12 @@
       align-items: flex-end;
     }
 
+    .company__content {
+      @include media-desktop {
+        max-width: 64rem;
+      }
+    }
+
     .company__images {
       margin-right: 0;
     }
