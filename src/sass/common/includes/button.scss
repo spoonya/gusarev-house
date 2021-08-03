@@ -47,6 +47,12 @@
     }
   }
 
+  @include media-desktop {
+    &::before {
+      width: 39%;
+    }
+  }
+
   &__inner {
     position: relative;
 

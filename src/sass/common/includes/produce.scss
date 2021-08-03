@@ -1,9 +1,17 @@
 .produce {
   padding-bottom: $padding-bottom-section;
+
+  @include media-tablet-lg {
+    padding-bottom: 50px;
+  }
 }
 
 .produce__title {
   @include section-title;
+
+  @include media-tablet-lg {
+    text-align: center;
+  }
 }
 
 .produce__inner {
@@ -18,6 +26,10 @@
 
   width: 100%;
   height: 100%;
+
+  @include media-smartphone-sm {
+    padding: 30px 20px;
+  }
 }
 
 .produce__list {
@@ -52,6 +64,16 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  @include media-laptop {
+    width: 50%;
+
+    flex: unset;
+  }
+
+  @include media-smartphone-lg {
+    width: 100%;
+  }
 
   &::before {
     position: absolute;
@@ -100,9 +122,9 @@
 
     line-height: 0;
 
-    padding-bottom: 4rem;
-    padding-right: 1rem;
-    padding-top: 3rem;
+    padding-bottom: 40px;
+    padding-right: 10px;
+    padding-top: 30px;
 
     &::after {
       position: absolute;

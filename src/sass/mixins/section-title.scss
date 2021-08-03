@@ -9,4 +9,10 @@
   span {
     font-weight: 700;
   }
+
+  @include media-tablet-lg {
+    font-size: 28px;
+
+    margin-bottom: 35px;
+  }
 }

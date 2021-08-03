@@ -1,9 +1,17 @@
 .fee {
   padding-bottom: $padding-bottom-section;
+
+  @include media-tablet-lg {
+    padding-bottom: 50px;
+  }
 }
 
 .fee__list {
   display: flex;
+
+  @include media-tablet-lg {
+    flex-direction: column;
+  }
 }
 
 .fee__item {
@@ -54,6 +62,29 @@
   @include media-laptop {
     padding-right: 3rem;
   }
+
+  @include media-tablet-lg {
+    width: 97%;
+
+    padding: 20.8rem 0 4rem 5rem;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+
+    &:nth-child(odd) {
+      margin-right: 3%;
+    }
+
+    &:nth-child(even) {
+      margin-left: 3%;
+    }
+  }
+
+  @include media-smartphone-sm {
+    padding: 100px 0 20px 20px;
+  }
 }
 
 .fee__content {
@@ -85,13 +116,21 @@
   }
 
   @include media-laptop {
-    margin-bottom: 15px;
+    margin-bottom: 24px;
     margin-right: 0;
 
     max-width: unset;
 
     span {
       display: inline;
+    }
+  }
+
+  @include media-tablet-lg {
+    font-size: 24px;
+
+    span {
+      display: inline-block;
     }
   }
 }

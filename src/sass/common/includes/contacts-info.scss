@@ -31,9 +31,15 @@
   .icon {
     fill: $color-primary-alpha;
 
-    width: 4rem;
-    height: 4rem;
+    max-width: 4rem;
+    max-height: 4rem;
+    min-width: 4rem;
+    min-height: 4rem;
 
     margin-right: 3rem;
+
+    @include media-tablet-sm {
+      margin-right: 1.5rem;
+    }
   }
 }

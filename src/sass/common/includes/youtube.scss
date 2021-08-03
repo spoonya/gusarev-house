@@ -4,6 +4,10 @@
   @include media-desktop {
     padding-bottom: ($padding-bottom-section + 5rem);
   }
+
+  // @include media-tablet-lg {
+  //   padding-bottom: 50px;
+  // }
 }
 
 .youtube__inner {

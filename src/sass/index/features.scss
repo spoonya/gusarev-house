@@ -25,6 +25,10 @@
     opacity: 0.8;
   }
 
+  @include media-tablet-lg {
+    margin-bottom: 50px;
+  }
+
   @include media-tablet-sm {
     padding: 7rem 0;
   }
@@ -60,6 +64,10 @@
 
   span {
     font-weight: 700;
+  }
+
+  @include media-tablet-lg {
+    font-size: 28px;
   }
 
   @include media-tablet-sm {

@@ -3,9 +3,19 @@
 }
 
 .footer__top {
-  padding: 5rem 0 8.5rem;
+  padding: 5rem 0 4.5rem;
 
   border-bottom: 1px solid $color-secondary-psi;
+
+  @include media-tablet-sm {
+    padding-bottom: 1.5rem;
+  }
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
   .logo {
     flex-direction: column;
@@ -22,6 +32,13 @@
     }
   }
 
+  .phones,
+  .mail {
+    @include media-laptop {
+      transform: translateX(0);
+    }
+  }
+
   .worktime {
     justify-content: flex-start;
 
@@ -35,11 +52,6 @@
       margin-bottom: 3rem;
     }
   }
-}
-
-.footer__inner {
-  display: flex;
-  justify-content: space-between;
 }
 
 .footer__menu {
@@ -70,18 +82,66 @@
 }
 
 .footer__bot {
-  display: flex;
-  justify-content: space-between;
-
   padding: 3.3rem 0;
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-tablet-lg {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @include media-smartphone-sm {
+      align-items: flex-start;
+    }
+  }
 
   .footer__button {
     margin-bottom: 7px;
     font-size: 16px;
+    align-self: flex-end;
+    width: fit-content;
+
+    @include media-tablet-lg {
+      align-self: center;
+    }
+
+    @include media-smartphone-sm {
+      align-self: flex-start;
+    }
+  }
+
+  .footer__item {
+    @include media-tablet-sm {
+      align-items: center;
+    }
+
+    @include media-smartphone-sm {
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 }
 
 .footer__item {
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  @include media-laptop {
+    width: 47%;
+  }
+
+  @include media-smartphone-lg {
+    width: 100%;
+  }
+
   p {
     font-size: 16px;
     color: $color-primary-psi;
@@ -95,6 +155,10 @@
     text-align: center;
 
     max-width: 48.3rem;
+
+    @include media-smartphone-sm {
+      text-align: left;
+    }
   }
 }
 
@@ -134,4 +198,8 @@
 
 .footer__createby {
   text-align: right;
+
+  @include media-tablet-lg {
+    text-align: center;
+  }
 }

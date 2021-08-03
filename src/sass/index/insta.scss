@@ -42,6 +42,10 @@
     opacity: 0.5;
   }
 
+  @include media-tablet-lg {
+    margin-bottom: 50px;
+  }
+
   @include media-tablet-sm {
     padding: 6.5rem 5.4rem;
   }
