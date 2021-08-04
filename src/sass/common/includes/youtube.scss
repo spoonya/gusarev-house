@@ -1,13 +1,9 @@
 .youtube {
   padding-bottom: $padding-bottom-section;
 
-  @include media-desktop {
-    padding-bottom: ($padding-bottom-section + 5rem);
+  @include media-tablet-lg {
+    padding-bottom: 50px;
   }
-
-  // @include media-tablet-lg {
-  //   padding-bottom: 50px;
-  // }
 }
 
 .youtube__inner {
@@ -41,8 +37,8 @@
 }
 
 .youtube__title {
-  font-weight: 300;
-  font-size: 3.6rem;
+  @include section-title(left);
+
   color: $color-primary-gamma;
 
   margin-bottom: 4.2rem;

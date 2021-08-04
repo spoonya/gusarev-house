@@ -14,8 +14,18 @@
       margin-bottom: 4rem;
     }
 
+    .projects__item {
+      &:nth-child(n + 7) {
+        display: flex;
+      }
+    }
+
     .filter {
       margin-bottom: 4rem;
+
+      @include media-tablet-lg {
+        margin-bottom: 20px;
+      }
     }
   }
 }

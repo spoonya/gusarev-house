@@ -4,7 +4,7 @@
   span {
     display: block;
 
-    @include media-tablet-lg {
+    @include media-laptop {
       display: inline;
     }
   }
@@ -15,6 +15,14 @@
   flex-wrap: wrap;
 
   padding-bottom: $padding-bottom-section;
+
+  @include media-laptop {
+    justify-content: space-between;
+  }
+
+  @include media-tablet-lg {
+    padding-bottom: 40px;
+  }
 }
 
 .sale__item {
@@ -34,6 +42,21 @@
     width: 30.91%;
   }
 
+  @include media-laptop {
+    margin-right: 0;
+
+    width: 49%;
+
+    margin-bottom: 2rem;
+  }
+
+  @include media-tablet-sm {
+    width: 100%;
+  }
+
+  @include media-smartphone-sm {
+  }
+
   &-img {
     min-height: 300px;
     max-height: 300px;
@@ -49,6 +72,10 @@
 
     border: 1px solid $color-secondary-alpha;
     border-radius: 0px 0px 10px 10px;
+
+    @include media-smartphone-sm {
+      padding: 2rem;
+    }
   }
 
   &-titles {
@@ -95,6 +122,8 @@
 
     color: $color-primary-gamma;
     font-size: 16px;
+
+    margin-right: 2rem;
 
     &-icon {
       width: 18px;

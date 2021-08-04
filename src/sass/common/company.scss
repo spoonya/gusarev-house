@@ -7,18 +7,39 @@
 
   &--reverse {
     .company__inner {
+      position: relative;
+
       flex-direction: row-reverse;
       align-items: flex-end;
+
+      @include media-tablet-lg {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     .company__content {
       @include media-desktop {
         max-width: 64rem;
       }
+
+      @include media-tablet-lg {
+        max-width: unset;
+
+        &:not(:first-child) {
+          padding-top: 87px;
+        }
+      }
     }
 
     .company__images {
       margin-right: 0;
+      margin-left: 27rem;
+
+      @include media-tablet-lg {
+        margin-left: 0;
+        align-self: center;
+      }
     }
 
     .company__img-decorator {
@@ -29,6 +50,12 @@
     .company__years {
       left: -25%;
       right: unset;
+
+      @include media-tablet-lg {
+        left: 25%;
+        top: unset;
+        bottom: -27%;
+      }
     }
 
     .company__txt {
@@ -48,6 +75,7 @@
 
   @include media-tablet-sm {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -63,6 +91,8 @@
   }
 
   @include media-tablet-sm {
+    align-self: center;
+
     margin-right: 0;
   }
 }
@@ -70,17 +100,46 @@
 .company__info {
   display: flex;
   align-items: center;
+
+  @include media-smartphone-lg {
+    flex-direction: column;
+  }
 }
 
 .company__numbers {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 
   margin-left: 3.1rem;
+
+  @include media-smartphone-lg {
+    flex-direction: row;
+    justify-content: center;
+
+    text-align: center;
+
+    padding-top: 20px;
+    margin-left: 0;
+
+    width: 100%;
+  }
 
   &-item {
     &:not(:last-child) {
       margin-bottom: 5rem;
+    }
+
+    @include media-smartphone-lg {
+      width: 48%;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    @include media-smartphone-sm {
+      width: 100%;
     }
 
     &-value {
@@ -100,10 +159,15 @@
   border-radius: 10px;
 
   max-width: 45rem;
+
   object-fit: cover;
 
   @include media-laptop {
     max-width: 36rem;
+  }
+
+  @include media-smartphone-sm {
+    width: 100%;
   }
 }
 
@@ -162,21 +226,15 @@
   }
 
   @include media-tablet-lg {
-    width: 160px;
-    height: 160px;
-
     span {
       font-size: 72px;
     }
   }
 
   @include media-tablet-sm {
-    bottom: -10%;
-    right: 13%;
-
+    right: 15%;
     top: unset;
-
-    transform: translateX(-25%);
+    bottom: -27%;
   }
 }
 
@@ -188,7 +246,19 @@
   }
 
   @include media-tablet-sm {
-    padding-top: 87px;
+    &:first-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include media-tablet-sm {
+    &:not(:first-child) {
+      padding-top: 87px;
+    }
+  }
+
+  .button {
+    min-width: 288px;
   }
 }
 
@@ -201,6 +271,12 @@
 
   span {
     font-weight: 700;
+  }
+
+  &.inline-flex {
+    span {
+      display: inline-flex;
+    }
   }
 }
 

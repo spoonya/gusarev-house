@@ -1,7 +1,19 @@
 .insta {
   margin-bottom: 6rem;
 
+  @include media-tablet-lg {
+    margin-bottom: 50px;
+  }
+}
+
+.insta__inner {
   position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 1;
 
   padding: 6.5rem 12rem;
 
@@ -15,6 +27,8 @@
 
   &::before {
     position: absolute;
+
+    z-index: -1;
 
     content: '';
 
@@ -30,6 +44,8 @@
   &::after {
     position: absolute;
 
+    z-index: -1;
+
     content: '';
 
     top: 0;
@@ -42,24 +58,6 @@
     opacity: 0.5;
   }
 
-  @include media-tablet-lg {
-    margin-bottom: 50px;
-  }
-
-  @include media-tablet-sm {
-    padding: 6.5rem 5.4rem;
-  }
-}
-
-.insta__inner {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  z-index: 1;
-
   @include media-laptop {
     flex-direction: column;
 
@@ -67,6 +65,8 @@
   }
 
   @include media-tablet-sm {
+    padding: 6.5rem 5.4rem;
+
     align-items: flex-start;
 
     text-align: left;

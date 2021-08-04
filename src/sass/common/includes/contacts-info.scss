@@ -37,9 +37,5 @@
     min-height: 4rem;
 
     margin-right: 3rem;
-
-    @include media-tablet-sm {
-      margin-right: 1.5rem;
-    }
   }
 }

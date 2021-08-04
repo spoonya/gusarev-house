@@ -8,6 +8,10 @@
   &--page {
     padding-bottom: 13rem;
 
+    @include media-tablet-lg {
+      padding-bottom: 3rem;
+    }
+
     .catalog__content {
       align-items: unset;
 
@@ -21,6 +25,10 @@
 
   .title-block__txt {
     max-width: 57rem;
+
+    @include media-tablet-lg {
+      max-width: unset;
+    }
   }
 }
 

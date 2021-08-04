@@ -10,7 +10,8 @@ const swiperIntro = new Swiper('#swiper-product', {
   grabCursor: true,
 
   navigation: {
-    nextEl: '.swiper-button-next'
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
   },
 
   autoplay: {

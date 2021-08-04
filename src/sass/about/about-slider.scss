@@ -3,8 +3,18 @@
 
   margin-bottom: 9rem;
 
+  @include media-tablet-lg {
+    margin-bottom: 50px;
+  }
+
+  @include media-smartphone-lg {
+    margin-bottom: 30px;
+  }
+
   .swiper-container {
     max-width: 117rem;
+
+    padding: 0 50px;
   }
 
   .swiper-wrapper {
@@ -12,11 +22,11 @@
   }
 
   .swiper-button-prev {
-    padding-left: 3rem;
+    left: 50px;
   }
 
   .swiper-button-next {
-    padding-right: 3rem;
+    right: 50px;
   }
 
   .swiper-button-prev,
@@ -29,6 +39,58 @@
   }
 
   @include swiper-pagination;
+
+  @include media-laptop {
+    .swiper-button-prev {
+      left: 25px;
+    }
+
+    .swiper-button-next {
+      right: 25px;
+    }
+  }
+
+  @include media-smartphone-lg {
+    .swiper-container {
+      max-width: 117rem;
+
+      padding: 0 25px;
+    }
+
+    .swiper-wrapper {
+      margin-bottom: 55px;
+    }
+
+    .swiper-button-prev {
+      left: 0px;
+    }
+
+    .swiper-button-next {
+      right: 0px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 50%;
+
+      transform: translateY(50%);
+
+      &::after {
+        font-size: 30px;
+      }
+    }
+  }
+
+  @include media-smartphone-sm {
+    .swiper-container {
+      padding: 0;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
 }
 
 .about-slider__title {

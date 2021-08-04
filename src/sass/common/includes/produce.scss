@@ -33,10 +33,20 @@
 }
 
 .produce__list {
-  position: relative;
-
   display: flex;
   flex-wrap: wrap;
+}
+
+.produce__item {
+  position: relative;
+
+  flex: 1;
+
+  width: 25%;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   &::after {
     position: absolute;
@@ -52,18 +62,6 @@
     background-color: $color-primary-gamma;
     opacity: 0.6;
   }
-}
-
-.produce__item {
-  position: relative;
-
-  flex: 1;
-
-  width: 25%;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 
   @include media-laptop {
     width: 50%;

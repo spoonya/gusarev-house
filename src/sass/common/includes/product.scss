@@ -6,6 +6,14 @@
 
     margin: 0;
     margin-right: 3rem;
+
+    @include media-tablet-lg {
+      margin-right: 0;
+
+      max-width: unset;
+
+      margin-bottom: 35px;
+    }
   }
 
   .swiper-wrapper {
@@ -35,6 +43,10 @@
 .product__inner {
   display: flex;
   justify-content: space-between;
+
+  @include media-tablet-lg {
+    flex-direction: column;
+  }
 }
 
 .product__slide {
@@ -43,8 +55,13 @@
   width: 100%;
 
   max-height: 55.9rem;
+  min-height: 55.9rem;
 
   border-radius: 10px;
+
+  @include media-tablet-lg {
+    max-width: unset;
+  }
 }
 
 .product__list {
@@ -66,9 +83,13 @@
   &-item {
     display: flex;
 
-    width: 50%;
+    width: 49%;
 
     margin-bottom: 3rem;
+
+    @include media-smartphone-sm {
+      width: 100%;
+    }
 
     &-title,
     &-txt {
@@ -90,8 +111,13 @@
 .product-title {
   font-weight: 700;
   font-size: 3.6rem;
-
   color: $color-primary-gamma;
+
+  margin-right: 3rem;
+
+  @include media-laptop {
+    margin-bottom: 3rem;
+  }
 }
 
 .product-name {
@@ -115,10 +141,23 @@
 
     background-color: $color-primary-omega;
     border-radius: 10px;
+
+    @include media-laptop {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include media-tablet-sm {
+      padding: 5.1rem 4rem;
+    }
   }
 
   &__txt {
     max-width: 87rem;
+
+    @include media-laptop {
+      max-width: unset;
+    }
 
     p {
       color: $color-primary-gamma;
@@ -134,6 +173,10 @@
 .product-plan {
   padding-bottom: 8rem;
 
+  @include media-tablet-lg {
+    padding-bottom: 4rem;
+  }
+
   .product-title {
     margin-bottom: 4rem;
   }
@@ -141,6 +184,7 @@
   &__list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     &-item {
       display: flex;
@@ -157,11 +201,23 @@
       border-radius: 10px;
 
       cursor: pointer;
+
+      @include media-tablet-lg {
+        width: 100%;
+      }
     }
 
     &-img {
       max-width: 69rem;
       object-fit: cover;
+
+      @include media-smartphone-lg {
+        max-width: 50rem;
+      }
+
+      @include media-smartphone-sm {
+        max-width: 40rem;
+      }
     }
   }
 }
