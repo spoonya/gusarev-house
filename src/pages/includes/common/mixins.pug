@@ -416,6 +416,7 @@ mixin aboutSlider(imgArr)
 
 mixin modal
   #modal.modal
-    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
-      +icon('modal__button-close-icon', 'close')
+    .modal__top
+      button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+        +icon('modal__button-close-icon', 'close')
     #modal-content.modal__content

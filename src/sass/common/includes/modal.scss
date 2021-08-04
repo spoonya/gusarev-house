@@ -6,9 +6,7 @@
   top: 50%;
   left: 50%;
 
-  max-width: 76rem;
-
-  padding-top: 4.7rem;
+  max-width: 760px;
 
   transform: translate(-50%, -50%);
 
@@ -25,9 +23,9 @@
   background-color: $color-primary-gamma;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-  @include media-smartphone-sm {
-    max-width: 35rem;
-  }
+  max-height: calc(100vh - 10px);
+  overflow-y: auto;
+  overflow-x: hidden;
 
   &.active {
     pointer-events: all;
@@ -36,9 +34,15 @@
     visibility: visible;
   }
 
+  &__top {
+    position: relative;
+
+    min-height: 60px;
+  }
+
   &__button-close {
     position: absolute;
-    top: 25px;
+    top: 41%;
     right: 25px;
 
     &-icon {

@@ -39,8 +39,7 @@ const modalContent = {
     btnTxt: 'Отправить заявку'
   }),
   video: `<div id="modal-youtube" class="video-section">
-    <div class="video-block"><iframe class="video" src="https://www.youtube.com/embed/wBcik87jPVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-    </div>`
+    <iframe class="video" src="https://www.youtube.com/embed/wBcik87jPVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>`
 };
 
 function closeModal() {

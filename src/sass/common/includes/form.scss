@@ -134,6 +134,8 @@
   display: flex;
   align-items: center;
 
+  padding-top: 5px;
+
   cursor: pointer;
 }
 
@@ -495,16 +497,38 @@
 
   display: flex;
 
+  min-width: 760px;
+
+  @include media-tablet-sm {
+    flex-direction: column-reverse;
+
+    min-width: 450px;
+  }
+
+  @include media-smartphone-sm {
+    min-width: unset;
+    max-width: 310px;
+  }
+
+  .form {
+    padding: 0 25px;
+  }
+
   .form__inner {
     padding-bottom: 3rem;
 
-    max-width: 30rem;
     width: 100%;
+    padding-right: 50px;
+
+    @include media-tablet-sm {
+      max-width: unset;
+
+      padding: 0;
+    }
   }
 
   &__img {
     max-width: 33rem;
-    width: 100%;
     object-fit: cover;
     margin-right: 3rem;
   }
@@ -521,6 +545,13 @@
       display: block;
 
       font-weight: 700;
+    }
+
+    @include media-tablet-sm {
+      text-align: center;
+      margin-right: 0;
+
+      font-size: 24px;
     }
   }
 
