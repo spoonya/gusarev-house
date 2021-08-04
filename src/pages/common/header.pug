@@ -1,8 +1,12 @@
-mixin header(modif='header--dark')
+mixin header(modif='header--dark', isLogoLink=true)
   header.header(class= modif)
     .container
       .header__top
-        +logo('logo')
+        if isLogoLink
+          a(href="index.html" aria-label="Перейти на главную")
+            +logo('logo')
+        else
+          +logo('logo')
         .header__info
           .header__social
             p.header__social-txt Мы в соц.сетях:

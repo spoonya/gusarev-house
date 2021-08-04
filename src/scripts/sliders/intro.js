@@ -14,11 +14,6 @@ const swiperIntro = new Swiper('#swiper-intro', {
     nextEl: '.swiper-button-next'
   },
 
-  autoplay: {
-    delay: 3000,
-    pauseOnMouseEnter: true
-  },
-
   resizeObserver: true,
 
   preloadImages: false,

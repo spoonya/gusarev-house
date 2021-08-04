@@ -84,7 +84,8 @@
 
   &:hover {
     .contacts__map-info {
-      display: none;
+      opacity: 0;
+      pointer-events: none;
     }
   }
 
@@ -117,6 +118,8 @@
 
     border-radius: 10px 0px 0px 10px;
     background-color: rgba(0, 0, 0, 0.6);
+
+    transition: opacity 0.06s linear;
 
     &::after {
       position: absolute;
