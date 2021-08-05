@@ -63,6 +63,22 @@
     opacity: 0.6;
   }
 
+  @include media-custom-mf(1200px) {
+    &::before {
+      position: absolute;
+
+      content: '';
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      backdrop-filter: blur(3px);
+    }
+  }
+
   @include media-laptop {
     width: 50%;
 
@@ -71,20 +87,6 @@
 
   @include media-smartphone-lg {
     width: 100%;
-  }
-
-  &::before {
-    position: absolute;
-
-    content: '';
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    // backdrop-filter: blur(3px);
   }
 
   &:hover,
