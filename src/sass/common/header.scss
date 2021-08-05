@@ -190,8 +190,6 @@
     ul {
       position: absolute;
 
-      z-index: 1;
-
       top: -2rem;
       left: -2rem;
 
@@ -316,6 +314,8 @@
         }
 
         & > ul {
+          z-index: 1;
+
           left: 50%;
           top: -25px;
           transform: translateX(-50%);

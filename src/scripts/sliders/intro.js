@@ -1,5 +1,3 @@
-import { isMediaBreakpoint, isMobile } from '../helpers';
-
 const currentSlideIndex = document.querySelector('#swiper-intro-current');
 const totalSlidesCount = document.querySelector('#swiper-intro-total');
 
@@ -21,7 +19,7 @@ const swiperIntro = new Swiper('#swiper-intro', {
   preloadImages: false,
   lazy: true,
 
-  effect: isMobile() ? 'slide' : 'coverflow',
+  effect: 'coverflow',
 
   on: {
     init() {
