@@ -1,4 +1,4 @@
-import { DOM } from './constants';
+import { DOM, CLASSES } from './constants';
 
 import { isMediaBreakpoint } from './helpers';
 
@@ -10,12 +10,14 @@ function moveHeaderSocial() {
 
   if (isMediaBreakpoint()) {
     DOM.headerBot.append(headerSocial);
+    headerSocial.classList.add(CLASSES.active);
 
     return;
   }
 
   if (!headerInfo.contains(headerSocial)) {
     headerInfo.prepend(headerSocial);
+    headerSocial.classList.remove(CLASSES.active);
   }
 }
 

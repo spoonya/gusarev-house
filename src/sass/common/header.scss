@@ -76,6 +76,10 @@
 
   margin-right: 10.1rem;
 
+  &.active {
+    display: flex;
+  }
+
   &-txt {
     font-size: 14px;
 
@@ -95,6 +99,8 @@
   }
 
   @include media-tablet-lg {
+    display: none;
+
     flex-direction: row;
     align-items: center;
 

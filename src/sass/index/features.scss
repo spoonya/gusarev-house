@@ -9,7 +9,7 @@
   background-position: center;
   background-size: cover;
 
-  @include media-custom-mf(1600px) {
+  @include media-custom-mf(1200px) {
     background-attachment: fixed;
   }
 

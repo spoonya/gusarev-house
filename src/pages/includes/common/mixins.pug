@@ -62,6 +62,11 @@ mixin modalCallButton(txt, dataTarget, modif=null)
     span.button__inner= txt
       +icon('button__icon', 'arrow-right')
 
+mixin button(txt)
+  button.button
+    span.button__inner= txt
+      +icon('button__icon', 'arrow-right')
+
 mixin submitButton(txt)
   button.form__button
     = txt

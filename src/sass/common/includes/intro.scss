@@ -109,7 +109,9 @@
   background-position: center;
   background-size: cover;
 
-  animation: zoom 40s infinite;
+  @include media-custom-mf(1200px) {
+    animation: zoom 40s infinite;
+  }
 
   &::after {
     position: absolute;
