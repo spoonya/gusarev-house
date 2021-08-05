@@ -24,7 +24,7 @@
     @include media-tablet-lg {
       position: sticky;
 
-      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     .header__call {
@@ -325,6 +325,14 @@
   }
 }
 
+.header__group {
+  .worktime {
+    body.touch & {
+      justify-content: center;
+    }
+  }
+}
+
 .header__phones {
   position: relative;
   z-index: 1;
@@ -336,11 +344,9 @@
     align-items: center;
     justify-content: flex-end;
 
-    &:hover {
+    body:not(.touch) &:hover {
       & > ul {
         display: flex;
-
-        opacity: 1;
       }
     }
 
@@ -365,9 +371,12 @@
     padding-top: 2rem;
     width: max-content;
 
-    opacity: 0;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
     animation: fadeIn 0.15s linear;
+
+    &.active {
+      display: flex;
+    }
 
     li {
       background-color: $color-primary-beta;
@@ -402,8 +411,26 @@
     }
   }
 
+  &-icon {
+    fill: $color-primary-beta;
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+
+    margin-left: 10px;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+
+    body:not(.touch) & {
+      display: none;
+    }
+  }
+
   @include media-laptop {
-    ul {
+    body:not(.touch) & {
       left: -4rem;
     }
   }
@@ -411,8 +438,10 @@
   @include media-tablet-lg {
     ul {
       top: 3rem;
-      left: -2rem;
+      left: 50%;
       width: max-content;
+
+      transform: translateX(-50%);
     }
   }
 }

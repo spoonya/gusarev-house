@@ -19,9 +19,10 @@ mixin header(modif='header--dark', isLogoLink=true)
             |Позвоните мне
           .header__group
             +worktime
-            ul.header__phones
+            ul#header-phones.header__phones
               li
                 a(href="tel:80333333333") 8 (033) 333 33 33
+                +icon('header__phones-icon', 'arrow-down')
                 ul
                   li: a(href="tel:80297777777") 8 (029) 777 77 77
                   li: a(href="tel:80333333333") 8 (033) 333 33 33

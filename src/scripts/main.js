@@ -13,11 +13,15 @@ import controlModal from './modal';
 import initPanzoom from './panzoom';
 import controlBurger from './header/burger';
 import relocateElements from './relocateElements';
-import { lockLightHeader } from './header';
+import { lockLightHeader, controlPhonesList } from './header';
 
 lazyLoadObserver.observe();
 
 lockLightHeader();
+
+controlPhonesList();
+controlModal();
+controlBurger();
 
 validateFormCatalog();
 validateFormCallback();
@@ -26,9 +30,6 @@ validateFormCallbackMini();
 spoilerWebuild.init();
 
 addClickEvtToFilters();
-
-controlModal();
-controlBurger();
 
 initPanzoom();
 

@@ -91,9 +91,12 @@
 
   background: rgba(39, 40, 39, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
 
   @include media-desktop {
     padding: 5rem 2rem 0;
+  }
+
+  @include media-custom-mf(1200px) {
+    backdrop-filter: blur(4px);
   }
 }

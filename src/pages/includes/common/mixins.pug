@@ -47,7 +47,7 @@ mixin social
       a(href="#" aria-label="vk" target="_blank" rel="noopener"): +icon('social__icon', 'vk')
     li.social__item
       a(href="https://www.instagram.com/gusarev_house/" aria-label="instagram" target="_blank" rel="noopener")
-        .social__icon-wrapper
+        .social__icon-wrapper(style="background-image: url(images/common/insta-bg.png);")
           +icon('social__icon social__icon--insta', 'instagram')
     li.social__item
       a(href="https://www.youtube.com/channel/UCUdIa66ASkvG7fYzFUC6DWA" aria-label="youtube" target="_blank" rel="noopener"): +icon('social__icon', 'youtube')
@@ -315,7 +315,7 @@ mixin formCatalog(isText=true)
           input.form__input(name="catalog-name" type="text" placeholder="Ваше имя" data-form-name)
         .form__control
           span.form__error
-          input.form__input(name="catalog-phone" type="text" placeholder="Ваш телефон" data-form-phone)
+          input.form__input(name="catalog-phone" type="tel" placeholder="Ваш телефон" data-form-phone)
         .form__control
           span.form__error
           input.form__input(name="catalog-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
@@ -341,7 +341,7 @@ mixin formCallback(titleArr, feature, formTxt, modificators={modifDisplay: null,
                 input.form__input(name="callback-name" type="text" placeholder="Ваше имя" data-form-name)
               .form__control
                 span.form__error
-                input.form__input(name="callback-phone" type="text" placeholder="Ваш телефон" data-form-phone)
+                input.form__input(name="callback-phone" type="tel" placeholder="Ваш телефон" data-form-phone)
               .form__control
                 span.form__error
                 input.form__input(name="callback-email" type="text" placeholder="Ваш e-mail (необязательно)" data-form-email)
@@ -382,7 +382,7 @@ mixin formCallbackMini(titleArr, subtitle, modificators={modifDisplayGroup: null
           .form__group(class= modificators.modifDisplayGroup)
             .form__control.form__control--wide
               span.form__error
-              input.form__input(name="callback-mini-phone" type="text" placeholder="Ваш телефон" data-form-phone)
+              input.form__input(name="callback-mini-phone" type="tel" placeholder="Ваш телефон" data-form-phone)
             +submitButton("Перезвонить")
 
 mixin productAbout(txt)
