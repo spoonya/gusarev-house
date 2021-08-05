@@ -1,7 +1,9 @@
 const CLASSES = {
   active: 'active',
+  absolute: 'absolute',
   fixed: 'fixed',
   loading: 'loading',
+  headerDark: 'header--dark',
   scrollHidden: 'scroll-hidden'
 };
 
@@ -15,6 +17,8 @@ const IDs = {
 
 const DOM = {
   body: document.querySelector('body'),
+  header: document.querySelector('#header'),
+  headerBot: document.querySelector('#header-bottom'),
   modal: document.querySelector('#modal'),
   modalContent: document.querySelector('#modal-content'),
   overlay: document.querySelector('#overlay')

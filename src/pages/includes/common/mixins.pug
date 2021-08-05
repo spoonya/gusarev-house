@@ -82,9 +82,11 @@ mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null, isSl
   .swiper-slide
     if isSlide
       .intro__bg-img.swiper-lazy(data-background=`images/intro/${img}.jpg`)
+        img.intro__decorator.lozad(data-src="images/intro/arrows-group.png", width="733", height="340",  alt="")
       .swiper-lazy-preloader.swiper-lazy-preloader-white
     else
       .intro__bg-img.lozad(data-background-image=`images/intro/${img}.jpg`)
+        img.intro__decorator.lozad(data-src="images/intro/arrows-group.png", width="733", height="340",  alt="")
     .container
       .intro__inner
         .intro__content
@@ -225,7 +227,7 @@ mixin produceItem(img, title, textArr, link, isProduceDesign=false)
           for item in textArr
             p= item
         button.produce__item-link(data-modal-target="#form-callme")
-          p Подробнее
+          span Подробнее
           +icon('produce__item-link-icon', 'arrow-right')
 
 mixin docsItem(img)

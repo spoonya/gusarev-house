@@ -11,8 +11,13 @@ import {
 import addClickEvtToFilters from './filters';
 import controlModal from './modal';
 import initPanzoom from './panzoom';
+import controlBurger from './header/burger';
+import relocateElements from './relocateElements';
+import { lockLightHeader } from './header';
 
 lazyLoadObserver.observe();
+
+lockLightHeader();
 
 validateFormCatalog();
 validateFormCallback();
@@ -23,5 +28,8 @@ spoilerWebuild.init();
 addClickEvtToFilters();
 
 controlModal();
+controlBurger();
 
 initPanzoom();
+
+relocateElements();

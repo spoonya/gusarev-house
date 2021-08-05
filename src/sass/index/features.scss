@@ -8,7 +8,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+
+  @include media-custom-mf(1600px) {
+    background-attachment: fixed;
+  }
 
   &::after {
     position: absolute;

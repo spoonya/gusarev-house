@@ -1,14 +1,17 @@
 mixin header(modif='header--dark', isLogoLink=true)
-  header.header(class= modif)
+  header#header.header(class= modif)
     .container
       .header__top
-        if isLogoLink
-          a(href="index.html" aria-label="Перейти на главную")
+        .header__logo
+          if isLogoLink
+            a(href="index.html" aria-label="Перейти на главную")
+              +logo('logo')
+          else
             +logo('logo')
-        else
-          +logo('logo')
-        .header__info
-          .header__social
+          button#burger.burger(aria-label="Бургер-меню")
+            span
+        #header-info.header__info
+          #header-social.header__social
             p.header__social-txt Мы в соц.сетях:
             +social
           button.header__call(data-modal-target="#form-callme")
@@ -22,17 +25,19 @@ mixin header(modif='header--dark', isLogoLink=true)
                 ul
                   li: a(href="tel:80297777777") 8 (029) 777 77 77
                   li: a(href="tel:80333333333") 8 (033) 333 33 33
-      nav.header__menu
-        ul
-          li: a(href="index.html") Главная
-          li: a(href="catalog.html") Каталог проектов
-          li: a(href="projects.html") Портфолио
-          li
-            a(role="button") Услуги
+      #header-bot-wrapper.header__bot-wrapper
+        #header-bottom.header__bot
+          nav#menu.header__menu
             ul
-              li: a(href="services-design.html") Архитектурное проектирование
-              li: a(href="services-produce.html") Производство материалов
-          li: a(href="sale.html") Продаём
-          li: a(href="about.html") О компании
-          li: a(href="news.html") Новости
-          li: a(href="contacts.html") Контакты
+              li: a(href="index.html") Главная
+              li: a(href="catalog.html") Каталог проектов
+              li: a(href="projects.html") Портфолио
+              li
+                a(role="button") Услуги
+                ul
+                  li: a(href="services-design.html") Архитектурное проектирование
+                  li: a(href="services-produce.html") Производство материалов
+              li: a(href="sale.html") Продаём
+              li: a(href="about.html") О компании
+              li: a(href="news.html") Новости
+              li: a(href="contacts.html") Контакты

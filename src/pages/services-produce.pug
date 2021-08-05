@@ -6,7 +6,7 @@ block title
   title Услуги производства
 
 block header
-  +header(null)
+  +header('absolute', false)
 
 block content
   .page.page--paddingless
@@ -14,4 +14,3 @@ block content
       //Intro
       section.intro
         +introSlide('slide-1', 'Строительство домов под ключ в Минской области и Минском районе', ['Строим надёжные дома', 'из клееного бруса и массива сроком эксплуатации до 100 лет'], 'По индивидуальному или готовому проекту', ['Качественно', 'Долговечно', 'Доступно'], 'intro__subtitle--wide', false)
-        img.intro__decorator.lozad(data-src="images/intro/arrows-group.png", width="733", height="340",  alt="")

@@ -17,4 +17,14 @@
 
     margin-top: 6px;
   }
+
+  @include media-tablet-lg {
+    &__icon {
+      margin-right: 0;
+    }
+
+    &__title {
+      display: none;
+    }
+  }
 }
