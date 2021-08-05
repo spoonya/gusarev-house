@@ -67,8 +67,8 @@ mixin submitButton(txt)
     = txt
     +icon('form__button-icon', 'arrow-right')
 
-mixin mediaButton
-  button.media-button(aria-label="Воспроизвести видео" data-modal-target="#modal-youtube")
+mixin mediaButton(link)
+  button.media-button(data-src= link data-modal-target="#modal-youtube" aria-label="Воспроизвести видео")
     +icon('media-button__icon', 'play')
 
 mixin companyFeature(titleArr, icon)
@@ -100,7 +100,7 @@ mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null, isSl
               li= item
           +linkButton('catalog.html', 'В каталог проектов', 'button--light')
         .intro__media
-          +mediaButton
+          +mediaButton("https://www.youtube.com/embed/wBcik87jPVU")
           p.intro__media-txt
             |Посмотреть
             span видео-презентацию
@@ -261,9 +261,9 @@ mixin sectionYoutube
             +icon('youtube__link-icon', 'arrow-right')
         ul.youtube__videos
           li.youtube__item.lozad(data-background-image="images/youtube/youtube-1.jpg")
-            +mediaButton
+            +mediaButton("https://www.youtube.com/embed/wBcik87jPVU")
           li.youtube__item.lozad(data-background-image="images/youtube/youtube-1.jpg")
-            +mediaButton
+            +mediaButton("https://www.youtube.com/embed/IZnTfsC-nqY")
 
 mixin sectionFeaturesCompany
   section.company-features

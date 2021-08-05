@@ -25,6 +25,13 @@ function createFormContent({ img, title, btnTxt }) {
   return formTemplate;
 }
 
+function createVideo(link) {
+  const videoTemplate = `<div id="modal-youtube" class="video-section">
+    <iframe class="video" src="${link}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>`;
+
+  return videoTemplate;
+}
+
 const modalContent = {
   formCallme: createFormContent({
     img: 'house.png',
@@ -37,9 +44,7 @@ const modalContent = {
     title:
       '<h2 class="form-modal__title"><span>Оставить заявку&nbsp;</span>на индивидуальный проект</h2>',
     btnTxt: 'Отправить заявку'
-  }),
-  video: `<div id="modal-youtube" class="video-section">
-    <iframe class="video" src="https://www.youtube.com/embed/wBcik87jPVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>`
+  })
 };
 
 function closeModal() {
@@ -55,8 +60,10 @@ function createModal(html) {
   DOM.modalContent.insertAdjacentHTML('afterbegin', html);
 }
 
-function openModal(modalTarget) {
-  if (!modalTarget) return;
+function openModal(button) {
+  if (!button) return;
+
+  const { modalTarget } = button.dataset;
 
   switch (modalTarget) {
     case IDs.formCallMe:
@@ -70,7 +77,7 @@ function openModal(modalTarget) {
       break;
 
     case IDs.modalYouTube:
-      createModal(modalContent.video);
+      createModal(createVideo(button.dataset.src));
       break;
 
     default:
@@ -85,7 +92,7 @@ function openModal(modalTarget) {
 function controlModal() {
   openModalButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      openModal(button.dataset.modalTarget);
+      openModal(button);
     });
   });
 
