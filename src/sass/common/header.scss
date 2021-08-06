@@ -413,12 +413,14 @@
 
   &-icon {
     fill: $color-primary-beta;
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
+
+    padding: 0 8px;
 
     cursor: pointer;
 
-    margin-left: 10px;
+    margin-left: 5px;
 
     &.active {
       transform: rotate(180deg);
