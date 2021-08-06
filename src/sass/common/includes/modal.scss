@@ -34,6 +34,12 @@
     visibility: visible;
   }
 
+  &__content {
+    position: relative;
+
+    @include loading;
+  }
+
   &__top {
     position: relative;
 

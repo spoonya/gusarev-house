@@ -55,7 +55,13 @@ function closeModal() {
   DOM.body.classList.remove(CLASSES.scrollHidden);
 }
 
-function createModal(html) {
+function createModal(html, isVideo = false) {
+  if (isVideo) {
+    DOM.modalContent.classList.add(CLASSES.loading);
+  } else {
+    DOM.modalContent.classList.remove(CLASSES.loading);
+  }
+
   DOM.modalContent.innerHTML = '';
   DOM.modalContent.insertAdjacentHTML('afterbegin', html);
 }
@@ -77,7 +83,7 @@ function openModal(button) {
       break;
 
     case IDs.modalYouTube:
-      createModal(createVideo(button.dataset.src));
+      createModal(createVideo(button.dataset.src), true);
       break;
 
     default:
