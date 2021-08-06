@@ -91,7 +91,7 @@ mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null, isSl
       .swiper-lazy-preloader.swiper-lazy-preloader-white
     else
       .intro__bg-img.lozad(data-background-image=`images/intro/${img}.jpg`)
-        img.intro__decorator.lozad(data-src="images/intro/arrows-group.png", width="733", height="340",  alt="")
+        img.intro__decorator(src="images/intro/arrows-group.png", width="733", height="340",  alt="")
     .container
       .intro__inner
         .intro__content
