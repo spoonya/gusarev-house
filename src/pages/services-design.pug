@@ -6,7 +6,7 @@ block title
   title Услуги проектирования
 
 block header
-  +header('absolute', false)
+  +header('absolute')
 
 block content
   .page.page--paddingless
@@ -64,12 +64,12 @@ block content
         .container
           .company__inner
             .company__images
-              img.company__img.lozad(data-src="images/company/house-2.jpg" width="450" height="690" alt="")
-              .company__years.lozad(data-background-image=`images/company/texture-1.png`)
+              img.company__img(src="images/company/house-2.jpg" width="450" height="690" alt="")
+              .company__years(style="background-image: url(images/company/texture-1.png)")
                 p.company__years-txt
                   span 14
                   |дней в среднем длится разработка проекта
-              .company__img-decorator.lozad(data-background-image=`images/company/texture-2.png`)
+              .company__img-decorator(style="background-image: url(images/company/texture-2.png)")
             .company__content
               h3.company__suptitle Предложим вам готовый проект
               h2.company__title.inline-flex
