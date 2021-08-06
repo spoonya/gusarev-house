@@ -14,18 +14,8 @@
     position: absolute;
   }
 
-  &.fixed {
-    position: fixed;
-  }
-
   &--dark {
     background-color: $color-primary-gamma;
-
-    @include media-tablet-lg {
-      position: sticky;
-
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
 
     .header__call {
       background-color: rgba(255, 255, 255, 0.1);

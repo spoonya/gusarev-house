@@ -13,11 +13,9 @@ import controlModal from './modal';
 import initPanzoom from './panzoom';
 import controlBurger from './header/burger';
 import relocateElements from './relocateElements';
-import { lockLightHeader, controlPhonesList } from './header';
+import { controlPhonesList } from './header';
 
 lazyLoadObserver.observe();
-
-lockLightHeader();
 
 controlPhonesList();
 controlModal();

@@ -1,7 +1,6 @@
 const CLASSES = {
   active: 'active',
   absolute: 'absolute',
-  fixed: 'fixed',
   loading: 'loading',
   headerDark: 'header--dark',
   scrollHidden: 'scroll-hidden'
