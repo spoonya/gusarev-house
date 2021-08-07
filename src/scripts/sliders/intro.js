@@ -16,9 +16,6 @@ const swiperIntro = new Swiper('#swiper-intro', {
 
   resizeObserver: true,
 
-  preloadImages: false,
-  lazy: true,
-
   effect: 'coverflow',
 
   on: {

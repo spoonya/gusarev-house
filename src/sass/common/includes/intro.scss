@@ -100,6 +100,7 @@
 
 .intro__bg-img {
   position: absolute;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -109,8 +110,8 @@
   background-position: center;
   background-size: cover;
 
-  @include media-custom-mf(1200px) {
-    animation: zoom 40s infinite;
+  &--mobile {
+    display: none;
   }
 
   &::after {
@@ -125,6 +126,18 @@
 
     background-color: $color-primary-gamma;
     opacity: 0.65;
+  }
+
+  @include media-custom-mf(1200px) {
+    animation: zoom 40s infinite;
+  }
+
+  @include media-tablet-sm {
+    display: none;
+
+    &--mobile {
+      display: block;
+    }
   }
 }
 

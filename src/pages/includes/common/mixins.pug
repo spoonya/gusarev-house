@@ -86,11 +86,12 @@ mixin companyFeature(titleArr, icon)
 mixin introSlide(img, title, subtitleArr, descrip, featuresArr, modif=null, isSlide=true)
   .swiper-slide
     if isSlide
-      .intro__bg-img.swiper-lazy(data-background=`images/intro/${img}.jpg`)
+      .intro__bg-img.lozad(data-background-image=`images/intro/${img}.jpg`)
+      .intro__bg-img.intro__bg-img--mobile.lozad(data-background-image=`images/intro/${img}-small.jpg`)
       img.intro__decorator(src="images/intro/arrows-group.png", width="733", height="340",  alt="")
-      .swiper-lazy-preloader
     else
       .intro__bg-img.lozad(data-background-image=`images/intro/${img}.jpg`)
+      .intro__bg-img.intro__bg-img--mobile.lozad(data-background-image=`images/intro/${img}-small.jpg`)
       img.intro__decorator(src="images/intro/arrows-group.png", width="733", height="340",  alt="")
     .container
       .intro__inner
