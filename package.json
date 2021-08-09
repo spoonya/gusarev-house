@@ -16,7 +16,6 @@
     "@babel/preset-env": "^7.11.0",
     "@htmlacademy/editorconfig-cli": "^1.0.0",
     "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.12",
     "chrome-launcher": "^0.13.4",
     "circular-dependency-plugin": "^5.2.0",
@@ -62,9 +61,11 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^4.0.0-alpha.4",
+    "core-js": "^2.6.12",
     "intersection-observer": "^0.12.0",
     "lozad": "^1.16.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "regenerator-runtime": "^0.11.1"
   },
   "editorconfig-cli": [
     "*.json",

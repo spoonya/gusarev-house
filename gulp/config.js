@@ -12,5 +12,14 @@ module.exports = {
   },
   copyDependencies: {
     dist: path.join(src, 'local_modules')
-  }
+  },
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        useBuiltIns: 'usage',
+        corejs: 3
+      }
+    ]
+  ]
 };
