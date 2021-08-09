@@ -12,13 +12,20 @@ class FormValidation {
       success: 'success'
     };
 
-    this.alert = {
+    this.alertSucces = {
       html: `<div class="alert" id="#form-alert">
               <div class="alert__inner">
                 <h2 class="alert__title">Спасибо! Ваш запрос отправлен.</h2>
                 <h3 class="alert__subtitle"><span>А пока подпишитесь на наш Instagram,&nbsp;</span>там много интересного</h3><a class="alert__link" href="https://www.instagram.com/gusarev_house/" target="_blank" rel="noopener">@gusarev_house</a>
               </div>
               <img class="alert__img" src="images/modals/phone-2.png" width="240" height="228" alt="" />
+            </div>`
+    };
+
+    this.alertFailure = {
+      html: `<div class="alert" id="#form-alert">
+              <div class="alert__inner">
+                <h2 class="alert__title">Произошла ошибка.</h2>
             </div>`
     };
 
@@ -207,9 +214,14 @@ class FormValidation {
     return true;
   }
 
-  _showAlert() {
+  _showAlert(isSuccess = true) {
     DOM.modalContent.innerHTML = '';
-    DOM.modalContent.insertAdjacentHTML('afterbegin', this.alert.html);
+
+    if (!isSuccess) {
+      DOM.modalContent.insertAdjacentHTML('afterbegin', this.alertFailure.html);
+    } else {
+      DOM.modalContent.insertAdjacentHTML('afterbegin', this.alertSucces.html);
+    }
 
     DOM.body.classList.add(CLASSES.scrollHidden);
     DOM.modal.classList.add(CLASSES.active);
@@ -230,6 +242,29 @@ class FormValidation {
         this.classes.error
       );
     });
+  }
+
+  async _send() {
+    this.form.classList.add(CLASSES.loading);
+
+    const formData = new FormData(this.form);
+
+    const res = await fetch('sendmail.php', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (res.ok) {
+      if (!this.isModal) this._clearInputs();
+
+      this.form.classList.remove(CLASSES.loading);
+
+      this._showAlert();
+    } else {
+      this.form.classList.remove(CLASSES.loading);
+
+      this._showAlert(false);
+    }
   }
 
   validateOnSubmit(userConfig = {}) {
@@ -289,15 +324,7 @@ class FormValidation {
         return;
       }
 
-      this.form.classList.add(CLASSES.loading);
-
-      setTimeout(() => {
-        if (!this.isModal) this._clearInputs();
-
-        this.form.classList.remove(CLASSES.loading);
-
-        this._showAlert();
-      }, 1500);
+      this._send();
     });
   }
 }
