@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+import 'core-js';
+import 'regenerator-runtime/runtime';
 import { Fancybox } from '@fancyapps/ui';
 import lazyLoadObserver from './lazyload';
 import * as sliders from './sliders';
