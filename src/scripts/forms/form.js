@@ -249,10 +249,15 @@ class FormValidation {
 
     const formData = new FormData(this.form);
 
-    const res = await fetch('sendmail.php', {
-      method: 'POST',
-      body: formData
-    });
+    formData.append('form-name', this.form.name);
+
+    const res = await fetch(
+      `${window.location.protocol}//${document.domain}/sendmail.php`,
+      {
+        method: 'POST',
+        body: formData
+      }
+    );
 
     if (res.ok) {
       if (!this.isModal) this._clearInputs();

@@ -309,7 +309,7 @@ mixin formCatalog(isText=true)
       h3.catalog__form-subtitle
         span Зарегистрируйтесь,&nbsp;
         |чтобы получить доступ к каталогу
-    form#form-catalog.form(method="POST", action="#")
+    form#form-catalog.form(name="Каталог", method="POST", action="#")
       .form__inner
         .form__control
           span.form__error
@@ -333,7 +333,7 @@ mixin formCallback(titleArr, feature, formTxt, modificators={modifDisplay: null,
         = titleArr[1]
     .form-content
       .container
-        form#form-callback.form(method="POST", action="#")
+        form#form-callback.form(name='Перезвонить', method="POST", action="#")
           p.form__txt= formTxt
           .form__inner
             .form__group
@@ -355,10 +355,10 @@ mixin formCallback(titleArr, feature, formTxt, modificators={modifDisplay: null,
           img.form-callback__img-phone.lozad(data-src="images/common/phone.png", width="780", height="842", alt="")
           img.form-callback__img-arrow.lozad(data-src="images/common/arrows.png", width="933", height="567", alt="")
 
-mixin formCallbackMini(titleArr, subtitle, modificators={modifDisplayGroup: null}, isRadio=false)
+mixin formCallbackMini(name, titleArr, subtitle, modificators={modifDisplayGroup: null}, isRadio=false)
   .form-callback-mini
     .form-content
-      form#form-callback-mini.form(method="POST", action="#")
+      form#form-callback-mini.form(name= name, method="POST", action="#")
         if subtitle
           h2.form-callback-mini__title= subtitle
         p.form-callback-mini__subtitle

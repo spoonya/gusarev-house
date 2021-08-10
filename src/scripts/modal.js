@@ -4,9 +4,9 @@ import { CLASSES, DOM, IDs } from './constants';
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-modal-close]');
 
-function createFormContent({ img, title, btnTxt }) {
+function createFormContent({ img, title, btnTxt, name }) {
   const formTemplate = `<div class="form-modal"><img class="form-modal__img" src="images/modals/${img}" width="330" height="479" alt="" />
-    <form class="form" id="form-modal-callback" method="POST" action="#">
+    <form class="form" id="form-modal-callback" name=${name} method="POST" action="#">
         ${title}
         <div class="form__inner">
             <div class="form__control"><span class="form__error"></span><input class="form__input" name="callme-name" type="text" placeholder="Ваше имя" data-form-name="data-form-name" /></div>
@@ -37,13 +37,15 @@ const modalContent = {
     img: 'house.png',
     title:
       '<h2 class="form-modal__title"><span>Перезвоним и проконсультируем&nbsp;</span>по всем вопросам</h2>',
-    btnTxt: 'Перезвоните мне'
+    btnTxt: 'Перезвоните мне',
+    name: 'Перезвонить'
   }),
   formRequest: createFormContent({
     img: 'phone-1.png',
     title:
       '<h2 class="form-modal__title"><span>Оставить заявку&nbsp;</span>на индивидуальный проект</h2>',
-    btnTxt: 'Отправить заявку'
+    btnTxt: 'Отправить заявку',
+    name: 'Разработка'
   })
 };
 
