@@ -47,6 +47,7 @@
 
 .projects__item {
   position: relative;
+
   width: 25%;
 
   &::after {
@@ -92,6 +93,16 @@
     }
   }
 
+  @include media-custom-mf(1200px) {
+    @include if-count(2) {
+      width: 50%;
+    }
+
+    @include if-count(3) {
+      width: 33.33333%;
+    }
+  }
+
   @include media-laptop {
     width: 33.3333%;
 
@@ -124,6 +135,8 @@
   }
 
   &-descrip {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -157,6 +170,8 @@
   }
 
   &-location {
+    position: absolute;
+
     display: flex;
 
     font-size: 14px;
