@@ -18,13 +18,27 @@
     margin-top: 6px;
   }
 
+  @include media-laptop {
+    body.touch &__title {
+      max-width: 25rem;
+    }
+  }
+
   @include media-tablet-lg {
     &__icon {
       margin-right: 0;
     }
 
     &__title {
-      display: none;
+      position: absolute;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      border: 0;
+      -webkit-clip-path: inset(0 0 99.9% 99.9%);
+      clip-path: inset(0 0 99.9% 99.9%);
     }
   }
 }

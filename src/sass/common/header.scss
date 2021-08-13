@@ -76,6 +76,10 @@
     margin-right: 19px;
   }
 
+  @include media-desktop {
+    margin-right: 5rem;
+  }
+
   @include media-laptop {
     flex-direction: column;
     align-items: flex-start;
@@ -421,9 +425,9 @@
     }
   }
 
-  @include media-laptop {
-    body:not(.touch) & {
-      left: -4rem;
+  @include media-custom-mf($media-xl) {
+    body:not(.touch) & ul {
+      left: -3.5rem;
     }
   }
 
