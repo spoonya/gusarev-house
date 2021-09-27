@@ -1,15 +1,15 @@
-const gulp = require("gulp");
-const svgstore = require("gulp-svgstore");
-const rename = require("gulp-rename");
+const gulp = require('gulp');
+const svgstore = require('gulp-svgstore');
+const rename = require('gulp-rename');
 
 module.exports = function svgSprite() {
   return gulp
-    .src("src/images/**/*.svg")
+    .src('src/images/**/*.svg')
     .pipe(
       svgstore({
-        inlineSvg: true,
+        inlineSvg: true
       })
     )
-    .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("build/images"));
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('build/images'));
 };

@@ -26,7 +26,7 @@ module.exports = function serve(cb) {
     'src/images/**/*.{gif,png,jpg,svg,webp}',
     gulp.series(imageMinify, readyReload)
   );
-  gulp.watch('src/images/sprite/*.svg', gulp.series(svgSprite, readyReload));
+  gulp.watch('src/images/**/*.svg', gulp.series(svgSprite, readyReload));
   gulp.watch(
     'src/sass/**/*.scss',
     gulp.series(styles, (cb) =>
