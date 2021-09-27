@@ -1,15 +1,23 @@
-const gulp = require("gulp");
-const svgstore = require("gulp-svgstore");
-const rename = require("gulp-rename");
+const gulp = require('gulp');
+const svgstore = require('gulp-svgstore');
+const svgmin = require('gulp-svgmin');
+const rename = require('gulp-rename');
 
 module.exports = function svgSprite() {
   return gulp
-    .src("src/images/**/*.svg")
+    .src('src/images/**/*.svg')
     .pipe(
-      svgstore({
-        inlineSvg: true,
+      svgmin({
+        js2svg: {
+          pretty: true
+        }
       })
     )
-    .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("build/images"));
+    .pipe(
+      svgstore({
+        inlineSvg: true
+      })
+    )
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('build/images'));
 };

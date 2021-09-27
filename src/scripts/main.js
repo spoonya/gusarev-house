@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import 'core-js';
+import 'core-js/es6/promise';
 import 'regenerator-runtime/runtime';
 import { Fancybox } from '@fancyapps/ui';
 import lazyLoadObserver from './lazyload';
